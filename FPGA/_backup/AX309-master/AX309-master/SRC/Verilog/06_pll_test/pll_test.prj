@@ -1,2 +1,0 @@
-verilog work "ipcore_dir/pll_ip.v"
-verilog work "pll_test.v"
