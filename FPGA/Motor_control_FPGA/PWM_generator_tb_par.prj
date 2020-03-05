@@ -1,0 +1,2 @@
+vhdl work "netgen/par/PWM_generator_timesim.vhd"
+vhdl work "PWM_generator_tb.vhd"

@@ -1,0 +1,164 @@
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+netgen -intstyle ise -s 2  -pcf PWM_generator.pcf -rpw 100 -tpw 0 -ar Structure -tm PWM_generator -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim PWM_generator.ncd PWM_generator_timesim.vhd 
+bitgen -intstyle ise -f PWM_generator.ut PWM_generator.ncd 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 PWM_generator.ngc PWM_generator.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o PWM_generator_map.ncd PWM_generator.ngd PWM_generator.pcf 
+par -w -intstyle ise -ol high -mt off PWM_generator_map.ncd PWM_generator.ncd PWM_generator.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml PWM_generator.twx PWM_generator.ncd -o PWM_generator.twr PWM_generator.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_generator.syr" 

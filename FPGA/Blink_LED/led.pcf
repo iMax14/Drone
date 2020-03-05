@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Mar 02 19:15:04 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led" LOCATE = SITE "P4" LEVEL 1;
+COMP "clk_50M" LOCATE = SITE "T8" LEVEL 1;
+COMP "Rst" LOCATE = SITE "L3" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "compteur.count_0" BEL "compteur.count_1" BEL
+        "compteur.count_2" BEL "compteur.count_3" BEL "compteur.count_4" BEL
+        "compteur.count_5" BEL "compteur.count_6" BEL "compteur.count_7" BEL
+        "compteur.count_8" BEL "compteur.count_9" BEL "compteur.count_10" BEL
+        "compteur.count_11" BEL "compteur.count_12" BEL "compteur.count_13"
+        BEL "compteur.count_14" BEL "compteur.count_15" BEL
+        "compteur.count_16" BEL "compteur.count_17" BEL "compteur.count_18"
+        BEL "compteur.count_19" BEL "compteur.count_20" BEL
+        "compteur.count_21" BEL "compteur.count_22" BEL "compteur.count_23"
+        BEL "compteur.count_24" BEL "compteur.count_25" BEL "led" BEL
+        "compteur.count_25_1" BEL "compteur.count_25_2" BEL
+        "clk_50M_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

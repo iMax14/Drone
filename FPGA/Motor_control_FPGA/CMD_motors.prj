@@ -1,0 +1,3 @@
+vhdl work "PWM_config_duty.vhd"
+vhdl work "PWM.vhd"
+vhdl work "CMD_motors.vhd"

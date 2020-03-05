@@ -1,0 +1,2 @@
+vhdl isim_temp "PWM_generator.vhd"
+vhdl isim_temp "PWM_generator_tb.vhd"

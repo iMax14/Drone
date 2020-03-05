@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_buffer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 SPI_buffer.ngc SPI_buffer.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SPI_buffer_map.ncd SPI_buffer.ngd SPI_buffer.pcf 
+par -w -intstyle ise -ol high -mt off SPI_buffer_map.ncd SPI_buffer.ncd SPI_buffer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml SPI_buffer.twx SPI_buffer.ncd -o SPI_buffer.twr SPI_buffer.pcf 

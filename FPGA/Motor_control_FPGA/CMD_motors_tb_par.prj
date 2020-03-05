@@ -1,0 +1,2 @@
+vhdl work "netgen/par/CMD_motors_timesim.vhd"
+vhdl work "CMD_motors_tb.vhd"

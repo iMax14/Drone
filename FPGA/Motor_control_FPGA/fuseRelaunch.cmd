@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb_isim_beh.exe" -prj "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb_beh.prj" "work.CMD_motors_tb" 

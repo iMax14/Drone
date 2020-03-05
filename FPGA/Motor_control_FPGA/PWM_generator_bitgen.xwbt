@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM_generator.ncd
+OUTFILE=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM_generator.bit
+FAMILY=Spartan6
+PART=xc6slx9-2ftg256
+WORKINGDIR=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA
+LICENSE=WebPack
+USER_INFO=211823609_0_0_762

@@ -1,0 +1,508 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr
+CMD_motors.pcf -ucf AX309_mapping.ucf
+
+Design file:              CMD_motors.ncd
+Physical constraint file: CMD_motors.pcf
+Device,package,speed:     xc6slx9,ftg256,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1627 paths analyzed, 193 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.086ns.
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C23), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.914ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      10.037ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
+    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
+                                                       duty_inter<7>_inv1_INV_0
+    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
+    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                     10.037ns (7.323ns logic, 2.714ns route)
+                                                       (73.0% logic, 27.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.070ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_0 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.881ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
+                                                       PWM_config_duty_1/duty_inter_0
+    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
+    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.881ns (7.169ns logic, 2.712ns route)
+                                                       (72.6% logic, 27.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.222ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.729ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
+    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.729ns (7.064ns logic, 2.665ns route)
+                                                       (72.6% logic, 27.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C13), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.937ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      10.014ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
+    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
+                                                       duty_inter<7>_inv1_INV_0
+    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
+    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                     10.014ns (7.323ns logic, 2.691ns route)
+                                                       (73.1% logic, 26.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.093ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_0 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.858ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
+                                                       PWM_config_duty_1/duty_inter_0
+    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
+    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.858ns (7.169ns logic, 2.689ns route)
+                                                       (72.7% logic, 27.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.245ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.706ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
+    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.706ns (7.064ns logic, 2.642ns route)
+                                                       (72.8% logic, 27.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C36), 10 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     10.004ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.947ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
+    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
+                                                       duty_inter<7>_inv1_INV_0
+    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
+    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.947ns (7.323ns logic, 2.624ns route)
+                                                       (73.6% logic, 26.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.160ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_0 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.791ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
+                                                       PWM_config_duty_1/duty_inter_0
+    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
+    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.791ns (7.169ns logic, 2.622ns route)
+                                                       (73.2% logic, 26.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     10.312ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               PWM_config_duty_1/duty_inter_7 (FF)
+  Destination:          PWM_1/Mmult_n00171 (DSP)
+  Requirement:          20.000ns
+  Data Path Delay:      9.639ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
+                                                       PWM_config_duty_1/duty_inter_7
+    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
+    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
+                                                       PWM_1/Mmult_n0017
+    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
+    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
+                                                       PWM_1/Mmult_n00171
+    -------------------------------------------------  ---------------------------
+    Total                                      9.639ns (7.064ns logic, 2.575ns route)
+                                                       (73.3% logic, 26.7% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/count_15 (SLICE_X7Y44.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.476ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               PWM_1/count_15 (FF)
+  Destination:          PWM_1/count_15 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.476ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: PWM_1/count_15 to PWM_1/count_15
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y44.AQ       Tcko                  0.198   PWM_1/count<18>
+                                                       PWM_1/count_15
+    SLICE_X7Y44.A6       net (fanout=23)       0.063   PWM_1/count<15>
+    SLICE_X7Y44.CLK      Tah         (-Th)    -0.215   PWM_1/count<18>
+                                                       PWM_1/Mcount_count_eqn_151
+                                                       PWM_1/count_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.476ns (0.413ns logic, 0.063ns route)
+                                                       (86.8% logic, 13.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/count_11 (SLICE_X7Y43.A4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.576ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               PWM_1/count_13 (FF)
+  Destination:          PWM_1/count_11 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.576ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: PWM_1/count_13 to PWM_1/count_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y43.CQ       Tcko                  0.198   PWM_1/count<14>
+                                                       PWM_1/count_13
+    SLICE_X7Y43.A4       net (fanout=23)       0.163   PWM_1/count<13>
+    SLICE_X7Y43.CLK      Tah         (-Th)    -0.215   PWM_1/count<14>
+                                                       PWM_1/Mcount_count_eqn_111
+                                                       PWM_1/count_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.576ns (0.413ns logic, 0.163ns route)
+                                                       (71.7% logic, 28.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point PWM_1/count_8 (SLICE_X7Y42.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.590ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               PWM_1/count_15 (FF)
+  Destination:          PWM_1/count_8 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.588ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.002ns (0.036 - 0.038)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: PWM_1/count_15 to PWM_1/count_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y44.AQ       Tcko                  0.198   PWM_1/count<18>
+                                                       PWM_1/count_15
+    SLICE_X7Y42.B6       net (fanout=23)       0.175   PWM_1/count<15>
+    SLICE_X7Y42.CLK      Tah         (-Th)    -0.215   PWM_1/count<10>
+                                                       PWM_1/Mcount_count_eqn_81
+                                                       PWM_1/count_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.588ns (0.413ns logic, 0.175ns route)
+                                                       (70.2% logic, 29.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.041ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.959ns (337.952MHz) (Tdspper_PREG)
+  Physical resource: PWM_1/Mmult_n00171/CLK
+  Logical resource: PWM_1/Mmult_n00171/CLK
+  Location pin: DSP48_X0Y11.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: PWM_1/count<2>/CLK
+  Logical resource: PWM_1/count_0/CK
+  Location pin: SLICE_X4Y42.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   10.086|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 1627 paths, 0 nets, and 365 connections
+
+Design statistics:
+   Minimum period:  10.086ns{1}   (Maximum frequency:  99.147MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Thu Mar 05 16:24:33 2020 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4570 MB
+
+
+

@@ -1,0 +1,3 @@
+vhdl work "flipflop_sys.vhd"
+vhdl work "flipflop2.vhd"
+vhdl work "risingEdge_detector.vhd"

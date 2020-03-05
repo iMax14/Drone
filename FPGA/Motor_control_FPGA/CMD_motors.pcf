@@ -1,0 +1,31 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Mar 05 16:24:18 2020
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "user_keys<0>" LOCATE = SITE "E3" LEVEL 1;
+COMP "reset" LOCATE = SITE "L3" LEVEL 1;
+COMP "user_keys<1>" LOCATE = SITE "E4" LEVEL 1;
+COMP "user_keys<2>" LOCATE = SITE "D3" LEVEL 1;
+COMP "user_keys<3>" LOCATE = SITE "C3" LEVEL 1;
+COMP "clk" LOCATE = SITE "T8" LEVEL 1;
+COMP "motor_1" LOCATE = SITE "A5" LEVEL 1;
+PIN PWM_1/Mmult_n00171_pins<110> = BEL "PWM_1/Mmult_n00171" PINNAME CLK;
+TIMEGRP sys_clk_pin = BEL "PWM_config_duty_1/duty_inter_6" BEL
+        "PWM_config_duty_1/duty_inter_5" BEL "PWM_config_duty_1/duty_inter_4"
+        BEL "PWM_config_duty_1/duty_inter_0" BEL "PWM_1/count_19" BEL
+        "PWM_1/count_18" BEL "PWM_1/count_17" BEL "PWM_1/count_16" BEL
+        "PWM_1/count_15" BEL "PWM_1/count_14" BEL "PWM_1/count_13" BEL
+        "PWM_1/count_12" BEL "PWM_1/count_11" BEL "PWM_1/count_10" BEL
+        "PWM_1/count_9" BEL "PWM_1/count_8" BEL "PWM_1/count_7" BEL
+        "PWM_1/count_6" BEL "PWM_1/count_5" BEL "PWM_1/count_4" BEL
+        "PWM_1/count_3" BEL "PWM_1/count_2" BEL "PWM_1/count_1" BEL
+        "PWM_1/count_0" BEL "PWM_1/half_duty_4" BEL "PWM_1/half_duty_3" BEL
+        "PWM_1/half_duty_2" BEL "PWM_1/half_duty_1" BEL "PWM_1/half_duty_0"
+        BEL "PWM_1/pwm_out" BEL "PWM_config_duty_1/duty_inter_8" BEL
+        "PWM_config_duty_1/duty_inter_7" BEL "PWM_config_duty_1/duty_inter_3"
+        BEL "PWM_config_duty_1/duty_inter_2" BEL "clk_BUFGP/BUFG" PIN
+        "PWM_1/Mmult_n00171_pins<110>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

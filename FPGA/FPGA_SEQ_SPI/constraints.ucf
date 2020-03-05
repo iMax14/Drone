@@ -1,0 +1,64 @@
+#NET "CLK" TNM_NET = CLK;
+#TIMESPEC TS_CLK = PERIOD "CLK" 20 ns HIGH 50% PRIORITY 0;
+#
+NET "CLK"   					      LOC = "T9"  |  IOSTANDARD = LVCMOS33 ;
+NET "reset" CLOCK_DEDICATED_ROUTE = FALSE;
+#
+##Slide switches
+
+
+NET "sclk"         LOC = "E6" | IOSTANDARD = LVCMOS33;
+NET "simo"         LOC = "C5"  | IOSTANDARD = LVCMOS33;
+NET "ssel"         LOC = "C6" | IOSTANDARD = LVCMOS33;
+
+#NET "sclk" CLOCK_DEDICATED_ROUTE = FALSE; 
+
+
+#Push-button switches
+
+NET "reset"    					   LOC = "M13"  | IOSTANDARD = LVCMOS33;                                      
+
+
+#BLDC - A2 Expansion Connector
+NET "H3H2H1_R(0)"				LOC = "D5"	| IOSTANDARD = LVCMOS33;	#H3
+NET "H3H2H1_R(1)"				LOC = "D6"	| IOSTANDARD = LVCMOS33;	#H2
+NET "H3H2H1_R(2)"				LOC = "E7"	| IOSTANDARD = LVCMOS33;	#H1
+
+
+NET "th1_R"                LOC = "D7"	| IOSTANDARD = LVCMOS33;	#th1  
+NET "th2_R"                LOC = "D8"	| IOSTANDARD = LVCMOS33;	#th2 
+NET "th3_R"                LOC = "D10"	| IOSTANDARD = LVCMOS33;	#th3
+NET "tl1_R"                LOC = "B4"	| IOSTANDARD = LVCMOS33;	#tl1 
+NET "tl2_R"                LOC = "B5"	| IOSTANDARD = LVCMOS33;	#tl2 
+NET "tl3_R"                LOC = "B6"	| IOSTANDARD = LVCMOS33;	#tl3 
+
+#
+NET "th1_L"                LOC = "C10"	| IOSTANDARD = LVCMOS33;	#th1  
+NET "th2_L"                LOC = "E10"	| IOSTANDARD = LVCMOS33;	#th2 
+NET "th3_L"                LOC = "C11"	| IOSTANDARD = LVCMOS33;	#th3
+NET "tl1_L"                LOC = "D11"	| IOSTANDARD = LVCMOS33;	#tl1 
+NET "tl2_L"                LOC = "C12"	| IOSTANDARD = LVCMOS33;	#tl2 
+NET "tl3_L"                LOC = "D12"	| IOSTANDARD = LVCMOS33;	#tl3       
+#
+
+NET "H3H2H1_L(0)"				LOC = "C16"	| IOSTANDARD = LVCMOS33;	#H3
+NET "H3H2H1_L(1)"				LOC = "D16"	| IOSTANDARD = LVCMOS33;	#H2
+NET "H3H2H1_L(2)"				LOC = "E16"	| IOSTANDARD = LVCMOS33;	#H1
+
+#NET "test_data<11>"               LOC = "D5"	| IOSTANDARD = LVCMOS33;	#th1 
+#NET "test_data<10>"               LOC = "D6"	| IOSTANDARD = LVCMOS33;	#th1 
+#NET "test_data<9>"                LOC = "E7"	| IOSTANDARD = LVCMOS33;	#th1 
+#NET "test_data<8>"                LOC = "B7"	| IOSTANDARD = LVCMOS33;	#th1 
+#NET "test_data<7>"                LOC = "B8"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<6>"                LOC = "D10"| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<5>"                LOC = "B4"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<4>"                LOC = "B5"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<3>"                LOC = "B6"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<2>"                LOC = "C7"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<1>"                LOC = "C8"	| IOSTANDARD = LVCMOS33;	#th1
+#NET "test_data<0>"                LOC = "C9"	| IOSTANDARD = LVCMOS33;	#th1
+
+
+#NET "Test_PWM_R"             LOC = "C7"	| IOSTANDARD = LVCMOS33;	#simo_out  
+
+

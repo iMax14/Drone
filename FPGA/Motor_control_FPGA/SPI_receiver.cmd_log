@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_receiver.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_receiver.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_receiver.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/SPI_receiver.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 SPI_receiver.ngc SPI_receiver.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SPI_receiver_map.ncd SPI_receiver.ngd SPI_receiver.pcf 
+par -w -intstyle ise -ol high -mt off SPI_receiver_map.ncd SPI_receiver.ncd SPI_receiver.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml SPI_receiver.twx SPI_receiver.ncd -o SPI_receiver.twr SPI_receiver.pcf 

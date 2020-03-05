@@ -1,0 +1,25 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb_isim_beh.exe -prj C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb_beh.prj work.CMD_motors_tb 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM_config_duty.vhd" into library work
+Parsing VHDL file "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/PWM.vhd" into library work
+Parsing VHDL file "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors.vhd" into library work
+Parsing VHDL file "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity PWM_config_duty [pwm_config_duty_default]
+Compiling architecture logic of entity pwm [\pwm(50000000,50,11)\]
+Compiling architecture behavioral of entity CMD_motors [cmd_motors_default]
+Compiling architecture behavior of entity cmd_motors_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 11 VHDL Units
+Built simulation executable C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors_tb_isim_beh.exe
+Fuse Memory Usage: 34292 KB
+Fuse CPU Usage: 671 ms
