@@ -193,17 +193,14 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="SPI_receiver.ngc"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="SPI_receiver.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="SPI_receiver.ngr"/>
-    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="SPI_receiver.pad"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="SPI_receiver.par" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="SPI_receiver.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_receiver.prj"/>
-    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="SPI_receiver.ptwx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="SPI_receiver.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="SPI_receiver.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="SPI_receiver.twr" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="SPI_receiver.twx" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="SPI_receiver.unroutes" xil_pn:subbranch="Par"/>
-    <file xil_pn:fileType="FILE_XPI" xil_pn:name="SPI_receiver.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="SPI_receiver.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="SPI_receiver_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="SPI_receiver_guide.ncd" xil_pn:origination="imported"/>
@@ -211,15 +208,48 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="SPI_receiver_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="SPI_receiver_map.ncd" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="SPI_receiver_map.ngm" xil_pn:subbranch="Map"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_receiver_map.xrpt"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_receiver_ngdbuild.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="SPI_receiver_pad.csv" xil_pn:subbranch="Par"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="SPI_receiver_pad.txt" xil_pn:subbranch="Par"/>
-    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_receiver_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="SPI_receiver_summary.html"/>
-    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="SPI_receiver_summary.xml"/>
-    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="SPI_receiver_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_receiver_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="SPI_transceiver.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="SPI_transceiver.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="SPI_transceiver.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="SPI_transceiver.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="SPI_transceiver.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="SPI_transceiver.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="SPI_transceiver.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="SPI_transceiver.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="SPI_transceiver.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="SPI_transceiver.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_transceiver.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="SPI_transceiver.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="SPI_transceiver.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="SPI_transceiver.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="SPI_transceiver.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="SPI_transceiver.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="SPI_transceiver.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="SPI_transceiver.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="SPI_transceiver.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="SPI_transceiver_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="SPI_transceiver_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="SPI_transceiver_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="SPI_transceiver_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="SPI_transceiver_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="SPI_transceiver_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="SPI_transceiver_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="SPI_transceiver_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_par.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="SPI_transceiver_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="SPI_transceiver_summary.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_transceiver_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="SPI_transceiver_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="SPI_transceiver_tb_isim_beh.wdb"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_transceiver_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="SPI_transceiver_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_xst.xrpt"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
@@ -369,145 +399,126 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583421718" xil_pn:in_ck="4502280750259303271" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1583421718">
+    <transform xil_pn:end_ts="1583444801" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1583444800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
+      <outfile xil_pn:name="CMD_motors.vhd"/>
+      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
+      <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="PWM_config_duty.vhd"/>
+      <outfile xil_pn:name="SPI_buffer.vhd"/>
+      <outfile xil_pn:name="SPI_receiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
+      <outfile xil_pn:name="flipflop2.vhd"/>
+      <outfile xil_pn:name="flipflop_sys.vhd"/>
+      <outfile xil_pn:name="pwm_tb.vhd"/>
+      <outfile xil_pn:name="risingEdge_detector.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1583444215" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7690711854679854308" xil_pn:start_ts="1583444215">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583444215" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3354384110549467034" xil_pn:start_ts="1583444215">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583443898" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8290343049701986362" xil_pn:start_ts="1583443898">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583444804" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1583444803">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CMD_motors.vhd"/>
+      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
+      <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="PWM_config_duty.vhd"/>
+      <outfile xil_pn:name="SPI_buffer.vhd"/>
+      <outfile xil_pn:name="SPI_receiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
+      <outfile xil_pn:name="flipflop2.vhd"/>
+      <outfile xil_pn:name="flipflop_sys.vhd"/>
+      <outfile xil_pn:name="pwm_tb.vhd"/>
+      <outfile xil_pn:name="risingEdge_detector.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1583444807" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6651349716993956840" xil_pn:start_ts="1583444804">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
-    </transform>
-    <transform xil_pn:end_ts="1583421718" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9203431193956748382" xil_pn:start_ts="1583421718">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583421718" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8319295955885503456" xil_pn:start_ts="1583421718">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583421718" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3669032936164737632" xil_pn:start_ts="1583421718">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-    </transform>
-    <transform xil_pn:end_ts="1583421718" xil_pn:in_ck="4502280750259303271" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1583421718">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputRemoved"/>
-    </transform>
-    <transform xil_pn:end_ts="1583421723" xil_pn:in_ck="4502280750259303271" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1857691709547529124" xil_pn:start_ts="1583421718">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="SPI_transceiver_tb_beh.prj"/>
+      <outfile xil_pn:name="SPI_transceiver_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1583421729" xil_pn:in_ck="9056503099934555834" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5231610653398492399" xil_pn:start_ts="1583421729">
+    <transform xil_pn:end_ts="1583444814" xil_pn:in_ck="-2689729084017883153" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7622426042611223717" xil_pn:start_ts="1583444813">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="SPI_transceiver_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1583185854" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1583185854">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-7487766175515239551" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="3260167797509838226" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="924232756855710953" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8290343049701986362" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="3790755251575638531" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7623905616127364308" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745411629038" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745411629038" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425314" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-4520037744907962573" xil_pn:start_ts="1583425314">
+    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="3708966932070921796" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583425412" xil_pn:in_ck="-1160809535734288224" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2234189648249921922" xil_pn:start_ts="1583425403">
+    <transform xil_pn:end_ts="1583444554" xil_pn:in_ck="7176492008350258689" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6960412708398907117" xil_pn:start_ts="1583444545">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="SPI_receiver.lso"/>
-      <outfile xil_pn:name="SPI_receiver.ngc"/>
+      <outfile xil_pn:name="SPI_buffer.ngr"/>
       <outfile xil_pn:name="SPI_receiver.ngr"/>
-      <outfile xil_pn:name="SPI_receiver.prj"/>
-      <outfile xil_pn:name="SPI_receiver.stx"/>
-      <outfile xil_pn:name="SPI_receiver.syr"/>
-      <outfile xil_pn:name="SPI_receiver.xst"/>
-      <outfile xil_pn:name="SPI_receiver_xst.xrpt"/>
+      <outfile xil_pn:name="SPI_transceiver.lso"/>
+      <outfile xil_pn:name="SPI_transceiver.ngc"/>
+      <outfile xil_pn:name="SPI_transceiver.ngr"/>
+      <outfile xil_pn:name="SPI_transceiver.prj"/>
+      <outfile xil_pn:name="SPI_transceiver.stx"/>
+      <outfile xil_pn:name="SPI_transceiver.syr"/>
+      <outfile xil_pn:name="SPI_transceiver.xst"/>
+      <outfile xil_pn:name="SPI_transceiver_tb_beh.prj"/>
+      <outfile xil_pn:name="SPI_transceiver_tb_stx_beh.prj"/>
+      <outfile xil_pn:name="SPI_transceiver_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="flipflop2.ngr"/>
+      <outfile xil_pn:name="risingEdge_detector.ngr"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1583425444" xil_pn:in_ck="-1513055928848742004" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-8130483034361271080" xil_pn:start_ts="1583425444">
+    <transform xil_pn:end_ts="1583443824" xil_pn:in_ck="-1513055928848742004" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-4424452206974978423" xil_pn:start_ts="1583443824">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583425450" xil_pn:in_ck="6661899369320617355" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="1408438697820954260" xil_pn:start_ts="1583425444">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="SPI_receiver.bld"/>
-      <outfile xil_pn:name="SPI_receiver.ngd"/>
-      <outfile xil_pn:name="SPI_receiver_ngdbuild.xrpt"/>
-      <outfile xil_pn:name="_ngo"/>
-      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
-    </transform>
-    <transform xil_pn:end_ts="1583425462" xil_pn:in_ck="3052570418885860791" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="111412226054857016" xil_pn:start_ts="1583425450">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="SPI_receiver.pcf"/>
-      <outfile xil_pn:name="SPI_receiver_map.map"/>
-      <outfile xil_pn:name="SPI_receiver_map.mrp"/>
-      <outfile xil_pn:name="SPI_receiver_map.ncd"/>
-      <outfile xil_pn:name="SPI_receiver_map.ngm"/>
-      <outfile xil_pn:name="SPI_receiver_map.xrpt"/>
-      <outfile xil_pn:name="SPI_receiver_summary.xml"/>
-      <outfile xil_pn:name="SPI_receiver_usage.xml"/>
-      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
-    </transform>
-    <transform xil_pn:end_ts="1583425478" xil_pn:in_ck="5419558172639239160" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1583425462">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="SPI_receiver.ncd"/>
-      <outfile xil_pn:name="SPI_receiver.pad"/>
-      <outfile xil_pn:name="SPI_receiver.par"/>
-      <outfile xil_pn:name="SPI_receiver.ptwx"/>
-      <outfile xil_pn:name="SPI_receiver.unroutes"/>
-      <outfile xil_pn:name="SPI_receiver.xpi"/>
-      <outfile xil_pn:name="SPI_receiver_pad.csv"/>
-      <outfile xil_pn:name="SPI_receiver_pad.txt"/>
-      <outfile xil_pn:name="SPI_receiver_par.xrpt"/>
-      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
     <transform xil_pn:end_ts="1583255762" xil_pn:in_ck="4655102193983144311" xil_pn:name="TRAN_copyPost-ParAbstractToPreSimulation" xil_pn:start_ts="1583255762">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -541,13 +552,6 @@
       <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
-    </transform>
-    <transform xil_pn:end_ts="1583425478" xil_pn:in_ck="5761268171548433811" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1583425471">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="SPI_receiver.twr"/>
-      <outfile xil_pn:name="SPI_receiver.twx"/>
-      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 

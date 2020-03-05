@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 SPI_transceiver.ngc SPI_transceiver.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o SPI_transceiver_map.ncd SPI_transceiver.ngd SPI_transceiver.pcf 
+par -w -intstyle ise -ol high -mt off SPI_transceiver_map.ncd SPI_transceiver.ncd SPI_transceiver.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml SPI_transceiver.twx SPI_transceiver.ncd -o SPI_transceiver.twr SPI_transceiver.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver.syr" 

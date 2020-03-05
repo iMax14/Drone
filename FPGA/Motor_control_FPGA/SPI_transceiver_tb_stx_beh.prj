@@ -1,0 +1,7 @@
+vhdl isim_temp "flipflop_sys.vhd"
+vhdl isim_temp "flipflop2.vhd"
+vhdl isim_temp "SPI_receiver.vhd"
+vhdl isim_temp "SPI_buffer.vhd"
+vhdl isim_temp "risingEdge_detector.vhd"
+vhdl isim_temp "SPI_transceiver.vhd"
+vhdl isim_temp "SPI_transceiver_tb.vhd"

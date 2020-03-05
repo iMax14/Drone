@@ -1,1 +1,6 @@
-work	"PWM.vhd"
+work	"SPI_buffer.vhd"
+work	"SPI_receiver.vhd"
+work	"SPI_transceiver.vhd"
+work	"flipflop2.vhd"
+work	"flipflop_sys.vhd"
+work	"risingEdge_detector.vhd"
