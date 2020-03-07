@@ -34,6 +34,8 @@ entity pwm is
 end pwm;
 
 architecture logic of pwm is
+	signal shift        : STD_LOGIC_VECTOR(10 downto 0):="00001100110";
+  --constant shift  : integer := 102;                          --Facteur pour passer d'une échelle 0/100 à 0/2048
   constant period  : integer := sys_clk/pwm_freq;                          --number of clocks in one pwm period
   --type counters is array (0 to 0) of integer range 0 to period - 1; --data type for array of period counters
   signal count     : integer range 0 to period - 1 := 0;                            --array of period counters
@@ -47,7 +49,7 @@ begin
       count <= 0;                                            	--clear counter
       pwm_out <= '0';                                        					--clear pwm output
     elsif(rising_edge(clk)) then                                
-      half_duty <= conv_integer(duty)*period/(2**bits_resolution)/2;     	--determine clocks in 1/2 duty cycle
+      half_duty <= conv_integer(duty+shift)*period/(2**bits_resolution)/2;     	--determine clocks in 1/2 duty cycle
 		if(count = period - 1) then                  			--end of period reached
 		 count <= 0;                                                      	--reset counter
 		else                                                              	--end of period not reached

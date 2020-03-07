@@ -65,6 +65,60 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CMD_motors_tb_stx_par.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="CMD_motors_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="CMD_motors_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Decode_SPIpacket.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Decode_SPIpacket.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Decode_SPIpacket.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Decode_SPIpacket.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Decode_SPIpacket.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Decode_SPIpacket.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Decode_SPIpacket.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="Decode_SPIpacket.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="Decode_SPIpacket.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Decode_SPIpacket.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Decode_SPIpacket.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Decode_SPIpacket.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Decode_SPIpacket.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Decode_SPIpacket.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Decode_SPIpacket.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Decode_SPIpacket.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Decode_SPIpacket_envsettings.html"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="Decode_SPIpacket_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Decode_SPIpacket_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Decode_SPIpacket_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Decode_SPIpacket_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="Decode_SPIpacket_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Decode_SPIpacket_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="Decode_SPIpacket_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="Decode_SPIpacket_summary.html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Decode_SPIpacket_tb_isim_beh.exe"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Decode_SPIpacket_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Decode_SPIpacket_xst.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Demux_motors.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Demux_motors.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Demux_motors.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Demux_motors.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Demux_motors.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Demux_motors.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Demux_motors.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="Demux_motors.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="Demux_motors.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Demux_motors.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Demux_motors.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Demux_motors.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Demux_motors.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Demux_motors.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Demux_motors.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Demux_motors.xst"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="Demux_motors_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Demux_motors_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Demux_motors_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Demux_motors_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="Demux_motors_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Demux_motors_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="Demux_motors_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Demux_motors_tb_isim_beh.exe"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Demux_motors_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Demux_motors_xst.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="PWM_config_duty.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="PWM_config_duty.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="PWM_config_duty.lso"/>
@@ -244,9 +298,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_par.xrpt"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="SPI_transceiver_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="SPI_transceiver_summary.xml"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_transceiver_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="SPI_transceiver_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="SPI_transceiver_tb_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPI_transceiver_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="SPI_transceiver_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="SPI_transceiver_xst.xrpt"/>
@@ -395,163 +447,259 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1583421718" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1583421718">
+    <transform xil_pn:end_ts="1583515369" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1583515369">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444801" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1583444800">
+    <transform xil_pn:end_ts="1583581001" xil_pn:in_ck="-5919043198896249326" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1583581001">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CMD_motors.vhd"/>
-      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
-      <outfile xil_pn:name="PWM.vhd"/>
-      <outfile xil_pn:name="PWM_config_duty.vhd"/>
-      <outfile xil_pn:name="SPI_buffer.vhd"/>
-      <outfile xil_pn:name="SPI_receiver.vhd"/>
-      <outfile xil_pn:name="SPI_transceiver.vhd"/>
-      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
-      <outfile xil_pn:name="flipflop2.vhd"/>
-      <outfile xil_pn:name="flipflop_sys.vhd"/>
-      <outfile xil_pn:name="pwm_tb.vhd"/>
-      <outfile xil_pn:name="risingEdge_detector.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1583444215" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7690711854679854308" xil_pn:start_ts="1583444215">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583444215" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3354384110549467034" xil_pn:start_ts="1583444215">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583443898" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="8290343049701986362" xil_pn:start_ts="1583443898">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1583444804" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1583444803">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="CMD_motors.vhd"/>
-      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
-      <outfile xil_pn:name="PWM.vhd"/>
-      <outfile xil_pn:name="PWM_config_duty.vhd"/>
-      <outfile xil_pn:name="SPI_buffer.vhd"/>
-      <outfile xil_pn:name="SPI_receiver.vhd"/>
-      <outfile xil_pn:name="SPI_transceiver.vhd"/>
-      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
-      <outfile xil_pn:name="flipflop2.vhd"/>
-      <outfile xil_pn:name="flipflop_sys.vhd"/>
-      <outfile xil_pn:name="pwm_tb.vhd"/>
-      <outfile xil_pn:name="risingEdge_detector.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1583444807" xil_pn:in_ck="-6760695486579070996" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6651349716993956840" xil_pn:start_ts="1583444804">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="SPI_transceiver_tb_beh.prj"/>
-      <outfile xil_pn:name="SPI_transceiver_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="CMD_motors.vhd"/>
+      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
+      <outfile xil_pn:name="Decode_SPIpacket.vhd"/>
+      <outfile xil_pn:name="Decode_SPIpacket_tb.vhd"/>
+      <outfile xil_pn:name="Demux_motors.vhd"/>
+      <outfile xil_pn:name="Demux_motors_tb.vhd"/>
+      <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="SPI_buffer.vhd"/>
+      <outfile xil_pn:name="SPI_receiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
+      <outfile xil_pn:name="flipflop2.vhd"/>
+      <outfile xil_pn:name="flipflop_sys.vhd"/>
+      <outfile xil_pn:name="pwm_tb.vhd"/>
+      <outfile xil_pn:name="risingEdge_detector.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1583515369" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-9203431193956748382" xil_pn:start_ts="1583515369">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583515369" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8319295955885503456" xil_pn:start_ts="1583515369">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583581008" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="3669032936164737632" xil_pn:start_ts="1583581008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583581008" xil_pn:in_ck="-5919043198896249326" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1583581008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="CMD_motors.vhd"/>
+      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
+      <outfile xil_pn:name="Decode_SPIpacket.vhd"/>
+      <outfile xil_pn:name="Decode_SPIpacket_tb.vhd"/>
+      <outfile xil_pn:name="Demux_motors.vhd"/>
+      <outfile xil_pn:name="Demux_motors_tb.vhd"/>
+      <outfile xil_pn:name="PWM.vhd"/>
+      <outfile xil_pn:name="SPI_buffer.vhd"/>
+      <outfile xil_pn:name="SPI_receiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
+      <outfile xil_pn:name="flipflop2.vhd"/>
+      <outfile xil_pn:name="flipflop_sys.vhd"/>
+      <outfile xil_pn:name="pwm_tb.vhd"/>
+      <outfile xil_pn:name="risingEdge_detector.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1583581014" xil_pn:in_ck="-5919043198896249326" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1857691709547529124" xil_pn:start_ts="1583581008">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="CMD_motors_tb_beh.prj"/>
+      <outfile xil_pn:name="CMD_motors_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1583444814" xil_pn:in_ck="-2689729084017883153" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7622426042611223717" xil_pn:start_ts="1583444813">
+    <transform xil_pn:end_ts="1583581020" xil_pn:in_ck="-6684241850435537244" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5231610653398492399" xil_pn:start_ts="1583581020">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="SPI_transceiver_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="CMD_motors_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
-    <transform xil_pn:end_ts="1583185854" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1583185854">
+    <transform xil_pn:end_ts="1583514740" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1583514740">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="3260167797509838226" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="6974838304646131352" xil_pn:start_ts="1583580929">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="8290343049701986362" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3669032936164737632" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="7623905616127364308" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-247825789060836198" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745411629038" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745411629038" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444545" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="3708966932070921796" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580930" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="7356770252571458090" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583444554" xil_pn:in_ck="7176492008350258689" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-6960412708398907117" xil_pn:start_ts="1583444545">
+    <transform xil_pn:end_ts="1583580943" xil_pn:in_ck="5178423160904982128" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2926335275161965753" xil_pn:start_ts="1583580930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="CMD_motors.lso"/>
+      <outfile xil_pn:name="CMD_motors.ngc"/>
+      <outfile xil_pn:name="CMD_motors.ngr"/>
+      <outfile xil_pn:name="CMD_motors.prj"/>
+      <outfile xil_pn:name="CMD_motors.stx"/>
+      <outfile xil_pn:name="CMD_motors.syr"/>
+      <outfile xil_pn:name="CMD_motors.xst"/>
+      <outfile xil_pn:name="CMD_motors_tb_beh.prj"/>
+      <outfile xil_pn:name="CMD_motors_tb_par.prj"/>
+      <outfile xil_pn:name="CMD_motors_tb_stx_beh.prj"/>
+      <outfile xil_pn:name="CMD_motors_tb_stx_par.prj"/>
+      <outfile xil_pn:name="CMD_motors_xst.xrpt"/>
+      <outfile xil_pn:name="Decode_SPIpacket.ngr"/>
+      <outfile xil_pn:name="Demux_motors.ngr"/>
       <outfile xil_pn:name="SPI_buffer.ngr"/>
       <outfile xil_pn:name="SPI_receiver.ngr"/>
-      <outfile xil_pn:name="SPI_transceiver.lso"/>
-      <outfile xil_pn:name="SPI_transceiver.ngc"/>
       <outfile xil_pn:name="SPI_transceiver.ngr"/>
-      <outfile xil_pn:name="SPI_transceiver.prj"/>
-      <outfile xil_pn:name="SPI_transceiver.stx"/>
-      <outfile xil_pn:name="SPI_transceiver.syr"/>
-      <outfile xil_pn:name="SPI_transceiver.xst"/>
-      <outfile xil_pn:name="SPI_transceiver_tb_beh.prj"/>
-      <outfile xil_pn:name="SPI_transceiver_tb_stx_beh.prj"/>
-      <outfile xil_pn:name="SPI_transceiver_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="flipflop2.ngr"/>
+      <outfile xil_pn:name="pwm.ngr"/>
       <outfile xil_pn:name="risingEdge_detector.ngr"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1583443824" xil_pn:in_ck="-1513055928848742004" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-4424452206974978423" xil_pn:start_ts="1583443824">
+    <transform xil_pn:end_ts="1583580956" xil_pn:in_ck="-1513055928848742004" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5037488031239695247" xil_pn:start_ts="1583580956">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1583255762" xil_pn:in_ck="4655102193983144311" xil_pn:name="TRAN_copyPost-ParAbstractToPreSimulation" xil_pn:start_ts="1583255762">
+    <transform xil_pn:end_ts="1583580963" xil_pn:in_ck="-5603687922822912613" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="17934373525041451" xil_pn:start_ts="1583580956">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CMD_motors.bld"/>
+      <outfile xil_pn:name="CMD_motors.ngd"/>
+      <outfile xil_pn:name="CMD_motors_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1583580974" xil_pn:in_ck="1763810799034963432" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="111412226054857016" xil_pn:start_ts="1583580963">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="CMD_motors.pcf"/>
+      <outfile xil_pn:name="CMD_motors_map.map"/>
+      <outfile xil_pn:name="CMD_motors_map.mrp"/>
+      <outfile xil_pn:name="CMD_motors_map.ncd"/>
+      <outfile xil_pn:name="CMD_motors_map.ngm"/>
+      <outfile xil_pn:name="CMD_motors_map.xrpt"/>
+      <outfile xil_pn:name="CMD_motors_summary.xml"/>
+      <outfile xil_pn:name="CMD_motors_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1583580990" xil_pn:in_ck="-5888749837779138195" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1583580974">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CMD_motors.ncd"/>
+      <outfile xil_pn:name="CMD_motors.pad"/>
+      <outfile xil_pn:name="CMD_motors.par"/>
+      <outfile xil_pn:name="CMD_motors.ptwx"/>
+      <outfile xil_pn:name="CMD_motors.unroutes"/>
+      <outfile xil_pn:name="CMD_motors.xpi"/>
+      <outfile xil_pn:name="CMD_motors_pad.csv"/>
+      <outfile xil_pn:name="CMD_motors_pad.txt"/>
+      <outfile xil_pn:name="CMD_motors_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1583581333" xil_pn:in_ck="7873826711583054248" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1583581320">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CMD_motors.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="cmd_motors.bgn"/>
+      <outfile xil_pn:name="cmd_motors.bit"/>
+      <outfile xil_pn:name="cmd_motors.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1583581347" xil_pn:in_ck="-8380501275793188981" xil_pn:name="TRAN_impactProgrammingTool" xil_pn:prop_ck="2682241697568822907" xil_pn:start_ts="1583581347">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1583496839" xil_pn:in_ck="-939231939292006829" xil_pn:name="TRAN_copyPost-ParAbstractToPreSimulation" xil_pn:start_ts="1583496839">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="CMD_motors_tb.vhd"/>
+      <outfile xil_pn:name="Decode_SPIpacket_tb.vhd"/>
+      <outfile xil_pn:name="SPI_transceiver_tb.vhd"/>
+      <outfile xil_pn:name="netgen/par/CMD_motors_timesim.sdf"/>
+      <outfile xil_pn:name="netgen/par/CMD_motors_timesim.vhd"/>
+      <outfile xil_pn:name="netgen/par/PWM_generator_timesim.sdf"/>
+      <outfile xil_pn:name="netgen/par/PWM_generator_timesim.vhd"/>
+      <outfile xil_pn:name="pwm_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1583255772" xil_pn:in_ck="836409073818380158" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModelRunFuse" xil_pn:prop_ck="-6089036952125369788" xil_pn:start_ts="1583255762">
+    <transform xil_pn:end_ts="1583496892" xil_pn:in_ck="-3983775751174233286" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModelRunFuse" xil_pn:prop_ck="-6089036952125369788" xil_pn:start_ts="1583496839">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="CMD_motors_tb_isim_par.exe"/>
+      <outfile xil_pn:name="CMD_motors_tb_par.prj"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1583255817" xil_pn:in_ck="4467522133717698305" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModel" xil_pn:prop_ck="-4123362784281459025" xil_pn:start_ts="1583255816">
+    <transform xil_pn:end_ts="1583496898" xil_pn:in_ck="4467522133717698305" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModel" xil_pn:prop_ck="-4123362784281459025" xil_pn:start_ts="1583496897">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
       <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="CMD_motors_tb_isim_par.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+    </transform>
+    <transform xil_pn:end_ts="1583580990" xil_pn:in_ck="6931415420401561140" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1583580984">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="CMD_motors.twr"/>
+      <outfile xil_pn:name="CMD_motors.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
     </transform>
   </transforms>
 

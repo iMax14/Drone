@@ -12,26 +12,19 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
 Loading constraints from 'CMD_motors.pcf'...
 The speed grade (-2) differs from the speed grade specified in the .ncd file
 (-2).
-The number of routable networks is 42
+The number of routable networks is 253
 Flattening design ...
 Processing design ... 
   Preping design's networks ...
   Preping design's macros ...
-Writing VHDL netlist
-'C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\netgen\par\CMD_mot
-ors_timesim.vhd' ...
-Writing VHDL SDF file
-'C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\netgen\par\CMD_mot
-ors_timesim.sdf' ...
-INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx SIMPRIM
-   simulation primitives and has to be used with SIMPRIM library for correct
-   compilation and simulation. 
-INFO:NetListWriters - Xilinx recommends running separate simulations to check
-   for setup by specifying the MAX field in the SDF file and for hold by
-   specifying the MIN field in the SDF file. Please refer to Simulator
-   documentation for more details on specifying MIN and MAX field in the SDF.
-INFO:NetListWriters:665 - For more information on how to pass the SDF switches
-   to the simulator, see your Simulator tool documentation.
+Writing VHDL netlist 'C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\netgen\par\CMD_motors_timesim.vhd' ...
+Writing VHDL SDF file 'C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\netgen\par\CMD_motors_timesim.sdf' ...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx SIMPRIM simulation primitives and has to be used with SIMPRIM library
+   for correct compilation and simulation. 
+INFO:NetListWriters - Xilinx recommends running separate simulations to check for setup by specifying the MAX field in the SDF file and for
+   hold by specifying the MIN field in the SDF file. Please refer to Simulator documentation for more details on specifying MIN and MAX
+   field in the SDF.
+INFO:NetListWriters:665 - For more information on how to pass the SDF switches to the simulator, see your Simulator tool documentation.
 Number of warnings: 0
 Number of info messages: 3
-Total memory usage is 4481780 kilobytes
+Total memory usage is 4483264 kilobytes

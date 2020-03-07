@@ -1,0 +1,29 @@
+Command line:
+   CMD_motors_tb_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=netgen/par/CMD_motors_timesim.sdf
+     -sdfroot  /uut
+     -simrunnum  1
+     -socket  50875
+
+Fri Mar 06 13:15:01 2020
+
+
+ Elaboration Time: 0.453125 sec
+ Current Memory Usage: 5065.61 Meg
+
+ Total Signals          : 7914
+ Total Nets             : 8502
+ Total Signal Drivers   : 4936
+ Total Blocks           : 2092
+ Total Primitive Blocks : 1507
+ Total Processes        : 4878
+ Total Traceable Variables  : 10288
+ Total Scalar Nets and Variables : 147277
+
+ Total Simulation Time: 0.671875 sec
+
+ Current Memory Usage: 5065.61 Meg
+
+Fri Mar 06 13:15:01 2020
+

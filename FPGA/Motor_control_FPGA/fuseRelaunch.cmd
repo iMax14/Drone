@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver_tb_isim_beh.exe" -prj "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver_tb_beh.prj" "work.SPI_transceiver_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors_tb_isim_beh.exe" -prj "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors_tb_beh.prj" "work.CMD_motors_tb" 

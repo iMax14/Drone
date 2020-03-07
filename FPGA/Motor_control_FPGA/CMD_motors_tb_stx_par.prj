@@ -1,1 +1,2 @@
+vhdl isim_temp "netgen/par/CMD_motors_timesim.vhd"
 vhdl isim_temp "CMD_motors_tb.vhd"

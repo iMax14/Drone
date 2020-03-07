@@ -30,19 +30,19 @@ Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH
 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 1627 paths analyzed, 193 endpoints analyzed, 0 failing endpoints
+ 12388 paths analyzed, 1156 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  10.086ns.
+ Minimum period is  11.429ns.
 --------------------------------------------------------------------------------
 
-Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C23), 10 paths
+Paths for end point PWM_1/Mmult_n00191 (DSP48_X0Y3.C23), 28 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.914ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     8.571ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_4 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      10.037ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      11.441ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -53,32 +53,32 @@ Slack (setup path):     9.914ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_4 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
-    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
-                                                       duty_inter<7>_inv1_INV_0
-    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
-    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X11Y19.AQ      Tcko                  0.430   Demux_motors_1/duty_M1_inter<6>
+                                                       Demux_motors_1/duty_M1_inter_4
+    SLICE_X11Y19.D4      net (fanout=4)        1.417   Demux_motors_1/duty_M1_inter<4>
+    SLICE_X11Y19.D       Tilo                  0.259   Demux_motors_1/duty_M1_inter<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<4>11
+    DSP48_X0Y2.B4        net (fanout=1)        1.349   PWM_1/duty[10]_GND_16_o_add_0_OUT<4>
+    DSP48_X0Y2.P40       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C23       net (fanout=1)        1.352   PWM_1/Mmult_n0019_P40_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                     10.037ns (7.323ns logic, 2.714ns route)
-                                                       (73.0% logic, 27.0% route)
+    Total                                     11.441ns (7.323ns logic, 4.118ns route)
+                                                       (64.0% logic, 36.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.070ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_0 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.044ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_1 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.881ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.968ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -89,29 +89,32 @@ Slack (setup path):     10.070ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_1 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
-                                                       PWM_config_duty_1/duty_inter_0
-    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
-    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.BQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_1
+    SLICE_X11Y14.D2      net (fanout=7)        1.173   Demux_motors_1/duty_M1_inter<1>
+    SLICE_X11Y14.D       Tilo                  0.259   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<5>11
+    DSP48_X0Y2.B5        net (fanout=1)        1.074   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+    DSP48_X0Y2.P40       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C23       net (fanout=1)        1.352   PWM_1/Mmult_n0019_P40_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.881ns (7.169ns logic, 2.712ns route)
-                                                       (72.6% logic, 27.4% route)
+    Total                                     10.968ns (7.369ns logic, 3.599ns route)
+                                                       (67.2% logic, 32.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.222ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.161ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_2 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.729ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.851ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -122,32 +125,35 @@ Slack (setup path):     10.222ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_2 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
-    DSP48_X0Y10.P40      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C23      net (fanout=1)        1.352   PWM_1/Mmult_n0017_P40_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.CQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_2
+    SLICE_X10Y15.A2      net (fanout=6)        1.103   Demux_motors_1/duty_M1_inter<2>
+    SLICE_X10Y15.A       Tilo                  0.235   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<6>11
+    DSP48_X0Y2.B6        net (fanout=1)        1.051   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+    DSP48_X0Y2.P40       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C23       net (fanout=1)        1.352   PWM_1/Mmult_n0019_P40_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.729ns (7.064ns logic, 2.665ns route)
-                                                       (72.6% logic, 27.4% route)
+    Total                                     10.851ns (7.345ns logic, 3.506ns route)
+                                                       (67.7% logic, 32.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C13), 10 paths
+Paths for end point PWM_1/Mmult_n00191 (DSP48_X0Y3.C13), 28 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     9.937ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     8.594ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_4 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      10.014ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      11.418ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -158,32 +164,32 @@ Slack (setup path):     9.937ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_4 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
-    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
-                                                       duty_inter<7>_inv1_INV_0
-    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
-    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X11Y19.AQ      Tcko                  0.430   Demux_motors_1/duty_M1_inter<6>
+                                                       Demux_motors_1/duty_M1_inter_4
+    SLICE_X11Y19.D4      net (fanout=4)        1.417   Demux_motors_1/duty_M1_inter<4>
+    SLICE_X11Y19.D       Tilo                  0.259   Demux_motors_1/duty_M1_inter<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<4>11
+    DSP48_X0Y2.B4        net (fanout=1)        1.349   PWM_1/duty[10]_GND_16_o_add_0_OUT<4>
+    DSP48_X0Y2.P30       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C13       net (fanout=1)        1.329   PWM_1/Mmult_n0019_P30_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                     10.014ns (7.323ns logic, 2.691ns route)
-                                                       (73.1% logic, 26.9% route)
+    Total                                     11.418ns (7.323ns logic, 4.095ns route)
+                                                       (64.1% logic, 35.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.093ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_0 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.067ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_1 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.858ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.945ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -194,29 +200,32 @@ Slack (setup path):     10.093ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_1 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
-                                                       PWM_config_duty_1/duty_inter_0
-    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
-    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.BQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_1
+    SLICE_X11Y14.D2      net (fanout=7)        1.173   Demux_motors_1/duty_M1_inter<1>
+    SLICE_X11Y14.D       Tilo                  0.259   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<5>11
+    DSP48_X0Y2.B5        net (fanout=1)        1.074   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+    DSP48_X0Y2.P30       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C13       net (fanout=1)        1.329   PWM_1/Mmult_n0019_P30_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.858ns (7.169ns logic, 2.689ns route)
-                                                       (72.7% logic, 27.3% route)
+    Total                                     10.945ns (7.369ns logic, 3.576ns route)
+                                                       (67.3% logic, 32.7% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.245ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.184ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_2 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.706ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.828ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -227,32 +236,35 @@ Slack (setup path):     10.245ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_2 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
-    DSP48_X0Y10.P30      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C13      net (fanout=1)        1.329   PWM_1/Mmult_n0017_P30_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.CQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_2
+    SLICE_X10Y15.A2      net (fanout=6)        1.103   Demux_motors_1/duty_M1_inter<2>
+    SLICE_X10Y15.A       Tilo                  0.235   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<6>11
+    DSP48_X0Y2.B6        net (fanout=1)        1.051   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+    DSP48_X0Y2.P30       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C13       net (fanout=1)        1.329   PWM_1/Mmult_n0019_P30_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.706ns (7.064ns logic, 2.642ns route)
-                                                       (72.8% logic, 27.2% route)
+    Total                                     10.828ns (7.345ns logic, 3.483ns route)
+                                                       (67.8% logic, 32.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point PWM_1/Mmult_n00171 (DSP48_X0Y11.C36), 10 paths
+Paths for end point PWM_1/Mmult_n00191 (DSP48_X0Y3.C36), 28 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     10.004ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     8.661ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_4 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.947ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      11.351ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -263,32 +275,32 @@ Slack (setup path):     10.004ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_4 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    SLICE_X3Y40.C3       net (fanout=2)        0.367   PWM_config_duty_1/duty_inter<7>
-    SLICE_X3Y40.C        Tilo                  0.259   PWM_config_duty_1/duty_inter<3>
-                                                       duty_inter<7>_inv1_INV_0
-    DSP48_X0Y10.B1       net (fanout=1)        0.995   duty_inter<1>
-    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X11Y19.AQ      Tcko                  0.430   Demux_motors_1/duty_M1_inter<6>
+                                                       Demux_motors_1/duty_M1_inter_4
+    SLICE_X11Y19.D4      net (fanout=4)        1.417   Demux_motors_1/duty_M1_inter<4>
+    SLICE_X11Y19.D       Tilo                  0.259   Demux_motors_1/duty_M1_inter<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<4>11
+    DSP48_X0Y2.B4        net (fanout=1)        1.349   PWM_1/duty[10]_GND_16_o_add_0_OUT<4>
+    DSP48_X0Y2.P47       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C36       net (fanout=18)       1.262   PWM_1/Mmult_n0019_P47_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.947ns (7.323ns logic, 2.624ns route)
-                                                       (73.6% logic, 26.4% route)
+    Total                                     11.351ns (7.323ns logic, 4.028ns route)
+                                                       (64.5% logic, 35.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.160ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_0 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.134ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_1 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.791ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.878ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -299,29 +311,32 @@ Slack (setup path):     10.160ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_0 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_1 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X2Y40.DMUX     Tshcko                0.535   PWM_config_duty_1/duty_inter<6>
-                                                       PWM_config_duty_1/duty_inter_0
-    DSP48_X0Y10.B0       net (fanout=1)        1.360   PWM_config_duty_1/duty_inter<0>
-    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.BQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_1
+    SLICE_X11Y14.D2      net (fanout=7)        1.173   Demux_motors_1/duty_M1_inter<1>
+    SLICE_X11Y14.D       Tilo                  0.259   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<5>11
+    DSP48_X0Y2.B5        net (fanout=1)        1.074   PWM_1/duty[10]_GND_16_o_add_0_OUT<5>
+    DSP48_X0Y2.P47       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C36       net (fanout=18)       1.262   PWM_1/Mmult_n0019_P47_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.791ns (7.169ns logic, 2.622ns route)
-                                                       (73.2% logic, 26.8% route)
+    Total                                     10.878ns (7.369ns logic, 3.509ns route)
+                                                       (67.7% logic, 32.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     10.312ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:          PWM_1/Mmult_n00171 (DSP)
+Slack (setup path):     9.251ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Demux_motors_1/duty_M1_inter_2 (FF)
+  Destination:          PWM_1/Mmult_n00191 (DSP)
   Requirement:          20.000ns
-  Data Path Delay:      9.639ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.014ns (0.331 - 0.345)
+  Data Path Delay:      10.761ns (Levels of Logic = 2)
+  Clock Path Skew:      0.047ns (0.697 - 0.650)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -332,108 +347,110 @@ Slack (setup path):     10.312ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Maximum Data Path at Slow Process Corner: Demux_motors_1/duty_M1_inter_2 to PWM_1/Mmult_n00191
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X3Y40.AQ       Tcko                  0.430   PWM_config_duty_1/duty_inter<3>
-                                                       PWM_config_duty_1/duty_inter_7
-    DSP48_X0Y10.B7       net (fanout=2)        1.313   PWM_config_duty_1/duty_inter<7>
-    DSP48_X0Y10.P47      Tdspdo_B_P            4.384   PWM_1/Mmult_n0017
-                                                       PWM_1/Mmult_n0017
-    DSP48_X0Y11.C36      net (fanout=18)       1.262   PWM_1/Mmult_n0017_P47_to_Mmult_n00171
-    DSP48_X0Y11.CLK      Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00171
-                                                       PWM_1/Mmult_n00171
+    SLICE_X10Y19.CQ      Tcko                  0.476   Demux_motors_1/duty_M1_inter<3>
+                                                       Demux_motors_1/duty_M1_inter_2
+    SLICE_X10Y15.A2      net (fanout=6)        1.103   Demux_motors_1/duty_M1_inter<2>
+    SLICE_X10Y15.A       Tilo                  0.235   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+                                                       PWM_1/Madd_duty[10]_GND_16_o_add_0_OUT_xor<6>11
+    DSP48_X0Y2.B6        net (fanout=1)        1.051   PWM_1/duty[10]_GND_16_o_add_0_OUT<6>
+    DSP48_X0Y2.P47       Tdspdo_B_P            4.384   PWM_1/Mmult_n0019
+                                                       PWM_1/Mmult_n0019
+    DSP48_X0Y3.C36       net (fanout=18)       1.262   PWM_1/Mmult_n0019_P47_to_Mmult_n00191
+    DSP48_X0Y3.CLK       Tdspdck_C_PREG        2.250   PWM_1/Mmult_n00191
+                                                       PWM_1/Mmult_n00191
     -------------------------------------------------  ---------------------------
-    Total                                      9.639ns (7.064ns logic, 2.575ns route)
-                                                       (73.3% logic, 26.7% route)
+    Total                                     10.761ns (7.345ns logic, 3.416ns route)
+                                                       (68.3% logic, 31.7% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point PWM_1/count_15 (SLICE_X7Y44.A6), 1 path
+Paths for end point SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_12 (SLICE_X3Y33.AX), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.476ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               PWM_1/count_15 (FF)
-  Destination:          PWM_1/count_15 (FF)
+Slack (hold path):      0.405ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_transceiver_1/SPI_receiver_1/data_12 (FF)
+  Destination:          SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_12 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.476ns (Levels of Logic = 1)
+  Data Path Delay:      0.407ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: SPI_transceiver_1/SPI_receiver_1/data_12 to SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y33.AQ       Tcko                  0.200   SPI_transceiver_1/SPI_receiver_1/data<15>
+                                                       SPI_transceiver_1/SPI_receiver_1/data_12
+    SLICE_X3Y33.AX       net (fanout=2)        0.148   SPI_transceiver_1/SPI_receiver_1/data<12>
+    SLICE_X3Y33.CLK      Tckdi       (-Th)    -0.059   SPI_transceiver_1/SPI_receiver_1/spi_packet_inter<15>
+                                                       SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.407ns (0.259ns logic, 0.148ns route)
+                                                       (63.6% logic, 36.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point SPI_transceiver_1/SPI_receiver_1/data_7 (SLICE_X2Y36.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.414ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_transceiver_1/SPI_receiver_1/data_7 (FF)
+  Destination:          SPI_transceiver_1/SPI_receiver_1/data_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.414ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: PWM_1/count_15 to PWM_1/count_15
+  Minimum Data Path at Fast Process Corner: SPI_transceiver_1/SPI_receiver_1/data_7 to SPI_transceiver_1/SPI_receiver_1/data_7
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y44.AQ       Tcko                  0.198   PWM_1/count<18>
-                                                       PWM_1/count_15
-    SLICE_X7Y44.A6       net (fanout=23)       0.063   PWM_1/count<15>
-    SLICE_X7Y44.CLK      Tah         (-Th)    -0.215   PWM_1/count<18>
-                                                       PWM_1/Mcount_count_eqn_151
-                                                       PWM_1/count_15
+    SLICE_X2Y36.DQ       Tcko                  0.200   SPI_transceiver_1/SPI_receiver_1/data<7>
+                                                       SPI_transceiver_1/SPI_receiver_1/data_7
+    SLICE_X2Y36.D6       net (fanout=2)        0.024   SPI_transceiver_1/SPI_receiver_1/data<7>
+    SLICE_X2Y36.CLK      Tah         (-Th)    -0.190   SPI_transceiver_1/SPI_receiver_1/data<7>
+                                                       SPI_transceiver_1/SPI_receiver_1/Mmux_data[7]_mosi_MUX_44_o11
+                                                       SPI_transceiver_1/SPI_receiver_1/data_7
     -------------------------------------------------  ---------------------------
-    Total                                      0.476ns (0.413ns logic, 0.063ns route)
-                                                       (86.8% logic, 13.2% route)
+    Total                                      0.414ns (0.390ns logic, 0.024ns route)
+                                                       (94.2% logic, 5.8% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point PWM_1/count_11 (SLICE_X7Y43.A4), 1 path
+Paths for end point SPI_transceiver_1/SPI_receiver_1/data_11 (SLICE_X6Y33.D6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.576ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               PWM_1/count_13 (FF)
-  Destination:          PWM_1/count_11 (FF)
+Slack (hold path):      0.414ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               SPI_transceiver_1/SPI_receiver_1/data_11 (FF)
+  Destination:          SPI_transceiver_1/SPI_receiver_1/data_11 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.576ns (Levels of Logic = 1)
+  Data Path Delay:      0.414ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk_BUFGP rising at 20.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: PWM_1/count_13 to PWM_1/count_11
+  Minimum Data Path at Fast Process Corner: SPI_transceiver_1/SPI_receiver_1/data_11 to SPI_transceiver_1/SPI_receiver_1/data_11
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X7Y43.CQ       Tcko                  0.198   PWM_1/count<14>
-                                                       PWM_1/count_13
-    SLICE_X7Y43.A4       net (fanout=23)       0.163   PWM_1/count<13>
-    SLICE_X7Y43.CLK      Tah         (-Th)    -0.215   PWM_1/count<14>
-                                                       PWM_1/Mcount_count_eqn_111
-                                                       PWM_1/count_11
+    SLICE_X6Y33.DQ       Tcko                  0.200   SPI_transceiver_1/SPI_receiver_1/data<11>
+                                                       SPI_transceiver_1/SPI_receiver_1/data_11
+    SLICE_X6Y33.D6       net (fanout=2)        0.024   SPI_transceiver_1/SPI_receiver_1/data<11>
+    SLICE_X6Y33.CLK      Tah         (-Th)    -0.190   SPI_transceiver_1/SPI_receiver_1/data<11>
+                                                       SPI_transceiver_1/SPI_receiver_1/Mmux_data[11]_mosi_MUX_40_o11
+                                                       SPI_transceiver_1/SPI_receiver_1/data_11
     -------------------------------------------------  ---------------------------
-    Total                                      0.576ns (0.413ns logic, 0.163ns route)
-                                                       (71.7% logic, 28.3% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point PWM_1/count_8 (SLICE_X7Y42.B6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.590ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               PWM_1/count_15 (FF)
-  Destination:          PWM_1/count_8 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.588ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.002ns (0.036 - 0.038)
-  Source Clock:         clk_BUFGP rising at 20.000ns
-  Destination Clock:    clk_BUFGP rising at 20.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: PWM_1/count_15 to PWM_1/count_8
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y44.AQ       Tcko                  0.198   PWM_1/count<18>
-                                                       PWM_1/count_15
-    SLICE_X7Y42.B6       net (fanout=23)       0.175   PWM_1/count<15>
-    SLICE_X7Y42.CLK      Tah         (-Th)    -0.215   PWM_1/count<10>
-                                                       PWM_1/Mcount_count_eqn_81
-                                                       PWM_1/count_8
-    -------------------------------------------------  ---------------------------
-    Total                                      0.588ns (0.413ns logic, 0.175ns route)
-                                                       (70.2% logic, 29.8% route)
+    Total                                      0.414ns (0.390ns logic, 0.024ns route)
+                                                       (94.2% logic, 5.8% route)
 
 --------------------------------------------------------------------------------
 
@@ -442,25 +459,25 @@ Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 
 Slack: 17.041ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 2.959ns (337.952MHz) (Tdspper_PREG)
-  Physical resource: PWM_1/Mmult_n00171/CLK
-  Logical resource: PWM_1/Mmult_n00171/CLK
-  Location pin: DSP48_X0Y11.CLK
+  Physical resource: PWM_4/Mmult_n00191/CLK
+  Logical resource: PWM_4/Mmult_n00191/CLK
+  Location pin: DSP48_X0Y12.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 17.334ns (period - min period limit)
+Slack: 17.041ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
-  Physical resource: clk_BUFGP/BUFG/I0
-  Logical resource: clk_BUFGP/BUFG/I0
-  Location pin: BUFGMUX_X3Y13.I0
-  Clock network: clk_BUFGP/IBUFG
+  Min period limit: 2.959ns (337.952MHz) (Tdspper_PREG)
+  Physical resource: PWM_3/Mmult_n00191/CLK
+  Logical resource: PWM_3/Mmult_n00191/CLK
+  Location pin: DSP48_X0Y9.CLK
+  Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
+Slack: 17.041ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: PWM_1/count<2>/CLK
-  Logical resource: PWM_1/count_0/CK
-  Location pin: SLICE_X4Y42.CLK
+  Min period limit: 2.959ns (337.952MHz) (Tdspper_PREG)
+  Physical resource: PWM_2/Mmult_n00191/CLK
+  Logical resource: PWM_2/Mmult_n00191/CLK
+  Location pin: DSP48_X0Y5.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -477,7 +494,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   10.086|         |         |         |
+clk            |   11.429|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -486,16 +503,16 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 1627 paths, 0 nets, and 365 connections
+Constraints cover 12388 paths, 0 nets, and 1950 connections
 
 Design statistics:
-   Minimum period:  10.086ns{1}   (Maximum frequency:  99.147MHz)
+   Minimum period:  11.429ns{1}   (Maximum frequency:  87.497MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Mar 05 16:24:33 2020 
+Analysis completed Sat Mar 07 12:36:28 2020 
 --------------------------------------------------------------------------------
 
 Trace Settings:

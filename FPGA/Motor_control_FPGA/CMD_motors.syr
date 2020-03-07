@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.44 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.44 secs
+Total CPU time to Xst completion: 0.23 secs
  
 --> Reading design: CMD_motors.prj
 
@@ -105,13 +105,34 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM_config_duty.vhd" into library work
-Parsing entity <PWM_config_duty>.
-Parsing architecture <Behavioral> of entity <pwm_config_duty>.
-Parsing VHDL file "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM.vhd" into library work
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\flipflop_sys.vhd" into library work
+Parsing entity <flipflop1>.
+Parsing architecture <Behavioral> of entity <flipflop1>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\flipflop2.vhd" into library work
+Parsing entity <flipflop2>.
+Parsing architecture <Behavioral> of entity <flipflop2>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_receiver.vhd" into library work
+Parsing entity <SPI_receiver>.
+Parsing architecture <Behavioral> of entity <spi_receiver>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_buffer.vhd" into library work
+Parsing entity <SPI_buffer>.
+Parsing architecture <Behavioral> of entity <spi_buffer>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\risingEdge_detector.vhd" into library work
+Parsing entity <risingEdge_detector>.
+Parsing architecture <Behavioral> of entity <risingedge_detector>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_transceiver.vhd" into library work
+Parsing entity <SPI_transceiver>.
+Parsing architecture <Behavioral> of entity <spi_transceiver>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd" into library work
 Parsing entity <pwm>.
 Parsing architecture <logic> of entity <pwm>.
-Parsing VHDL file "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\CMD_motors.vhd" into library work
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Demux_motors.vhd" into library work
+Parsing entity <Demux_motors>.
+Parsing architecture <Behavioral> of entity <demux_motors>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Decode_SPIpacket.vhd" into library work
+Parsing entity <Decode_SPIpacket>.
+Parsing architecture <Behavioral> of entity <decode_spipacket>.
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\CMD_motors.vhd" into library work
 Parsing entity <CMD_motors>.
 Parsing architecture <Behavioral> of entity <cmd_motors>.
 
@@ -121,45 +142,137 @@ Parsing architecture <Behavioral> of entity <cmd_motors>.
 
 Elaborating entity <CMD_motors> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <PWM_config_duty> (architecture <Behavioral>) from library <work>.
+Elaborating entity <SPI_transceiver> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <SPI_buffer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <risingEdge_detector> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <flipflop1> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <flipflop2> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <SPI_receiver> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Decode_SPIpacket> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Decode_SPIpacket.vhd" Line 104. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Decode_SPIpacket.vhd" Line 136. Case statement is complete. others clause is never selected
+
+Elaborating entity <Demux_motors> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <pwm> (architecture <logic>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd" Line 37: Using initial value "00001100110" for shift since it is never assigned
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <CMD_motors>.
-    Related source file is "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\CMD_motors.vhd".
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\CMD_motors.vhd".
     Summary:
 	no macro.
 Unit <CMD_motors> synthesized.
 
-Synthesizing Unit <PWM_config_duty>.
-    Related source file is "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM_config_duty.vhd".
-    Found 11-bit register for signal <duty_inter>.
-    Found 16x11-bit Read Only RAM for signal <user_keys[3]_GND_4_o_wide_mux_0_OUT>
+Synthesizing Unit <SPI_transceiver>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_transceiver.vhd".
     Summary:
-	inferred   1 RAM(s).
-	inferred  11 D-type flip-flop(s).
-Unit <PWM_config_duty> synthesized.
+	no macro.
+Unit <SPI_transceiver> synthesized.
+
+Synthesizing Unit <SPI_buffer>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_buffer.vhd".
+    Found 1-bit register for signal <ssel_inter2>.
+    Found 1-bit register for signal <sclk_inter2>.
+    Found 1-bit register for signal <mosi_inter2>.
+    Found 1-bit register for signal <mosi_inter1>.
+    Found 1-bit register for signal <sclk_inter1>.
+    Found 1-bit register for signal <ssel_inter1>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <SPI_buffer> synthesized.
+
+Synthesizing Unit <risingEdge_detector>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\risingEdge_detector.vhd".
+    Summary:
+	no macro.
+Unit <risingEdge_detector> synthesized.
+
+Synthesizing Unit <flipflop1>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\flipflop_sys.vhd".
+    Found 1-bit register for signal <Q_inter>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <flipflop1> synthesized.
+
+Synthesizing Unit <flipflop2>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\flipflop2.vhd".
+    Found 1-bit register for signal <Q_inter>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <flipflop2> synthesized.
+
+Synthesizing Unit <SPI_receiver>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\SPI_receiver.vhd".
+    Found 16-bit register for signal <spi_packet_inter>.
+    Found 16-bit register for signal <data>.
+    Found 32-bit register for signal <i>.
+    Found 33-bit subtractor for signal <n0042> created at line 56.
+    Found 32-bit comparator greater for signal <i[31]_GND_10_o_LessThan_1_o> created at line 55
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  64 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  17 Multiplexer(s).
+Unit <SPI_receiver> synthesized.
+
+Synthesizing Unit <Decode_SPIpacket>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Decode_SPIpacket.vhd".
+    Found 3-bit register for signal <sel_inter>.
+    Found 11-bit register for signal <duty_inter>.
+    Found 4-bit register for signal <SFD>.
+    Found 4-bit register for signal <CMD>.
+    Found 7-bit register for signal <VALUE>.
+    Found 1-bit register for signal <FCS>.
+    Found 1-bit register for signal <Control_SFD>.
+    Found 1-bit register for signal <Control_CMD>.
+    Found 1-bit register for signal <Control_FCS>.
+    Found 3-bit register for signal <result_control>.
+    Found 4x1-bit Read Only RAM for signal <CMD[1]_PWR_12_o_Mux_1_o>
+    Found 16x3-bit Read Only RAM for signal <CMD[3]_PWR_12_o_wide_mux_3_OUT>
+    Summary:
+	inferred   2 RAM(s).
+	inferred  36 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <Decode_SPIpacket> synthesized.
+
+Synthesizing Unit <Demux_motors>.
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\Demux_motors.vhd".
+    Found 11-bit register for signal <duty_M2_inter>.
+    Found 11-bit register for signal <duty_M3_inter>.
+    Found 11-bit register for signal <duty_M4_inter>.
+    Found 11-bit register for signal <duty_M1_inter>.
+    Summary:
+	inferred  44 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <Demux_motors> synthesized.
 
 Synthesizing Unit <pwm>.
-    Related source file is "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM.vhd".
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd".
         sys_clk = 50000000
         pwm_freq = 50
         bits_resolution = 11
     Found 20-bit register for signal <count>.
     Found 1-bit register for signal <pwm_out>.
     Found 19-bit register for signal <half_duty>.
-    Found 21-bit subtractor for signal <GND_7_o_GND_7_o_sub_6_OUT> created at line 59.
-    Found 20-bit adder for signal <count[19]_GND_7_o_add_2_OUT> created at line 54.
-    Found 11x20-bit multiplier for signal <n0017> created at line 50.
-    Found 20-bit comparator equal for signal <GND_7_o_count[19]_equal_5_o> created at line 57
-    Found 21-bit comparator not equal for signal <GND_7_o_GND_7_o_equal_7_o> created at line 59
+    Found 21-bit subtractor for signal <GND_16_o_GND_16_o_sub_7_OUT> created at line 61.
+    Found 11-bit adder for signal <duty[10]_GND_16_o_add_0_OUT> created at line 52.
+    Found 20-bit adder for signal <count[19]_GND_16_o_add_3_OUT> created at line 56.
+    Found 11x20-bit multiplier for signal <n0019> created at line 52.
+    Found 20-bit comparator equal for signal <GND_16_o_count[19]_equal_6_o> created at line 59
+    Found 21-bit comparator not equal for signal <GND_16_o_GND_16_o_equal_8_o> created at line 61
     Summary:
 	inferred   1 Multiplier(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred  40 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   1 Multiplexer(s).
@@ -169,23 +282,38 @@ Unit <pwm> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 16x11-bit single-port Read Only RAM                   : 1
-# Multipliers                                          : 1
- 20x11-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 2
- 20-bit adder                                          : 1
- 21-bit subtractor                                     : 1
-# Registers                                            : 4
- 1-bit register                                        : 1
- 11-bit register                                       : 1
- 19-bit register                                       : 1
- 20-bit register                                       : 1
-# Comparators                                          : 2
- 20-bit comparator equal                               : 1
- 21-bit comparator not equal                           : 1
-# Multiplexers                                         : 1
- 20-bit 2-to-1 multiplexer                             : 1
+# RAMs                                                 : 2
+ 16x3-bit single-port Read Only RAM                    : 1
+ 4x1-bit single-port Read Only RAM                     : 1
+# Multipliers                                          : 4
+ 20x11-bit multiplier                                  : 4
+# Adders/Subtractors                                   : 13
+ 11-bit adder                                          : 4
+ 20-bit adder                                          : 4
+ 21-bit subtractor                                     : 4
+ 33-bit subtractor                                     : 1
+# Registers                                            : 35
+ 1-bit register                                        : 13
+ 11-bit register                                       : 5
+ 16-bit register                                       : 2
+ 19-bit register                                       : 4
+ 20-bit register                                       : 4
+ 3-bit register                                        : 3
+ 32-bit register                                       : 1
+ 4-bit register                                        : 2
+ 7-bit register                                        : 1
+# Comparators                                          : 9
+ 20-bit comparator equal                               : 4
+ 21-bit comparator not equal                           : 4
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 32
+ 1-bit 2-to-1 multiplexer                              : 16
+ 11-bit 2-to-1 multiplexer                             : 10
+ 20-bit 2-to-1 multiplexer                             : 4
+ 3-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 1
+ 1-bit xor12                                           : 1
 
 =========================================================================
 
@@ -194,19 +322,31 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <PWM_config_duty>.
-INFO:Xst:3231 - The small RAM <Mram_user_keys[3]_GND_4_o_wide_mux_0_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+Synthesizing (advanced) Unit <Decode_SPIpacket>.
+INFO:Xst:3231 - The small RAM <Mram_CMD[1]_PWR_12_o_Mux_1_o> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 16-word x 11-bit                    |          |
+    |     aspect ratio   | 4-word x 1-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <user_keys>     |          |
+    |     addrA          | connected to signal <CMD<1:0>>      |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-Unit <PWM_config_duty> synthesized (advanced).
+INFO:Xst:3231 - The small RAM <Mram_CMD[3]_PWR_12_o_wide_mux_3_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 3-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <CMD>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3217 - HDL ADVISOR - Register <sel_inter> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_CMD[3]_PWR_12_o_wide_mux_3_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+Unit <Decode_SPIpacket> synthesized (advanced).
 
 Synthesizing (advanced) Unit <pwm>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
@@ -216,38 +356,126 @@ Unit <pwm> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
- 16x11-bit single-port distributed Read Only RAM       : 1
-# Multipliers                                          : 1
- 20x11-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 1
- 21-bit subtractor                                     : 1
-# Counters                                             : 1
- 20-bit up counter                                     : 1
-# Registers                                            : 31
- Flip-Flops                                            : 31
-# Comparators                                          : 2
- 20-bit comparator equal                               : 1
- 21-bit comparator not equal                           : 1
+# RAMs                                                 : 2
+ 16x3-bit single-port distributed Read Only RAM        : 1
+ 4x1-bit single-port distributed Read Only RAM         : 1
+# Multipliers                                          : 4
+ 20x11-bit multiplier                                  : 4
+# Adders/Subtractors                                   : 9
+ 11-bit adder                                          : 4
+ 21-bit subtractor                                     : 4
+ 32-bit subtractor                                     : 1
+# Counters                                             : 4
+ 20-bit up counter                                     : 4
+# Registers                                            : 232
+ Flip-Flops                                            : 232
+# Comparators                                          : 9
+ 20-bit comparator equal                               : 4
+ 21-bit comparator not equal                           : 4
+ 32-bit comparator greater                             : 1
+# Multiplexers                                         : 28
+ 1-bit 2-to-1 multiplexer                              : 16
+ 11-bit 2-to-1 multiplexer                             : 10
+ 3-bit 2-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# Xors                                                 : 1
+ 1-bit xor12                                           : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <duty_inter_10> has a constant value of 0 in block <PWM_config_duty>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <duty_inter_8> in Unit <PWM_config_duty> is equivalent to the following FF/Latch, which will be removed : <duty_inter_9> 
+WARNING:Xst:1293 - FF/Latch <duty_inter_7> has a constant value of 0 in block <Decode_SPIpacket>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <duty_inter_8> has a constant value of 0 in block <Decode_SPIpacket>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <duty_inter_9> has a constant value of 0 in block <Decode_SPIpacket>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <duty_inter_10> has a constant value of 0 in block <Decode_SPIpacket>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    sel_inter_2 in unit <Decode_SPIpacket>
+    sel_inter_1 in unit <Decode_SPIpacket>
+    sel_inter_0 in unit <Decode_SPIpacket>
+
 
 Optimizing unit <CMD_motors> ...
 
-Optimizing unit <PWM_config_duty> ...
+Optimizing unit <SPI_receiver> ...
+
+Optimizing unit <Decode_SPIpacket> ...
+
+Optimizing unit <Demux_motors> ...
 
 Optimizing unit <pwm> ...
-INFO:Xst:3203 - The FF/Latch <PWM_config_duty_1/duty_inter_7> in Unit <CMD_motors> is the opposite to the following FF/Latch, which will be removed : <PWM_config_duty_1/duty_inter_1> 
+WARNING:Xst:1293 - FF/Latch <Demux_motors_1/duty_M4_inter_10> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M4_inter_9> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M4_inter_8> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M4_inter_7> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M1_inter_10> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M1_inter_9> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M1_inter_8> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M1_inter_7> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M3_inter_10> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M3_inter_9> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M3_inter_8> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M3_inter_7> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M2_inter_10> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M2_inter_9> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M2_inter_8> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Demux_motors_1/duty_M2_inter_7> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_5> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_6> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_7> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_8> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_9> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_10> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_11> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_12> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_13> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_14> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_15> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_16> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_17> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_18> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_19> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_20> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_21> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_22> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_23> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_24> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_25> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_26> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_27> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_28> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_29> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_30> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <SPI_transceiver_1/SPI_receiver_1/i_31> has a constant value of 0 in block <CMD_motors>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block CMD_motors, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block CMD_motors, actual ratio is 10.
+WARNING:Xst:1426 - The value init of the FF/Latch Decode_SPIpacket_1/sel_inter_2_LD hinder the constant cleaning in the block CMD_motors.
+   You should achieve better results by setting this init to 1.
 
 Final Macro Processing ...
 
@@ -255,8 +483,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 34
- Flip-Flops                                            : 34
+# Registers                                            : 212
+ Flip-Flops                                            : 212
 
 =========================================================================
 
@@ -279,32 +507,35 @@ Top Level Output File Name         : CMD_motors.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 180
+# BELS                             : 804
 #      GND                         : 1
-#      INV                         : 17
-#      LUT1                        : 25
-#      LUT2                        : 1
-#      LUT3                        : 1
-#      LUT4                        : 5
-#      LUT5                        : 3
-#      LUT6                        : 35
-#      MUXCY                       : 52
+#      INV                         : 70
+#      LUT1                        : 101
+#      LUT2                        : 17
+#      LUT3                        : 18
+#      LUT4                        : 17
+#      LUT5                        : 7
+#      LUT6                        : 192
+#      MUXCY                       : 219
 #      VCC                         : 1
-#      XORCY                       : 39
-# FlipFlops/Latches                : 34
-#      FD                          : 4
-#      FDC                         : 20
-#      FDCE                        : 1
-#      FDE                         : 5
-#      FDR                         : 2
-#      FDS                         : 2
-# Clock Buffers                    : 1
+#      XORCY                       : 161
+# FlipFlops/Latches                : 213
+#      FD                          : 3
+#      FDC                         : 95
+#      FDCE                        : 44
+#      FDE                         : 61
+#      FDP                         : 4
+#      FDRE                        : 4
+#      FDSE                        : 1
+#      LD                          : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 6
-#      IBUF                        : 5
-#      OBUF                        : 1
-# DSPs                             : 2
-#      DSP48A1                     : 2
+# IO Buffers                       : 8
+#      IBUF                        : 4
+#      OBUF                        : 4
+# DSPs                             : 8
+#      DSP48A1                     : 8
 
 Device utilization summary:
 ---------------------------
@@ -313,24 +544,24 @@ Selected Device : 6slx9ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              34  out of  11440     0%  
- Number of Slice LUTs:                   87  out of   5720     1%  
-    Number used as Logic:                87  out of   5720     1%  
+ Number of Slice Registers:             213  out of  11440     1%  
+ Number of Slice LUTs:                  422  out of   5720     7%  
+    Number used as Logic:               422  out of   5720     7%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     92
-   Number with an unused Flip Flop:      58  out of     92    63%  
-   Number with an unused LUT:             5  out of     92     5%  
-   Number of fully used LUT-FF pairs:    29  out of     92    31%  
-   Number of unique control sets:         5
+ Number of LUT Flip Flop pairs used:    484
+   Number with an unused Flip Flop:     271  out of    484    55%  
+   Number with an unused LUT:            62  out of    484    12%  
+   Number of fully used LUT-FF pairs:   151  out of    484    31%  
+   Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                           7
- Number of bonded IOBs:                   7  out of    186     3%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    186     4%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of DSP48A1s:                      8  out of     16    50%  
 
 ---------------------------
 Partition Resource Summary:
@@ -353,7 +584,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 35    |
+clk                                | BUFGP                  | 216   |
+reset                              | IBUF+BUFG              | 1     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -364,9 +596,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 10.815ns (Maximum Frequency: 92.464MHz)
-   Minimum input arrival time before clock: 4.468ns
-   Maximum output required time after clock: 4.118ns
+   Minimum period: 11.285ns (Maximum Frequency: 88.613MHz)
+   Minimum input arrival time before clock: 6.226ns
+   Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -375,52 +607,52 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 10.815ns (frequency: 92.464MHz)
-  Total number of paths / destination ports: 1447 / 75
+  Clock period: 11.285ns (frequency: 88.613MHz)
+  Total number of paths / destination ports: 10528 / 471
 -------------------------------------------------------------------------
-Delay:               10.815ns (Levels of Logic = 2)
-  Source:            PWM_config_duty_1/duty_inter_7 (FF)
-  Destination:       PWM_1/Mmult_n00171 (DSP)
+Delay:               11.285ns (Levels of Logic = 2)
+  Source:            Demux_motors_1/duty_M4_inter_5 (FF)
+  Destination:       PWM_4/Mmult_n00191 (DSP)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: PWM_config_duty_1/duty_inter_7 to PWM_1/Mmult_n00171
+  Data Path: Demux_motors_1/duty_M4_inter_5 to PWM_4/Mmult_n00191
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.725  PWM_config_duty_1/duty_inter_7 (PWM_config_duty_1/duty_inter_7)
-     INV:I->O              1   0.255   0.681  duty_inter<7>_inv1_INV_0 (duty_inter<1>)
-     DSP48A1:B1->P47      18   5.145   1.234  PWM_1/Mmult_n0017 (PWM_1/Mmult_n0017_P47_to_Mmult_n00171)
-     DSP48A1:C30               2.250          PWM_1/Mmult_n00171
+     FDCE:C->Q             3   0.525   1.196  Demux_motors_1/duty_M4_inter_5 (Demux_motors_1/duty_M4_inter_5)
+     LUT5:I0->O            1   0.254   0.681  PWM_4/Madd_duty[10]_GND_16_o_add_0_OUT_xor<5>11 (PWM_4/duty[10]_GND_16_o_add_0_OUT<5>)
+     DSP48A1:B5->P47      18   5.145   1.234  PWM_4/Mmult_n0019 (PWM_4/Mmult_n0019_P47_to_Mmult_n00191)
+     DSP48A1:C30               2.250          PWM_4/Mmult_n00191
     ----------------------------------------
-    Total                     10.815ns (8.175ns logic, 2.640ns route)
-                                       (75.6% logic, 24.4% route)
+    Total                     11.285ns (8.174ns logic, 3.111ns route)
+                                       (72.4% logic, 27.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 63 / 39
+  Total number of paths / destination ports: 221 / 221
 -------------------------------------------------------------------------
-Offset:              4.468ns (Levels of Logic = 2)
+Offset:              6.226ns (Levels of Logic = 2)
   Source:            reset (PAD)
-  Destination:       PWM_config_duty_1/duty_inter_6 (FF)
+  Destination:       SPI_transceiver_1/SPI_buffer_1/sclk_inter2 (FF)
   Destination Clock: clk rising
 
-  Data Path: reset to PWM_config_duty_1/duty_inter_6
+  Data Path: reset to SPI_transceiver_1/SPI_buffer_1/sclk_inter2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   1.328   1.007  reset_IBUF (reset_IBUF)
-     INV:I->O             26   0.255   1.419  PWM_config_duty_1/reset_inv1_INV_0 (PWM_1/reset_inv)
-     FDCE:CLR                  0.459          PWM_1/pwm_out
+     IBUF:I->O            53   1.328   1.843  reset_IBUF (reset_IBUF)
+     INV:I->O            143   0.255   2.340  reset_IBUF_BUFG_LUT1_INV_0 (reset_IBUF_BUFG_LUT1)
+     FDC:CLR                   0.459          Decode_SPIpacket_1/duty_inter_0
     ----------------------------------------
-    Total                      4.468ns (2.042ns logic, 2.426ns route)
-                                       (45.7% logic, 54.3% route)
+    Total                      6.226ns (2.042ns logic, 4.184ns route)
+                                       (32.8% logic, 67.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 1 / 1
+  Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              4.118ns (Levels of Logic = 1)
+Offset:              4.162ns (Levels of Logic = 1)
   Source:            PWM_1/pwm_out (FF)
   Destination:       motor_1 (PAD)
   Source Clock:      clk rising
@@ -429,11 +661,11 @@ Offset:              4.118ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             1   0.525   0.681  PWM_1/pwm_out (PWM_1/pwm_out)
+     FDC:C->Q              2   0.525   0.725  PWM_1/pwm_out (PWM_1/pwm_out)
      OBUF:I->O                 2.912          motor_1_OBUF (motor_1)
     ----------------------------------------
-    Total                      4.118ns (3.437ns logic, 0.681ns route)
-                                       (83.5% logic, 16.5% route)
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
 
 =========================================================================
 
@@ -445,20 +677,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   10.815|         |         |         |
+clk            |   11.285|         |         |         |
+reset          |    5.115|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.95 secs
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.13 secs
  
 --> 
 
-Total memory usage is 4448520 kilobytes
+Total memory usage is 4465912 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :   50 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

@@ -32,30 +32,47 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity CMD_motors is
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
-			  user_keys : in  STD_LOGIC_VECTOR (3 downto 0);
-           motor_1 : out  STD_LOGIC);
+			  mosi : in  STD_LOGIC;
+           sclk : in  STD_LOGIC;
+           ssel : in  STD_LOGIC;
+           motor_1 : out  STD_LOGIC;
+			  motor_2 : out  STD_LOGIC;
+           motor_3 : out  STD_LOGIC;
+           motor_4 : out  STD_LOGIC);
 end CMD_motors;
 
 architecture Behavioral of CMD_motors is
 
 
 -------------------------------------COMPONENTS--------------------------------------
-
-component PWM_config_duty 
-	port	(	clk : in  STD_LOGIC;
-				reset : in  STD_LOGIC;
-				user_keys : in  STD_LOGIC_VECTOR (3 downto 0);
-				duty : out  STD_LOGIC_VECTOR (10 downto 0)
-			);
+component SPI_transceiver is
+    Port ( clk : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           mosi : in  STD_LOGIC;
+           sclk : in  STD_LOGIC;
+           ssel : in  STD_LOGIC;
+           spi_packet : out  STD_LOGIC_VECTOR (15 downto 0));
 end component;
 
-component PWM_generator 
-	port	(	clk : in  STD_LOGIC;
-				reset : in  STD_LOGIC;
-				duty_pwm : in  STD_LOGIC_VECTOR (10 downto 0);
-				pwm : out  STD_LOGIC
-			);
-end component; 
+component Decode_SPIpacket is
+    Port ( clk : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           SPI_packet : in  STD_LOGIC_VECTOR (15 downto 0);
+			  sel : out  STD_LOGIC_VECTOR (2 downto 0);
+           duty : out  STD_LOGIC_VECTOR (10 downto 0)
+          );
+end component;
+
+component Demux_motors is
+    Port ( clk : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           duty : in  STD_LOGIC_VECTOR (10 downto 0);
+           sel : in  STD_LOGIC_VECTOR (2 downto 0);
+           duty_M1 : out  STD_LOGIC_VECTOR (10 downto 0);
+			  duty_M2 : out  STD_LOGIC_VECTOR (10 downto 0);
+           duty_M3 : out  STD_LOGIC_VECTOR (10 downto 0);
+           duty_M4 : out  STD_LOGIC_VECTOR (10 downto 0));
+end component;
 
 component pwm
   generic(
@@ -69,29 +86,85 @@ component pwm
       pwm_out   : out STD_LOGIC);									          		--pwm outputs
 end component;
 
+signal spi_packet_inter  : std_logic_vector(15 downto 0);
+signal sel_inter  : std_logic_vector(2 downto 0);
 signal duty_inter  : std_logic_vector(10 downto 0);
-signal pwm_inter  : std_logic;
+signal duty_M1_inter  : std_logic_vector(10 downto 0);
+signal duty_M2_inter  : std_logic_vector(10 downto 0);
+signal duty_M3_inter  : std_logic_vector(10 downto 0);
+signal duty_M4_inter  : std_logic_vector(10 downto 0);
+signal pwm_M1_inter  : std_logic;
+signal pwm_M2_inter  : std_logic;
+signal pwm_M3_inter  : std_logic;
+signal pwm_M4_inter  : std_logic;
 
 begin
-
-
-PWM_config_duty_1: PWM_config_duty
+SPI_transceiver_1: SPI_transceiver 
 	port map( 
 	       clk       => clk,
 			 reset     => reset,
-			 user_keys => user_keys,
+			 mosi		  => mosi,
+			 sclk 	  => sclk,
+			 ssel		  => ssel,
+			 spi_packet=> spi_packet_inter
+			);
+			
+Decode_SPIpacket_1: Decode_SPIpacket 
+	port map( 
+	       clk       => clk,
+			 reset     => reset,
+			 SPI_packet		  => SPI_packet_inter,
+			 sel => sel_inter,
 			 duty => duty_inter
-			); 
-
-PWM_1: pwm 
+			);
+			
+Demux_motors_1: Demux_motors 
 	port map( 
 	       clk       => clk,
 			 reset     => reset,
 			 duty		  => duty_inter,
-			 pwm_out => pwm_inter
+			 sel		  => sel_inter,
+			 duty_M1 => duty_M1_inter,
+			 duty_M2 => duty_M2_inter,
+			 duty_M3 => duty_M3_inter,
+			 duty_M4 => duty_M4_inter
 			);
 			
-	motor_1 <= pwm_inter;
-	
+PWM_1: pwm 
+	port map( 
+	       clk       => clk,
+			 reset     => reset,
+			 duty		  => duty_M1_inter,
+			 pwm_out => pwm_M1_inter
+			);
+		
+PWM_2: pwm 
+	port map( 
+	       clk       => clk,
+			 reset     => reset,
+			 duty		  => duty_M2_inter,
+			 pwm_out => pwm_M2_inter
+			);
+PWM_3: pwm 
+	port map( 
+	       clk       => clk,
+			 reset     => reset,
+			 duty		  => duty_M3_inter,
+			 pwm_out => pwm_M3_inter
+			);
+			
+PWM_4: pwm 
+	port map( 
+	       clk       => clk,
+			 reset     => reset,
+			 duty		  => duty_M4_inter,
+			 pwm_out => pwm_M4_inter
+			);
+			
+motor_1 <= pwm_M1_inter;
+motor_2 <= pwm_M2_inter;
+motor_3 <= pwm_M3_inter;
+motor_4 <= pwm_M4_inter;
+
 end Behavioral;
 

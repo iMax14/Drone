@@ -5,7 +5,7 @@ Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 pwm.ngc pwm.ngd
 
 Reading NGO file
-"C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/pwm.ngc" ...
+"C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/pwm.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -26,7 +26,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 4402304 kilobytes
+Total memory usage is 4402308 kilobytes
 
 Writing NGD file "pwm.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

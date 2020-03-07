@@ -1,20 +1,132 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Mar 05 16:24:18 2020
+// Written by: Map P.20131013 on Sat Mar 07 12:36:12 2020
 //! **************************************************************************
 
 SCHEMATIC START;
-COMP "user_keys<0>" LOCATE = SITE "E3" LEVEL 1;
-COMP "reset" LOCATE = SITE "L3" LEVEL 1;
-COMP "user_keys<1>" LOCATE = SITE "E4" LEVEL 1;
-COMP "user_keys<2>" LOCATE = SITE "D3" LEVEL 1;
-COMP "user_keys<3>" LOCATE = SITE "C3" LEVEL 1;
 COMP "clk" LOCATE = SITE "T8" LEVEL 1;
-COMP "motor_1" LOCATE = SITE "A5" LEVEL 1;
-PIN PWM_1/Mmult_n00171_pins<110> = BEL "PWM_1/Mmult_n00171" PINNAME CLK;
-TIMEGRP sys_clk_pin = BEL "PWM_config_duty_1/duty_inter_6" BEL
-        "PWM_config_duty_1/duty_inter_5" BEL "PWM_config_duty_1/duty_inter_4"
-        BEL "PWM_config_duty_1/duty_inter_0" BEL "PWM_1/count_19" BEL
-        "PWM_1/count_18" BEL "PWM_1/count_17" BEL "PWM_1/count_16" BEL
+COMP "sclk" LOCATE = SITE "A5" LEVEL 1;
+COMP "mosi" LOCATE = SITE "A4" LEVEL 1;
+COMP "ssel" LOCATE = SITE "A6" LEVEL 1;
+COMP "reset" LOCATE = SITE "L3" LEVEL 1;
+PIN reset_pin<0> = BEL "reset" PINNAME PAD;
+PIN "reset_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "motor_1" LOCATE = SITE "H16" LEVEL 1;
+COMP "motor_2" LOCATE = SITE "L16" LEVEL 1;
+COMP "motor_3" LOCATE = SITE "M15" LEVEL 1;
+COMP "motor_4" LOCATE = SITE "P16" LEVEL 1;
+PIN PWM_1/Mmult_n00191_pins<110> = BEL "PWM_1/Mmult_n00191" PINNAME CLK;
+PIN PWM_2/Mmult_n00191_pins<110> = BEL "PWM_2/Mmult_n00191" PINNAME CLK;
+PIN PWM_3/Mmult_n00191_pins<110> = BEL "PWM_3/Mmult_n00191" PINNAME CLK;
+PIN PWM_4/Mmult_n00191_pins<110> = BEL "PWM_4/Mmult_n00191" PINNAME CLK;
+TIMEGRP sys_clk_pin = BEL "SPI_transceiver_1/SPI_buffer_1/sclk_inter2" BEL
+        "SPI_transceiver_1/SPI_buffer_1/ssel_inter2" BEL
+        "SPI_transceiver_1/SPI_buffer_1/mosi_inter2" BEL
+        "SPI_transceiver_1/SPI_buffer_1/sclk_inter1" BEL
+        "SPI_transceiver_1/SPI_buffer_1/mosi_inter1" BEL
+        "SPI_transceiver_1/SPI_buffer_1/ssel_inter1" BEL
+        "SPI_transceiver_1/risingEdge_detector_1/flipflop_sys/Q_inter" BEL
+        "SPI_transceiver_1/risingEdge_detector_1/flipflop_ris/Q_inter" BEL
+        "SPI_transceiver_1/SPI_receiver_1/i_4" BEL
+        "SPI_transceiver_1/SPI_receiver_1/i_3" BEL
+        "SPI_transceiver_1/SPI_receiver_1/i_2" BEL
+        "SPI_transceiver_1/SPI_receiver_1/i_1" BEL
+        "SPI_transceiver_1/SPI_receiver_1/i_0" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_15" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_14" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_13" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_12" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_11" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_10" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_9" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_8" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_7" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_6" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_5" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_4" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_3" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_2" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_1" BEL
+        "SPI_transceiver_1/SPI_receiver_1/spi_packet_inter_0" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_15" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_14" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_13" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_12" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_11" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_10" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_9" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_8" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_7" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_6" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_5" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_4" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_3" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_2" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_1" BEL
+        "SPI_transceiver_1/SPI_receiver_1/data_0" BEL
+        "Decode_SPIpacket_1/result_control_2" BEL
+        "Decode_SPIpacket_1/result_control_1" BEL
+        "Decode_SPIpacket_1/result_control_0" BEL
+        "Decode_SPIpacket_1/Control_SFD,Control_CMD,Control_FCS_sliced_0" BEL
+        "Decode_SPIpacket_1/Control_SFD,Control_CMD,Control_FCS_sliced_1" BEL
+        "Decode_SPIpacket_1/Control_CMD" BEL "Decode_SPIpacket_1/duty_inter_6"
+        BEL "Decode_SPIpacket_1/duty_inter_5" BEL
+        "Decode_SPIpacket_1/duty_inter_4" BEL
+        "Decode_SPIpacket_1/duty_inter_3" BEL
+        "Decode_SPIpacket_1/duty_inter_2" BEL
+        "Decode_SPIpacket_1/duty_inter_1" BEL
+        "Decode_SPIpacket_1/duty_inter_0" BEL "Decode_SPIpacket_1/FCS" BEL
+        "Decode_SPIpacket_1/VALUE_6" BEL "Decode_SPIpacket_1/VALUE_5" BEL
+        "Decode_SPIpacket_1/VALUE_4" BEL "Decode_SPIpacket_1/VALUE_3" BEL
+        "Decode_SPIpacket_1/VALUE_2" BEL "Decode_SPIpacket_1/VALUE_1" BEL
+        "Decode_SPIpacket_1/VALUE_0" BEL "Decode_SPIpacket_1/CMD_3" BEL
+        "Decode_SPIpacket_1/CMD_2" BEL "Decode_SPIpacket_1/CMD_1" BEL
+        "Decode_SPIpacket_1/CMD_0" BEL "Decode_SPIpacket_1/SFD_3" BEL
+        "Decode_SPIpacket_1/SFD_2" BEL "Decode_SPIpacket_1/SFD_1" BEL
+        "Decode_SPIpacket_1/SFD_0" BEL "Demux_motors_1/duty_M4_inter_6" BEL
+        "Demux_motors_1/duty_M4_inter_5" BEL "Demux_motors_1/duty_M4_inter_4"
+        BEL "Demux_motors_1/duty_M4_inter_3" BEL
+        "Demux_motors_1/duty_M4_inter_2" BEL "Demux_motors_1/duty_M4_inter_1"
+        BEL "Demux_motors_1/duty_M4_inter_0" BEL
+        "Demux_motors_1/duty_M1_inter_6" BEL "Demux_motors_1/duty_M1_inter_5"
+        BEL "Demux_motors_1/duty_M1_inter_4" BEL
+        "Demux_motors_1/duty_M1_inter_3" BEL "Demux_motors_1/duty_M1_inter_2"
+        BEL "Demux_motors_1/duty_M1_inter_1" BEL
+        "Demux_motors_1/duty_M1_inter_0" BEL "Demux_motors_1/duty_M3_inter_6"
+        BEL "Demux_motors_1/duty_M3_inter_5" BEL
+        "Demux_motors_1/duty_M3_inter_4" BEL "Demux_motors_1/duty_M3_inter_3"
+        BEL "Demux_motors_1/duty_M3_inter_2" BEL
+        "Demux_motors_1/duty_M3_inter_1" BEL "Demux_motors_1/duty_M3_inter_0"
+        BEL "Demux_motors_1/duty_M2_inter_6" BEL
+        "Demux_motors_1/duty_M2_inter_5" BEL "Demux_motors_1/duty_M2_inter_4"
+        BEL "Demux_motors_1/duty_M2_inter_3" BEL
+        "Demux_motors_1/duty_M2_inter_2" BEL "Demux_motors_1/duty_M2_inter_1"
+        BEL "Demux_motors_1/duty_M2_inter_0" BEL "PWM_4/count_19" BEL
+        "PWM_4/count_18" BEL "PWM_4/count_17" BEL "PWM_4/count_16" BEL
+        "PWM_4/count_15" BEL "PWM_4/count_14" BEL "PWM_4/count_13" BEL
+        "PWM_4/count_12" BEL "PWM_4/count_11" BEL "PWM_4/count_10" BEL
+        "PWM_4/count_9" BEL "PWM_4/count_8" BEL "PWM_4/count_7" BEL
+        "PWM_4/count_6" BEL "PWM_4/count_5" BEL "PWM_4/count_4" BEL
+        "PWM_4/count_3" BEL "PWM_4/count_2" BEL "PWM_4/count_1" BEL
+        "PWM_4/count_0" BEL "PWM_4/half_duty_4" BEL "PWM_4/half_duty_3" BEL
+        "PWM_4/half_duty_2" BEL "PWM_4/half_duty_1" BEL "PWM_4/half_duty_0"
+        BEL "PWM_3/count_19" BEL "PWM_3/count_18" BEL "PWM_3/count_17" BEL
+        "PWM_3/count_16" BEL "PWM_3/count_15" BEL "PWM_3/count_14" BEL
+        "PWM_3/count_13" BEL "PWM_3/count_12" BEL "PWM_3/count_11" BEL
+        "PWM_3/count_10" BEL "PWM_3/count_9" BEL "PWM_3/count_8" BEL
+        "PWM_3/count_7" BEL "PWM_3/count_6" BEL "PWM_3/count_5" BEL
+        "PWM_3/count_4" BEL "PWM_3/count_3" BEL "PWM_3/count_2" BEL
+        "PWM_3/count_1" BEL "PWM_3/count_0" BEL "PWM_3/half_duty_4" BEL
+        "PWM_3/half_duty_3" BEL "PWM_3/half_duty_2" BEL "PWM_3/half_duty_1"
+        BEL "PWM_3/half_duty_0" BEL "PWM_2/count_19" BEL "PWM_2/count_18" BEL
+        "PWM_2/count_17" BEL "PWM_2/count_16" BEL "PWM_2/count_15" BEL
+        "PWM_2/count_14" BEL "PWM_2/count_13" BEL "PWM_2/count_12" BEL
+        "PWM_2/count_11" BEL "PWM_2/count_10" BEL "PWM_2/count_9" BEL
+        "PWM_2/count_8" BEL "PWM_2/count_7" BEL "PWM_2/count_6" BEL
+        "PWM_2/count_5" BEL "PWM_2/count_4" BEL "PWM_2/count_3" BEL
+        "PWM_2/count_2" BEL "PWM_2/count_1" BEL "PWM_2/count_0" BEL
+        "PWM_2/half_duty_4" BEL "PWM_2/half_duty_3" BEL "PWM_2/half_duty_2"
+        BEL "PWM_2/half_duty_1" BEL "PWM_2/half_duty_0" BEL "PWM_1/count_19"
+        BEL "PWM_1/count_18" BEL "PWM_1/count_17" BEL "PWM_1/count_16" BEL
         "PWM_1/count_15" BEL "PWM_1/count_14" BEL "PWM_1/count_13" BEL
         "PWM_1/count_12" BEL "PWM_1/count_11" BEL "PWM_1/count_10" BEL
         "PWM_1/count_9" BEL "PWM_1/count_8" BEL "PWM_1/count_7" BEL
@@ -22,10 +134,16 @@ TIMEGRP sys_clk_pin = BEL "PWM_config_duty_1/duty_inter_6" BEL
         "PWM_1/count_3" BEL "PWM_1/count_2" BEL "PWM_1/count_1" BEL
         "PWM_1/count_0" BEL "PWM_1/half_duty_4" BEL "PWM_1/half_duty_3" BEL
         "PWM_1/half_duty_2" BEL "PWM_1/half_duty_1" BEL "PWM_1/half_duty_0"
-        BEL "PWM_1/pwm_out" BEL "PWM_config_duty_1/duty_inter_8" BEL
-        "PWM_config_duty_1/duty_inter_7" BEL "PWM_config_duty_1/duty_inter_3"
-        BEL "PWM_config_duty_1/duty_inter_2" BEL "clk_BUFGP/BUFG" PIN
-        "PWM_1/Mmult_n00171_pins<110>";
+        BEL "Decode_SPIpacket_1/sel_inter_2_C_2" BEL
+        "Decode_SPIpacket_1/sel_inter_2_P_2" BEL
+        "Decode_SPIpacket_1/sel_inter_1_C_1" BEL
+        "Decode_SPIpacket_1/sel_inter_1_P_1" BEL
+        "Decode_SPIpacket_1/sel_inter_0_C_0" BEL
+        "Decode_SPIpacket_1/sel_inter_0_P_0" BEL "PWM_4/pwm_out" BEL
+        "PWM_3/pwm_out" BEL "PWM_2/pwm_out" BEL "PWM_1/pwm_out" BEL
+        "clk_BUFGP/BUFG" PIN "PWM_1/Mmult_n00191_pins<110>" PIN
+        "PWM_2/Mmult_n00191_pins<110>" PIN "PWM_3/Mmult_n00191_pins<110>" PIN
+        "PWM_4/Mmult_n00191_pins<110>";
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

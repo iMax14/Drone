@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Thu Mar 05 15:54:41 2020
+Fri Mar 06 13:06:43 2020
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -207,7 +207,7 @@ Pinout by Pin Number:
 |M9        |           |IOBM     |IO_L29P_GCLK3_2              |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |M10       |pwm_out    |IOB      |IO_L16N_VREF_2               |OUTPUT   |LVCMOS25*  |2             |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
 |M11       |duty<2>    |IOB      |IO_L2N_CMPMOSI_2             |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
-|M12       |duty<1>    |IOB      |IO_L2P_CMPCLK_2              |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|M12       |reset      |IOB      |IO_L2P_CMPCLK_2              |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |M13       |           |IOBM     |IO_L74P_AWAKE_1              |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |M14       |           |IOBS     |IO_L74N_DOUT_BUSY_1          |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |M15       |           |IOBM     |IO_L46P_FCS_B_M1DQ2_1        |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
@@ -254,7 +254,7 @@ Pinout by Pin Number:
 |R8        |           |         |VCCO_2                       |         |           |2             |          |         |           |         |2.50     |          |           |                |
 |R9        |           |IOBM     |IO_L23P_2                    |UNUSED   |           |2             |          |         |           |         |         |          |           |                |
 |R10       |           |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|R11       |reset      |IOB      |IO_L1P_CCLK_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|R11       |duty<1>    |IOB      |IO_L1P_CCLK_2                |INPUT    |LVCMOS25*  |2             |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
 |R12       |           |IOBM     |IO_L52P_M1DQ14_1             |UNUSED   |           |1             |          |         |           |         |         |          |           |                |
 |R13       |           |         |VCCO_1                       |         |           |1             |          |         |           |         |any******|          |           |                |
 |R14       |           |IOBM     |IO_L50P_M1UDQS_1             |UNUSED   |           |1             |          |         |           |         |         |          |           |                |

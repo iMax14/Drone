@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.34 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.38 secs
  
 --> Reading design: pwm.prj
 
@@ -105,7 +105,7 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM.vhd" into library work
+Parsing VHDL file "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd" into library work
 Parsing entity <pwm>.
 Parsing architecture <logic> of entity <pwm>.
 
@@ -114,27 +114,29 @@ Parsing architecture <logic> of entity <pwm>.
 =========================================================================
 
 Elaborating entity <pwm> (architecture <logic>) with generics from library <work>.
+WARNING:HDLCompiler:871 - "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd" Line 37: Using initial value "00001100110" for shift since it is never assigned
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <pwm>.
-    Related source file is "C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\PWM.vhd".
+    Related source file is "C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\PWM.vhd".
         sys_clk = 50000000
         pwm_freq = 50
         bits_resolution = 11
     Found 20-bit register for signal <count>.
     Found 1-bit register for signal <pwm_out>.
     Found 19-bit register for signal <half_duty>.
-    Found 21-bit subtractor for signal <GND_5_o_GND_5_o_sub_6_OUT> created at line 59.
-    Found 20-bit adder for signal <count[19]_GND_5_o_add_2_OUT> created at line 54.
-    Found 11x20-bit multiplier for signal <n0016> created at line 50.
-    Found 20-bit comparator equal for signal <GND_5_o_count[19]_equal_5_o> created at line 57
-    Found 21-bit comparator not equal for signal <GND_5_o_GND_5_o_equal_7_o> created at line 59
+    Found 21-bit subtractor for signal <GND_5_o_GND_5_o_sub_7_OUT> created at line 61.
+    Found 11-bit adder for signal <duty[10]_GND_5_o_add_0_OUT> created at line 52.
+    Found 20-bit adder for signal <count[19]_GND_5_o_add_3_OUT> created at line 56.
+    Found 11x20-bit multiplier for signal <n0019> created at line 52.
+    Found 20-bit comparator equal for signal <GND_5_o_count[19]_equal_6_o> created at line 59
+    Found 21-bit comparator not equal for signal <GND_5_o_GND_5_o_equal_8_o> created at line 61
     Summary:
 	inferred   1 Multiplier(s).
-	inferred   2 Adder/Subtractor(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred  40 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   1 Multiplexer(s).
@@ -146,7 +148,8 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  20x11-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
+ 11-bit adder                                          : 1
  20-bit adder                                          : 1
  21-bit subtractor                                     : 1
 # Registers                                            : 3
@@ -176,7 +179,8 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  20x11-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 1
+# Adders/Subtractors                                   : 2
+ 11-bit adder                                          : 1
  21-bit subtractor                                     : 1
 # Counters                                             : 1
  20-bit up counter                                     : 1
@@ -196,7 +200,7 @@ Optimizing unit <pwm> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block pwm, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block pwm, actual ratio is 2.
 
 Final Macro Processing ...
 
@@ -228,14 +232,15 @@ Top Level Output File Name         : pwm.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 174
+# BELS                             : 185
 #      GND                         : 1
-#      INV                         : 16
+#      INV                         : 17
 #      LUT1                        : 25
-#      LUT2                        : 1
-#      LUT3                        : 1
-#      LUT4                        : 1
-#      LUT6                        : 35
+#      LUT2                        : 3
+#      LUT3                        : 3
+#      LUT4                        : 3
+#      LUT5                        : 2
+#      LUT6                        : 37
 #      MUXCY                       : 54
 #      VCC                         : 1
 #      XORCY                       : 39
@@ -258,14 +263,14 @@ Selected Device : 6slx9ftg256-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              26  out of  11440     0%  
- Number of Slice LUTs:                   79  out of   5720     1%  
-    Number used as Logic:                79  out of   5720     1%  
+ Number of Slice LUTs:                   90  out of   5720     1%  
+    Number used as Logic:                90  out of   5720     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     85
-   Number with an unused Flip Flop:      59  out of     85    69%  
-   Number with an unused LUT:             6  out of     85     7%  
-   Number of fully used LUT-FF pairs:    20  out of     85    23%  
+ Number of LUT Flip Flop pairs used:     96
+   Number with an unused Flip Flop:      70  out of     96    72%  
+   Number with an unused LUT:             6  out of     96     6%  
+   Number of fully used LUT-FF pairs:    20  out of     96    20%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -309,7 +314,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 4.685ns (Maximum Frequency: 213.447MHz)
-   Minimum input arrival time before clock: 10.638ns
+   Minimum input arrival time before clock: 13.522ns
    Maximum output required time after clock: 4.162ns
    Maximum combinational path delay: No path found
 
@@ -323,32 +328,32 @@ Timing constraint: Default period analysis for Clock 'clk'
   Total number of paths / destination ports: 918 / 21
 -------------------------------------------------------------------------
 Delay:               4.685ns (Levels of Logic = 17)
-  Source:            Mmult_n00161 (DSP)
+  Source:            Mmult_n00191 (DSP)
   Destination:       pwm_out (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: Mmult_n00161 to pwm_out
+  Data Path: Mmult_n00191 to pwm_out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P0       2   1.332   0.725  Mmult_n00161 (half_duty<5>)
-     INV:I->O              1   0.255   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_lut<5>_INV_0 (Msub_GND_5_o_GND_5_o_sub_6_OUT_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<5> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<6> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<7> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<8> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<9> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<10> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<11> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<12> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<13> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<14> (Msub_GND_5_o_GND_5_o_sub_6_OUT_cy<14>)
-     XORCY:CI->O           1   0.206   0.910  Msub_GND_5_o_GND_5_o_sub_6_OUT_xor<15> (GND_5_o_GND_5_o_sub_6_OUT<15>)
-     LUT6:I3->O            1   0.235   0.000  Mcompar__n0027_lut<5> (Mcompar__n0027_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  Mcompar__n0027_cy<5> (Mcompar__n0027_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Mcompar__n0027_cy<6> (_n0027)
-     MUXCY:CI->O           1   0.023   0.000  pwm_out_rstpot_cy (_n0027_l1)
+     DSP48A1:CLK->P0       2   1.332   0.725  Mmult_n00191 (half_duty<5>)
+     INV:I->O              1   0.255   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_lut<5>_INV_0 (Msub_GND_5_o_GND_5_o_sub_7_OUT_lut<5>)
+     MUXCY:S->O            1   0.215   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<5> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<6> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<7> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<8> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<9> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<10> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<11> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<12> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<13> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<14> (Msub_GND_5_o_GND_5_o_sub_7_OUT_cy<14>)
+     XORCY:CI->O           1   0.206   0.910  Msub_GND_5_o_GND_5_o_sub_7_OUT_xor<15> (GND_5_o_GND_5_o_sub_7_OUT<15>)
+     LUT6:I3->O            1   0.235   0.000  Mcompar__n0032_lut<5> (Mcompar__n0032_lut<5>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar__n0032_cy<5> (Mcompar__n0032_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar__n0032_cy<6> (_n0032)
+     MUXCY:CI->O           1   0.023   0.000  pwm_out_rstpot_cy (_n0032_l1)
      MUXCY:CI->O           1   0.262   0.000  pwm_out_rstpot_cy1 (pwm_out_rstpot)
      FDC:D                     0.074          pwm_out
     ----------------------------------------
@@ -357,23 +362,25 @@ Delay:               4.685ns (Levels of Logic = 17)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 610 / 80
+  Total number of paths / destination ports: 2995 / 80
 -------------------------------------------------------------------------
-Offset:              10.638ns (Levels of Logic = 2)
-  Source:            duty<10> (PAD)
-  Destination:       Mmult_n00161 (DSP)
+Offset:              13.522ns (Levels of Logic = 4)
+  Source:            duty<3> (PAD)
+  Destination:       Mmult_n00191 (DSP)
   Destination Clock: clk rising
 
-  Data Path: duty<10> to Mmult_n00161
+  Data Path: duty<3> to Mmult_n00191
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  duty_10_IBUF (duty_10_IBUF)
-     DSP48A1:B10->P47     18   5.145   1.234  Mmult_n0016 (Mmult_n0016_P47_to_Mmult_n00161)
-     DSP48A1:C30               2.250          Mmult_n00161
+     IBUF:I->O             5   1.328   1.296  duty_3_IBUF (Madd_duty[10]_GND_5_o_add_0_OUT_lut<3>)
+     LUT6:I0->O            4   0.254   1.080  Madd_duty[10]_GND_5_o_add_0_OUT_cy<6>11 (Madd_duty[10]_GND_5_o_add_0_OUT_cy<6>)
+     LUT5:I1->O            1   0.254   0.681  Madd_duty[10]_GND_5_o_add_0_OUT_xor<10>11 (duty[10]_GND_5_o_add_0_OUT<10>)
+     DSP48A1:B10->P47     18   5.145   1.234  Mmult_n0019 (Mmult_n0019_P47_to_Mmult_n00191)
+     DSP48A1:C30               2.250          Mmult_n00191
     ----------------------------------------
-    Total                     10.638ns (8.723ns logic, 1.915ns route)
-                                       (82.0% logic, 18.0% route)
+    Total                     13.522ns (9.231ns logic, 4.291ns route)
+                                       (68.3% logic, 31.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -410,14 +417,14 @@ clk            |    4.685|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.39 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.22 secs
  
 --> 
 
-Total memory usage is 4448504 kilobytes
+Total memory usage is 4448552 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

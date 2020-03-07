@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-03-04T11:58:56</DateModified>
-  <ModuleName>PWM_generator</ModuleName>
-  <SummaryTimeStamp>2020-03-04T11:58:14</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/iseconfig/CMD_motors.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA\</ImplementationReportsDirectory>
-  <DateInitialized>2020-03-04T11:55:54</DateInitialized>
+  <DateModified>2020-03-07T12:35:29</DateModified>
+  <ModuleName>CMD_motors</ModuleName>
+  <SummaryTimeStamp>2020-03-07T12:35:22</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/iseconfig/CMD_motors.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA\</ImplementationReportsDirectory>
+  <DateInitialized>2020-03-07T12:35:28</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF pwm_tb IS
    signal reset : std_logic := '0';
    signal duty : std_logic_vector(10 downto 0) := (others => '0');
 
- 	--Outputs
+ 	--Outputs 
    signal pwm_out : std_logic;
 
    -- Clock period definitions
@@ -78,11 +78,15 @@ BEGIN
 		clk <= '1';
 		wait for clk_period/2;
    end process;
- 
- 	reset <= '0';									-- Actif bas
 	
-	duty <= 	"00001100110",  					-- Duty de 5%/t_on = 1ms --> Résolution de 102
-				"00011001101" after 50ms; 		-- Duty de 10%/t_on = 2ms --> Résolution de 205
+
+ 	reset <= '1';									-- Actif bas
+	
+	duty <= 	"00000000000",  					-- Duty de 5%/t_on = 1ms --> Duty = 0%
+				"00001000000" after 50us; 		-- Duty de 10%/t_on = 2ms --> Duty = 100%
+				
+--	duty <= 	"00001100110",  					-- Duty de 5%/t_on = 1ms --> Résolution de 102
+--				"00011001101" after 50ms; 		-- Duty de 10%/t_on = 2ms --> Résolution de 205
 --   -- Stimulus process
 --   stim_proc: process
 --   begin		

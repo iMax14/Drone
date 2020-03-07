@@ -1,0 +1,31 @@
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 Decode_SPIpacket.ngc Decode_SPIpacket.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Decode_SPIpacket_map.ncd Decode_SPIpacket.ngd Decode_SPIpacket.pcf 
+par -w -intstyle ise -ol high -mt off Decode_SPIpacket_map.ncd Decode_SPIpacket.ncd Decode_SPIpacket.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Decode_SPIpacket.twx Decode_SPIpacket.ncd -o Decode_SPIpacket.twr Decode_SPIpacket.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 Decode_SPIpacket.ngc Decode_SPIpacket.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Decode_SPIpacket_map.ncd Decode_SPIpacket.ngd Decode_SPIpacket.pcf 
+par -w -intstyle ise -ol high -mt off Decode_SPIpacket_map.ncd Decode_SPIpacket.ncd Decode_SPIpacket.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Decode_SPIpacket.twx Decode_SPIpacket.ncd -o Decode_SPIpacket.twr Decode_SPIpacket.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 Decode_SPIpacket.ngc Decode_SPIpacket.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Decode_SPIpacket_map.ncd Decode_SPIpacket.ngd Decode_SPIpacket.pcf 
+par -w -intstyle ise -ol high -mt off Decode_SPIpacket_map.ncd Decode_SPIpacket.ncd Decode_SPIpacket.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Decode_SPIpacket.twx Decode_SPIpacket.ncd -o Decode_SPIpacket.twr Decode_SPIpacket.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 Decode_SPIpacket.ngc Decode_SPIpacket.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Decode_SPIpacket_map.ncd Decode_SPIpacket.ngd Decode_SPIpacket.pcf 
+par -w -intstyle ise -ol high -mt off Decode_SPIpacket_map.ncd Decode_SPIpacket.ncd Decode_SPIpacket.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Decode_SPIpacket.twx Decode_SPIpacket.ncd -o Decode_SPIpacket.twr Decode_SPIpacket.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-2 Decode_SPIpacket.ngc Decode_SPIpacket.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Decode_SPIpacket_map.ncd Decode_SPIpacket.ngd Decode_SPIpacket.pcf 
+par -w -intstyle ise -ol high -mt off Decode_SPIpacket_map.ncd Decode_SPIpacket.ncd Decode_SPIpacket.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml Decode_SPIpacket.twx Decode_SPIpacket.ncd -o Decode_SPIpacket.twr Decode_SPIpacket.pcf 

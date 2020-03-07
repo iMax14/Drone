@@ -3,12 +3,16 @@ TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
 
 ##
 NET reset                  LOC = L3 | IOSTANDARD = "LVCMOS33"; ## reset pushbutton
+NET reset CLOCK_DEDICATED_ROUTE = FALSE;
+
 ##
 
 ########KEY Pin define#####################
-NET user_keys<3>             LOC = C3 | IOSTANDARD = "LVCMOS33";       ## KEY1
-NET user_keys<2>             LOC = D3 | IOSTANDARD = "LVCMOS33";       ## KEY2
-NET user_keys<1>             LOC = E4 | IOSTANDARD = "LVCMOS33";       ## KEY3
-NET user_keys<0>             LOC = E3 | IOSTANDARD = "LVCMOS33";       ## KEY4
+NET mosi             LOC = A4  | IOSTANDARD = "LVCMOS33";       ## Pin 3 J3
+NET sclk             LOC = A5  | IOSTANDARD = "LVCMOS33";       ## Pin 5 J3
+NET ssel             LOC = A6  | IOSTANDARD = "LVCMOS33";       ## Pin 7 J3
 
-NET motor_1                  LOC = A5 | IOSTANDARD = "LVCMOS33";       ## Pin 5 J3
+NET motor_1          LOC = H16 | IOSTANDARD = "LVCMOS33";       ## Pin 3 J2
+NET motor_2          LOC = L16 | IOSTANDARD = "LVCMOS33";       ## Pin 5 J2
+NET motor_3          LOC = M15 | IOSTANDARD = "LVCMOS33";       ## Pin 7 J2
+NET motor_4          LOC = P16 | IOSTANDARD = "LVCMOS33";       ## Pin 9 J2

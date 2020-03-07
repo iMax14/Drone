@@ -92,7 +92,7 @@ void duty_moteurs(int id_moteur, int duty){
 	
 	switch(id_moteur){
 		case 0: //Moteur Avant gauche
-			spiTxBuf[0] |= 0x03;
+			spiTxBuf[0] |= 0x02;
 			break;
 		case 1: //Moteur Avant droit
 			spiTxBuf[0] |= 0x07;
@@ -114,6 +114,8 @@ void duty_moteurs(int id_moteur, int duty){
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET); //Activate SLAVE
 	HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY); //Début transmission
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
+	
+	HAL_Delay(100);
 }
 
 

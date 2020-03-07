@@ -1,0 +1,2 @@
+vhdl isim_temp "Demux_motors.vhd"
+vhdl isim_temp "Demux_motors_tb.vhd"

@@ -97,3 +97,75 @@ par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_moto
 trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
 bitgen -intstyle ise -f CMD_motors.ut CMD_motors.ncd 
 xst -intstyle ise -ifn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Desktop/Projet_drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+netgen -intstyle ise -s 2  -pcf CMD_motors.pcf -rpw 100 -tpw 0 -ar Structure -tm CMD_motors -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim CMD_motors.ncd CMD_motors_timesim.vhd 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+bitgen -intstyle ise -f CMD_motors.ut CMD_motors.ncd 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+bitgen -intstyle ise -f CMD_motors.ut CMD_motors.ncd 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+xst -intstyle ise -ifn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.xst" -ofn "C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc AX309_mapping.ucf -p xc6slx9-ftg256-2 CMD_motors.ngc CMD_motors.ngd  
+map -intstyle ise -p xc6slx9-ftg256-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CMD_motors_map.ncd CMD_motors.ngd CMD_motors.pcf 
+par -w -intstyle ise -ol high -mt off CMD_motors_map.ncd CMD_motors.ncd CMD_motors.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml CMD_motors.twx CMD_motors.ncd -o CMD_motors.twr CMD_motors.pcf -ucf AX309_mapping.ucf 
+bitgen -intstyle ise -f CMD_motors.ut CMD_motors.ncd 
