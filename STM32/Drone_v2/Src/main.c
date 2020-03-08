@@ -211,31 +211,34 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  //MX_I2C1_Init();
+  MX_I2C1_Init();
   MX_SPI1_Init();
-  //MX_TIM1_Init();
-  //MX_TIM2_Init();
+  MX_TIM1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 	
 
-			
-///*Setup the registers of the MPU-6050 (500dfs / +/-8g) and start the gyro*/
-//	if(MPU6050_Init(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
-//		Error_Handler();
-//	}
-///*Calibration of the MPU-6050*/
-//	if(MPU6050_Calibrate(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
-//		Error_Handler();
-//	}
+  /* Disable the selected SPI peripheral */
+  __HAL_SPI_DISABLE(&hspi1);
+/*Setup the registers of the MPU-6050 (500dfs / +/-8g) and start the gyro*/
+	if(MPU6050_Init(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+		Error_Handler();
+	}
+/*Calibration of the MPU-6050*/
+	if(MPU6050_Calibrate(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+		Error_Handler();
+	}
+	  /* Enable the selected SPI peripheral */
+  __HAL_SPI_ENABLE(&hspi1);
 	
 /*Activate Remote control captures*/
-//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1);
-//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2);
-//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3);
-//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4);
-//	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
-//	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
-//	
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1);
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2);
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3);
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4);
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
+
 /*Initialize SPI communication*/
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
 	
@@ -253,17 +256,8 @@ int main(void)
 
 * duty : [0 , 100]
 */
-//	duty_moteurs(0,180);
-//	duty_moteurs(0,0);
-	
-	duty_moteurs(0,5);
-	duty_moteurs(0,20);
-
-//	for(int i = 0; i < 100;i++){
-//		duty_moteurs(0,i);
-
-//	}
-
+//	duty_moteurs(0,5);
+//	duty_moteurs(0,20);
 
   /* USER CODE END 2 */
 
@@ -271,18 +265,23 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-///*Read and Convert all the data from the MPU6050*/
-//		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
-//			Error_Handler();
-//		}
+		/* Disable the selected SPI peripheral */
+		__HAL_SPI_DISABLE(&hspi1);
+/*Read and Convert all the data from the MPU6050*/
+		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+			Error_Handler();
+		}
+		/* Enable the selected SPI peripheral */
+		__HAL_SPI_ENABLE(&hspi1);
 		
-//		if(cmd.pitch > 1700){		
-//			duty_moteurs(0,10);
-//		}
-//		else{
-//			duty_moteurs(0,0);
-//		}
+		//duty_moteurs(0,5);
+
+		if(cmd.pitch > 1700){		
+			duty_moteurs(0,5);
+		}
+		else{
+			duty_moteurs(0,0);
+		}
 
     /* USER CODE END WHILE */
 

@@ -2431,12 +2431,12 @@ HAL_StatusTypeDef HAL_I2C_Mem_Read(I2C_HandleTypeDef *hi2c, uint16_t DevAddress,
     __HAL_LOCK(hi2c);
 
     /* Init tickstart for timeout management*/
-//    tickstart = HAL_GetTick();
+    tickstart = HAL_GetTick();
 
-//    if (I2C_WaitOnFlagUntilTimeout(hi2c, I2C_FLAG_BUSY, SET, I2C_TIMEOUT_BUSY, tickstart) != HAL_OK)
-//    {
-//      return HAL_ERROR;
-//    }
+    if (I2C_WaitOnFlagUntilTimeout(hi2c, I2C_FLAG_BUSY, SET, I2C_TIMEOUT_BUSY, tickstart) != HAL_OK)
+    {
+      return HAL_ERROR;
+    }
 
     hi2c->State     = HAL_I2C_STATE_BUSY_RX;
     hi2c->Mode      = HAL_I2C_MODE_MEM;

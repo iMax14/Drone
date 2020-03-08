@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\impact.xsl
-OUTFILE=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA\impact.xsl
+INFILE=C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\impact.xsl
+OUTFILE=C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=C:\Users\Maxime\Desktop\Projet_drone\FPGA\Motor_control_FPGA
+WORKINGDIR=C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA
 LICENSE=iMPACT
 USER_INFO=iMPACT

@@ -115,7 +115,7 @@ void duty_moteurs(int id_moteur, int duty){
 	HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY); //Début transmission
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
 	
-	HAL_Delay(100);
+	HAL_Delay(10);
 }
 
 
