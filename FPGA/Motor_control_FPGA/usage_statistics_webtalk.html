@@ -17,7 +17,7 @@
 </TR>
 <TR ALIGN=LEFT>
 <TD BGCOLOR='#FFFF99'><B>Project ID (random number)</B></TD>
-<TD><xtag-property name="RandomID">d0a2d6a286d94d15bd8d2ec424f6e696</xtag-property>.<xtag-property name="ProjectID">1f640aa0809b49f9b13cd3146a2e2fb0</xtag-property>.<xtag-property name="ProjectIteration">1</xtag-property></TD>
+<TD><xtag-property name="RandomID">d0a2d6a286d94d15bd8d2ec424f6e696</xtag-property>.<xtag-property name="ProjectID">782ea5d3753a4ac79c3803c054950395</xtag-property>.<xtag-property name="ProjectIteration">1</xtag-property></TD>
 <TD BGCOLOR='#FFFF99'><B>Target Package:</B></TD>
 <TD><xtag-property name="TargetPackage"></xtag-property></TD>
 </TR>
@@ -29,15 +29,15 @@
 </TR>
 <TR ALIGN=LEFT>
 <TD BGCOLOR='#FFFF99'><B>Date Generated</B></TD>
-<TD><xtag-property name="Date Generated">2020-03-08T10:37:17</xtag-property></TD>
+<TD><xtag-property name="Date Generated">2020-03-08T11:32:14</xtag-property></TD>
 <TD BGCOLOR='#FFFF99'><B>Tool Flow</B></TD>
 <TD><xtag-property name="ToolFlow">IMPACT</xtag-property></TD>
 </TR>
 </TABLE>
 
 &nbsp;<BR><TABLE BORDER CELLSPACING=0 WIDTH='100%'>
-<xtag-section name="iMPACT One Step SVF File Mode">
-<TR ALIGN=CENTER BGCOLOR='#99CCFF'><TD COLSPAN=4><B>iMPACT One Step SVF File Mode</B></TD></TR>
+<xtag-section name="iMPACT Boundary Scan Mode">
+<TR ALIGN=CENTER BGCOLOR='#99CCFF'><TD COLSPAN=4><B>iMPACT Boundary Scan Mode</B></TD></TR>
 <TR ALIGN=CENTER><TD COLSPAN=4><B>Chain Summary</B></TD></TR>
 <TR>
 <TD><xtag-property-name>Number of device</xtag-property-name>=<xtag-property-value>1</xtag-property-value></TD>
@@ -47,11 +47,14 @@
 <TR>
 <TD><xtag-property-name>Device1</xtag-property-name>=<xtag-property-value>spartan6</xtag-property-value></TD>
 <TD><xtag-property-name>Part1</xtag-property-name>=<xtag-property-value>xc6slx9</xtag-property-value></TD>
+<TD><xtag-property-name>Device1</xtag-property-name>=<xtag-property-value>SPI FLASH</xtag-property-value></TD>
+<TD><xtag-property-name>Part1</xtag-property-name>=<xtag-property-value>M25P16</xtag-property-value></TD>
+
+</TR><TR><TD><xtag-property-name>Data Width</xtag-property-name>=<xtag-property-value>x1</xtag-property-value></TD>
 <TR ALIGN=CENTER><TD COLSPAN=4><B>Boundary Scan Operations Statistics</B></TD></TR>
 <TR>
 <TD><xtag-property-name>BSCAN Operation</xtag-property-name>=<xtag-property-value>Program -p 0 </xtag-property-value></TD>
-<TD><xtag-property-name>BSCAN Operation</xtag-property-name>=<xtag-property-value>Program -p 0 </xtag-property-value></TD>
-<TD><xtag-property-name>BSCAN Operation</xtag-property-name>=<xtag-property-value>Program -p 0 </xtag-property-value></TD>
+<TD><xtag-property-name>BSCAN Operation</xtag-property-name>=<xtag-property-value>Program -p 0 -dataWidth 1 -spionly -e -v -loadfpga </xtag-property-value></TD>
 <TR ALIGN=CENTER><TD COLSPAN=4><B>Cable Summary</B></TD></TR>
 <TR>
 <TD><xtag-property-name>Cable Type</xtag-property-name>=<xtag-property-value>Platform Cable USB II</xtag-property-value></TD>
@@ -65,10 +68,31 @@
 <xtag-section name="iMPACT Project Info">
 <TR ALIGN=CENTER BGCOLOR='#99CCFF'><TD COLSPAN=2><B>iMPACT Project Info</B></TD></TR>
 <TR>
-<TD><xtag-property-name>Use Project File</xtag-property-name>=<xtag-property-value>No</xtag-property-value></TD>
+<TD><xtag-property-name>Use Project File</xtag-property-name>=<xtag-property-value>Yes</xtag-property-value></TD>
 <TD><xtag-property-name>Project Entry</xtag-property-name>=<xtag-property-value>ise</xtag-property-value></TD>
 
 </TR><TR><TD><xtag-property-name>OS Name</xtag-property-name>=<xtag-property-value>Microsoft Windows NT (64 Bit)</xtag-property-value></TD>
 <TD><xtag-property-name>User Lic. Info</xtag-property-name>=<xtag-property-value>211823609_0_0_762</xtag-property-value></TD>
+</TR></xtag-section></TABLE>
+
+&nbsp;<BR><TABLE BORDER CELLSPACING=0 WIDTH='100%'>
+<xtag-section name="iMPACT SPI FLASH File Generation Mode">
+<TR ALIGN=CENTER BGCOLOR='#99CCFF'><TD COLSPAN=4><B>iMPACT SPI FLASH File Generation Mode</B></TD></TR>
+<TR ALIGN=CENTER><TD COLSPAN=4><B>FLASH File Summary</B></TD></TR>
+<TR>
+<TD><xtag-property-name>Number of FLASH</xtag-property-name>=<xtag-property-value>1</xtag-property-value></TD>
+<TD><xtag-property-name>FLASH Data Width</xtag-property-name>=<xtag-property-value>8</xtag-property-value></TD>
+<TD><xtag-property-name>FLASH</xtag-property-name>=<xtag-property-value>1</xtag-property-value></TD>
+<TD><xtag-property-name>FLASH Size</xtag-property-name>=<xtag-property-value>8M Byte</xtag-property-value></TD>
+<TR ALIGN=CENTER><TD COLSPAN=4><B>Revision_Data File Summary</B></TD></TR>
+<TR>
+<TD><xtag-property-name>Number of Revision</xtag-property-name>=<xtag-property-value>1</xtag-property-value></TD>
+<TD><xtag-property-name>Number of Data File</xtag-property-name>=<xtag-property-value>0</xtag-property-value></TD>
+<TR ALIGN=CENTER><TD COLSPAN=4><B>Revision 1</B></TD></TR>
+<TR>
+<TD><xtag-property-name>Number of device</xtag-property-name>=<xtag-property-value>1</xtag-property-value></TD>
+<TD><xtag-property-name>Device1</xtag-property-name>=<xtag-property-value>spartan6</xtag-property-value></TD>
+<TD><xtag-property-name>Part1</xtag-property-name>=<xtag-property-value>xc6slx9</xtag-property-value></TD>
+<TR>
 </TR></xtag-section></TABLE>
 </BODY></HTML>
