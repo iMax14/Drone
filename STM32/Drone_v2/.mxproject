@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/Maxime/Desktop/Drone_v2/Inc
+HeaderPath=C:/Users/Maxime/Documents/Drone/STM32/Drone_v2/Inc
 HeaderFiles=stm32f3xx_it.h;stm32f3xx_hal_conf.h;main.h;
-SourcePath=C:/Users/Maxime/Desktop/Drone_v2/Src
+SourcePath=C:/Users/Maxime/Documents/Drone/STM32/Drone_v2/Src
 SourceFiles=stm32f3xx_it.c;stm32f3xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]

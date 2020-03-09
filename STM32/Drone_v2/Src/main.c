@@ -51,6 +51,7 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
+int _status = 2; //Par défaut : FlySky télécommande non détectée
 TM_MPU6050_t MPU6050;
 struct Input_captures{
 	int32_t capt1[6];
@@ -75,6 +76,8 @@ static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
+static void toggle_led(int id);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -91,10 +94,10 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 			}
 			else if (values.is_First_Captured[0]){
 				values.capt2[0] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-				cmd.roll = values.capt2[0] - values.capt1[0];
+				cmd.throttle = values.capt2[0] - values.capt1[0];
 				
-				if (cmd.roll < 0){
-					cmd.roll += 0xFFFF;
+				if (cmd.throttle < 0){
+					cmd.throttle += 0xFFFF;
 				}
 				values.is_First_Captured[0] = 0;
 			}
@@ -106,10 +109,10 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 			}
 			else if (values.is_First_Captured[1]){
 				values.capt2[1] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
-				cmd.pitch = values.capt2[1] - values.capt1[1];
+				cmd.roll = values.capt2[1] - values.capt1[1];
 				
-				if (cmd.pitch < 0){
-					cmd.pitch += 0xFFFF;
+				if (cmd.roll < 0){
+					cmd.roll += 0xFFFF;
 				}
 				values.is_First_Captured[1] = 0;
 			}
@@ -121,10 +124,10 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 			}
 			else if (values.is_First_Captured[2]){
 				values.capt2[2] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_3);
-				cmd.throttle = values.capt2[2] - values.capt1[2];
+				cmd.pitch = values.capt2[2] - values.capt1[2];
 				
-				if (cmd.throttle < 0){
-					cmd.throttle += 0xFFFF;
+				if (cmd.pitch < 0){
+					cmd.pitch += 0xFFFF;
 				}
 				values.is_First_Captured[2] = 0;
 			}		
@@ -180,6 +183,36 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 	
 }
 
+void toggle_led(int id){
+
+	switch (id){
+		case 0://LED rouge
+			HAL_GPIO_TogglePin(GPIOB, LED_rouge_Pin);
+		
+			HAL_GPIO_WritePin(GPIOB, LED_jaune_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOB, LED_verte_Pin, GPIO_PIN_RESET);
+			break;
+  	case 1://LED jaune
+			HAL_GPIO_WritePin(GPIOB, LED_jaune_Pin,GPIO_PIN_SET); //Initialisation du Drone
+		
+			HAL_GPIO_WritePin(GPIOB, LED_rouge_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOB, LED_verte_Pin, GPIO_PIN_RESET);
+			break;
+		case 2://LED verte
+			HAL_GPIO_WritePin(GPIOB, LED_verte_Pin, GPIO_PIN_SET); //Prêt au décolage
+		
+			HAL_GPIO_WritePin(GPIOB, LED_jaune_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOB, LED_rouge_Pin, GPIO_PIN_RESET);
+			break;
+		default:
+			break;
+	}
+
+
+}
+
+
+
 /* USER CODE END 0 */
 
 /**
@@ -192,7 +225,6 @@ int main(void)
 
   /* USER CODE END 1 */
   
-
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -216,71 +248,56 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+	_status = 0; //L'initialisation des périphériques a été excécutée
 	
+	toggle_led(1); //Set Led jaune pendant l'initialisation
 
-  /* Disable the selected SPI peripheral */
-  __HAL_SPI_DISABLE(&hspi1);
 /*Setup the registers of the MPU-6050 (500dfs / +/-8g) and start the gyro*/
 	if(MPU6050_Init(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+		_status = 1; //MPU-6050 non détectée
 		Error_Handler();
 	}
 /*Calibration of the MPU-6050*/
 	if(MPU6050_Calibrate(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+		_status = 1; //MPU-6050 non détectée
 		Error_Handler();
 	}
-	  /* Enable the selected SPI peripheral */
-  __HAL_SPI_ENABLE(&hspi1);
-	
-/*Activate Remote control captures*/
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1);
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2);
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3);
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4);
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1);
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2);
 
+/*Activate Remote control captures*/
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
+	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4); //PA11 --> CH4 receiver [yaw]
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1); //PA0  --> CH6 receiver [vrb]
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [vra]
+	HAL_Delay(2000); //Attendre 2 secondes le feedback de la télécommande
+	
+	if(cmd.throttle > 1100){
+		_status = 3; //Throttle n'est pas dans la position la plus basse
+		Error_Handler();
+	}
+	
 /*Initialize SPI communication*/
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
 	
-/* 
-* id_moteurs :
-* 0 ---> Moteur Avant gauche
-* 1 ---> Moteur Avant droit
-* 2 ---> Moteur Arrière gauche
-* 3 ---> Moteur Arrière droit
-
-* sense :
-
-* 0 ---> Horaire
-* 1 ---> Anti-horaire
-
-* duty : [0 , 100]
-*/
-//	duty_moteurs(0,5);
-//	duty_moteurs(0,20);
-
+	toggle_led(2); //Set Led verte à la fin de l'initialisation
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		/* Disable the selected SPI peripheral */
-		__HAL_SPI_DISABLE(&hspi1);
+
 /*Read and Convert all the data from the MPU6050*/
 		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
+			_status = 1; //MPU-6050 non détectée
 			Error_Handler();
 		}
-		/* Enable the selected SPI peripheral */
-		__HAL_SPI_ENABLE(&hspi1);
 		
-		//duty_moteurs(0,5);
-
-		if(cmd.pitch > 1700){		
-			duty_moteurs(0,5);
-		}
-		else{
-			duty_moteurs(0,0);
+		if(duty_moteurs(0,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){
+			_status = 4; //FPGA non détectée
+			Error_Handler();
 		}
 
     /* USER CODE END WHILE */
@@ -456,7 +473,7 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_RISING;
+  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_BOTHEDGE;
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
   sConfigIC.ICFilter = 0;
@@ -464,7 +481,6 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  sConfigIC.ICPolarity = TIM_INPUTCHANNELPOLARITY_BOTHEDGE;
   if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -478,7 +494,6 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN TIM1_Init 2 */
-
   /* USER CODE END TIM1_Init 2 */
 
 }
@@ -551,12 +566,22 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LED_jaune_Pin|LED_rouge_Pin|LED_verte_Pin, GPIO_PIN_RESET);
+
   /*Configure GPIO pin : SPI1_SSEL_Pin */
   GPIO_InitStruct.Pin = SPI1_SSEL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(SPI1_SSEL_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LED_jaune_Pin LED_rouge_Pin LED_verte_Pin */
+  GPIO_InitStruct.Pin = LED_jaune_Pin|LED_rouge_Pin|LED_verte_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
@@ -572,7 +597,20 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-	while(1);
+	while(1){
+/* Voici les cas d'erreurs pour la LED rouge 
+*	Valeur de la variable "_status"
+* 	0 : pas d'erreurs détectée
+* 	1 : MPU-6050 non détecté
+*		2 : FlySky télécommande non détectée
+*		3 : Throttle n'est pas dans la position la plus basse
+*		4 : FPGA non détecté 
+*/		
+		toggle_led(0);
+		HAL_Delay(_status*500);
+	
+	
+	}
 
   /* USER CODE END Error_Handler_Debug */
 }

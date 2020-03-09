@@ -82,12 +82,18 @@ int set_gyro_angles = 1;
 #define MPU6050_ACCE_SENS_8			((float) 4096)
 #define MPU6050_ACCE_SENS_16		((float) 2048)
 
+extern SPI_HandleTypeDef hspi1;
+
 
 TM_MPU6050_Result_t MPU6050_Init(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t DeviceNumber) {
+	
 	/* Format I2C address */
 	DataStruct->Address = MPU6050_I2C_ADDR | (uint8_t)DeviceNumber;
 	uint8_t temp;
 	temp = 0x00;
+
+	  /* Disable the selected SPI peripheral */
+  __HAL_SPI_DISABLE(&hspi1);
 	
 	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_PWR_MGMT_1,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Activate the MPU-6050
 		/* Return error */
@@ -106,7 +112,9 @@ TM_MPU6050_Result_t MPU6050_Init(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t D
 		return TM_MPU6050_Result_Error;
 	}
 	
-
+	  /* Enable the selected SPI peripheral */
+  __HAL_SPI_ENABLE(&hspi1);
+	
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }
@@ -120,9 +128,13 @@ TM_MPU6050_Result_t MPU6050_ReadAll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
 	uint8_t data[14];
 	int16_t temp;
 	
-		
-	/* Read full raw data, 14bytes */
-	HAL_I2C_Mem_Read(&hi2c1,DataStruct->Address ,MPU6050_ACCEL_XOUT_H,1,data,14,HAL_MAX_DELAY);
+		  /* Disable the selected SPI peripheral */
+  __HAL_SPI_DISABLE(&hspi1);
+	
+	if (HAL_I2C_Mem_Read(&hi2c1,DataStruct->Address ,MPU6050_ACCEL_XOUT_H,1,data,14,HAL_MAX_DELAY) != HAL_OK) {	/* Read full raw data, 14bytes */
+		/* Return error */
+		return TM_MPU6050_Result_Error;
+	}
 
 	/* Format accelerometer data */
 	DataStruct->Accelerometer_X = (int16_t)(data[0] << 8 | data[1]);	
@@ -138,12 +150,19 @@ TM_MPU6050_Result_t MPU6050_ReadAll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
 	DataStruct->Gyroscope_Y = (int16_t)(data[10] << 8 | data[11]);
 	DataStruct->Gyroscope_Z = (int16_t)(data[12] << 8 | data[13]);
 
+	  /* Enable the selected SPI peripheral */
+  __HAL_SPI_ENABLE(&hspi1);
+	
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }
 TM_MPU6050_Result_t MPU6050_Calibrate(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t DeviceNumber) {
 	
 	for (int cal_int = 0; cal_int < 2000 ; cal_int ++){                  //Run this code 2000 times
+		if (MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok) {	
+			/* Return error */
+			return TM_MPU6050_Result_Error;
+		}
 		MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0);                 //Read the raw acc and gyro data from the MPU-6050
 		MPU6050.gyro_x_cal += MPU6050.Gyroscope_X;                         //Add the gyro x-axis offset to the gyro_x_cal variable
 		MPU6050.gyro_y_cal += MPU6050.Gyroscope_Y;                         //Add the gyro y-axis offset to the gyro_y_cal variable
@@ -156,14 +175,16 @@ TM_MPU6050_Result_t MPU6050_Calibrate(TM_MPU6050_t* DataStruct, TM_MPU6050_Devic
   MPU6050.gyro_y_cal /= 2000;                                          //Divide the gyro_y_cal variable by 2000 to get the avarage offset
   MPU6050.gyro_z_cal /= 2000;                                          //Divide the gyro_z_cal variable by 2000 to get the avarage offset
 	
-
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }
 
 TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t DeviceNumber) {
 	
-	MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0);
+	if (MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok) {	
+		/* Return error */
+		return TM_MPU6050_Result_Error;
+	}
 	
 	MPU6050.Gyroscope_X -= MPU6050.gyro_x_cal;                        //Subtract the offset calibration value from the raw gyro_x value
 	MPU6050.Gyroscope_Y -= MPU6050.gyro_y_cal;                        //Subtract the offset calibration value from the raw gyro_y value
@@ -207,6 +228,7 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 	MPU6050.angle_roll_output = MPU6050.angle_roll_output * 0.9 + MPU6050.angle_roll * 0.1;      //Take 90% of the output roll value and add 10% of the raw roll value
 	
 	HAL_Delay(5);
+	
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }

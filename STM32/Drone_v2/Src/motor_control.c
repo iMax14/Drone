@@ -3,6 +3,15 @@
 extern SPI_HandleTypeDef hspi1;
 uint8_t spiTxBuf[2] = {0xF0,0x00};
 
+/* 
+* id_moteurs :
+* 0 ---> Moteur Avant gauche
+* 1 ---> Moteur Avant droit
+* 2 ---> Moteur Arrière gauche
+* 3 ---> Moteur Arrière droit
+
+* duty : [0 , 100]
+*/
 
 
 int check_parity(uint8_t val[2]){
@@ -34,59 +43,7 @@ int check_parity(uint8_t val[2]){
 }
 
 
-void run_moteurs(int id_moteur, int sense){
-	spiTxBuf[0]=0xF0;
-	spiTxBuf[1]=0x00;
-	
-	switch(id_moteur){
-		case 0: //Moteur Avant gauche
-			if(sense == 0)//Sens horaire
-				spiTxBuf[0] |= 0x01;
-			else if(sense == 1)//Sens anti-horaire
-				spiTxBuf[0] |= 0x02;
-			break;
-		case 1: //Moteur Avant droit
-			if(sense == 0)//Sens horaire
-				spiTxBuf[0] |= 0x05;
-			else if(sense == 1)//Sens anti-horaire
-				spiTxBuf[0] |= 0x06;
-			break;
-		case 2: //Moteur Arrière gauche
-			if(sense == 0)//Sens horaire
-				spiTxBuf[0] |= 0x09;
-			else if(sense == 1)//Sens anti-horaire
-				spiTxBuf[0] |= 0x0A;
-			break;	
-		case 3: //Moteur Arrière droit
-			if(sense == 0)//Sens horaire
-				spiTxBuf[0] |= 0x0D;
-			else if(sense == 1)//Sens anti-horaire
-				spiTxBuf[0] |= 0x0E;
-			break;	
-		default:
-			break;
-	}
-	
-	spiTxBuf[1] |= 0x02;
-	
-	if(check_parity(spiTxBuf))
-		spiTxBuf[1] |= 0x01; 
-		
-//	__HAL_SPI_ENABLE(&hspi1);
-//	HAL_Delay(1);
-
-	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET); //Activate SLAVE
-	HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY); //Début transmission
-	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
-	
-	__HAL_SPI_DISABLE(&hspi1);
-	HAL_Delay(2);
-
-}
-
-
-
-void duty_moteurs(int id_moteur, int duty){
+FPGA_Result_t duty_moteurs(int id_moteur, int duty){
 	spiTxBuf[0]=0xF0;
 	spiTxBuf[1]=0x00;
 	
@@ -112,44 +69,16 @@ void duty_moteurs(int id_moteur, int duty){
 		spiTxBuf[1] |= 0x01; 
 	
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET); //Activate SLAVE
-	HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY); //Début transmission
+	if (HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY) != HAL_OK) {//Send SPI packet
+		/* Return error */
+		return FPGA_Result_Error;
+	}
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
 	
 	HAL_Delay(10);
-}
-
-
-
-
-void stop_moteurs(int id_moteur){
-	spiTxBuf[0]=0xF0;
-	spiTxBuf[1]=0x00;
 	
-	switch(id_moteur){
-		case 0: //Moteur Avant gauche
-			spiTxBuf[0] |= 0x01;
-			break;
-		case 1: //Moteur Avant droit
-			spiTxBuf[0] |= 0x05;
-			break;
-		case 2: //Moteur Arrière gauche
-			spiTxBuf[0] |= 0x09;
-			break;	
-		case 3: //Moteur Arrière droit
-			spiTxBuf[0] |= 0x0D;
-			break;	
-		default:
-			break;
-	}
-	spiTxBuf[1] |= 0x00;
-	
-	if(check_parity(spiTxBuf))
-		spiTxBuf[1] |= 0x01; 
-	
-	
-	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET); //Activate SLAVE
-	HAL_SPI_Transmit(&hspi1,&spiTxBuf[0],2,HAL_MAX_DELAY); //Début transmission
-	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
+	/* Return OK */
+	return FPGA_Result_Ok;
 }
 
 
