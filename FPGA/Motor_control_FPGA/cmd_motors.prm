@@ -1,9 +1,9 @@
 PROMGEN: Xilinx Prom Generator P.20131013
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-promgen -w -p mcs -c FF -o C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\//cmd_motors -s 8192 -u 0000 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit -spi 
+promgen -w -p mcs -c FF -o C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\//cmd_motors -s 8192 -u 0 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit -spi 
 
-PROM C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\cmd_motors.prm map: Sun Mar 08 11:30:20 2020
+PROM C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\cmd_motors.prm map: Thu Mar 12 15:08:50 2020
 
 Calculating PROM checksum with fill value ff
 
@@ -11,7 +11,7 @@ Format        Mcs86 (32-bit)
 Size          8192K
 PROM start    0000:0000
 PROM end      007f:ffff
-PROM checksum 7a646aa4
+PROM checksum 7a6469cb
 
         Addr1        Addr2                     Date File(s)
-    0000:0000    0005:327b     Mar 07 12:42:09 2020 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit
+    0000:0000    0005:327b     Mar 12 14:37:55 2020 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit

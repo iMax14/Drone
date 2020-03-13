@@ -35,10 +35,10 @@ entity CMD_motors is
 			  mosi : in  STD_LOGIC;
            sclk : in  STD_LOGIC;
            ssel : in  STD_LOGIC;
-           motor_1 : out  STD_LOGIC;
-			  motor_2 : out  STD_LOGIC;
-           motor_3 : out  STD_LOGIC;
-           motor_4 : out  STD_LOGIC);
+           motor_av_g : out  STD_LOGIC;
+			  motor_av_d : out  STD_LOGIC;
+           motor_ar_g : out  STD_LOGIC;
+           motor_ar_d : out  STD_LOGIC);
 end CMD_motors;
 
 architecture Behavioral of CMD_motors is
@@ -161,10 +161,10 @@ PWM_4: pwm
 			 pwm_out => pwm_M4_inter
 			);
 			
-motor_1 <= pwm_M1_inter;
-motor_2 <= pwm_M2_inter;
-motor_3 <= pwm_M3_inter;
-motor_4 <= pwm_M4_inter;
+motor_av_g <= pwm_M1_inter;
+motor_av_d <= pwm_M2_inter;
+motor_ar_g <= pwm_M3_inter;
+motor_ar_d <= pwm_M4_inter;
 
 end Behavioral;
 

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: CMD_motors.prj
 
@@ -654,15 +654,15 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
 -------------------------------------------------------------------------
 Offset:              4.162ns (Levels of Logic = 1)
   Source:            PWM_1/pwm_out (FF)
-  Destination:       motor_1 (PAD)
+  Destination:       motor_av_g (PAD)
   Source Clock:      clk rising
 
-  Data Path: PWM_1/pwm_out to motor_1
+  Data Path: PWM_1/pwm_out to motor_av_g
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDC:C->Q              2   0.525   0.725  PWM_1/pwm_out (PWM_1/pwm_out)
-     OBUF:I->O                 2.912          motor_1_OBUF (motor_1)
+     OBUF:I->O                 2.912          motor_av_g_OBUF (motor_av_g)
     ----------------------------------------
     Total                      4.162ns (3.437ns logic, 0.725ns route)
                                        (82.6% logic, 17.4% route)
@@ -684,12 +684,12 @@ reset          |    5.115|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.13 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.31 secs
  
 --> 
 
-Total memory usage is 4465912 kilobytes
+Total memory usage is 4465880 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   50 (   0 filtered)

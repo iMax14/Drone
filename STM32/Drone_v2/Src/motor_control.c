@@ -52,13 +52,13 @@ FPGA_Result_t duty_moteurs(int id_moteur, int duty){
 			spiTxBuf[0] |= 0x02;
 			break;
 		case 1: //Moteur Avant droit
-			spiTxBuf[0] |= 0x07;
+			spiTxBuf[0] |= 0x06;
 			break;
 		case 2: //Moteur Arrière gauche
-			spiTxBuf[0] |= 0x0B;
+			spiTxBuf[0] |= 0x0A;
 			break;	
 		case 3: //Moteur Arrière droit
-			spiTxBuf[0] |= 0x0F;
+			spiTxBuf[0] |= 0x0E;
 			break;	
 		default:
 			break;

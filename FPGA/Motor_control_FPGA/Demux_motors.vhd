@@ -53,8 +53,8 @@ begin
 				duty_M1_inter <= "00000000000";	
 				duty_M2_inter <= "00000000000";
 				duty_M3_inter <= "00000000000";
-				duty_M4_inter <= "00000000000";			
-			elsif(rising_edge(clk)) then                                
+				duty_M4_inter <= "00000000000";	
+			elsif(rising_edge(clk)) then  
 				case sel is
 					  when "001" =>  duty_M1_inter <= duty;   
 					  when "010" =>  duty_M2_inter <= duty; 		  
@@ -67,7 +67,6 @@ begin
 				end case;
 			end if;
 	end process;
-
 	duty_M1 <= duty_M1_inter;
 	duty_M2 <= duty_M2_inter;
 	duty_M3 <= duty_M3_inter;

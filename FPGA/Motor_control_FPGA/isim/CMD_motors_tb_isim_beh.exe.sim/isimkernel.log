@@ -1,15 +1,15 @@
 Command line:
    CMD_motors_tb_isim_beh.exe
      -simmode  gui
-     -simrunnum  1
-     -socket  49873
+     -simrunnum  0
+     -socket  49692
 
-Sat Mar 07 12:37:02 2020
+Tue Mar 10 15:33:31 2020
 
 
- Elaboration Time: 0.078125 sec
+ Elaboration Time: 0.09375 sec
 
- Current Memory Usage: 5003.84 Meg
+ Current Memory Usage: 5003.85 Meg
 
  Total Signals          : 136
  Total Nets             : 283
@@ -20,9 +20,9 @@ Sat Mar 07 12:37:02 2020
  Total Traceable Variables  : 27
  Total Scalar Nets and Variables : 678
 
- Total Simulation Time: 18.2969 sec
+ Total Simulation Time: 10.6875 sec
 
- Current Memory Usage: 4689.27 Meg
+ Current Memory Usage: 5003.85 Meg
 
-Sat Mar 07 12:41:55 2020
+Tue Mar 10 15:33:57 2020
 

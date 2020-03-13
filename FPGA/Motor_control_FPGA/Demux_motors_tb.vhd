@@ -91,7 +91,7 @@ BEGIN
 		wait for clk_period/2;
    end process;
 	
-	reset <= '1';									-- Actif bas
+	reset <= '1','0' after 25us,'1' after 30us;									-- Actif bas
 	sel <= "001",									-- Motor 1
 			 "100" after 50us;					-- Motor 4
 			 

@@ -8,26 +8,5 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/CMD_motors_tb.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Decode_SPIpacket_tb.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/Demux_motors_tb.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/SPI_transceiver_tb.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/netgen/par/CMD_motors_timesim.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/netgen/par/PWM_generator_timesim.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/pwm_tb.vhd&quot; into library work</arg>
-</msg>
-
 </messages>
 

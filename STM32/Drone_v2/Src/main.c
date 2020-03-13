@@ -248,38 +248,45 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-	_status = 0; //L'initialisation des périphériques a été excécutée
 	
 	toggle_led(1); //Set Led jaune pendant l'initialisation
 
-/*Setup the registers of the MPU-6050 (500dfs / +/-8g) and start the gyro*/
+	//Setup the registers of the MPU-6050 (500dfs / +/-8g) and start the gyro
 	if(MPU6050_Init(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 		_status = 1; //MPU-6050 non détectée
 		Error_Handler();
 	}
-/*Calibration of the MPU-6050*/
+	//Calibration of the MPU-6050
 	if(MPU6050_Calibrate(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 		_status = 1; //MPU-6050 non détectée
 		Error_Handler();
 	}
 
-/*Activate Remote control captures*/
+	//Activate Remote control captures
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4); //PA11 --> CH4 receiver [yaw]
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1); //PA0  --> CH6 receiver [vrb]
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [vra]
-	HAL_Delay(2000); //Attendre 2 secondes le feedback de la télécommande
 	
-	if(cmd.throttle > 1100){
+	//Wait until the receiver is active.
+	while (cmd.throttle < 990 || cmd.roll < 990 || cmd.pitch < 990 || cmd.yaw < 990 || cmd.vrb < 990 || cmd.vra < 990){
+		_status = 2; //FlySky télécommande non détectée
+		Error_Handler();
+	}
+	
+	//Wait until the throtle is set to the lower position.
+	while (cmd.throttle < 990 || cmd.throttle > 1050)  {
 		_status = 3; //Throttle n'est pas dans la position la plus basse
 		Error_Handler();
 	}
 	
-/*Initialize SPI communication*/
+	//Initialize SPI communication
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
 	
+	_status = 0; //L'initialisation des périphériques a été excécutée
+
 	toggle_led(2); //Set Led verte à la fin de l'initialisation
 	
   /* USER CODE END 2 */
@@ -289,13 +296,25 @@ int main(void)
   while (1)
   {
 
-/*Read and Convert all the data from the MPU6050*/
+		//Read and Convert all the data from the MPU6050
 		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 			_status = 1; //MPU-6050 non détectée
 			Error_Handler();
 		}
 		
-		if(duty_moteurs(0,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){
+		if(duty_moteurs(0,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AV gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(1,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AV droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(2,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AR gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(3,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AR droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}

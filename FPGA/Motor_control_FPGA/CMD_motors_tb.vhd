@@ -46,10 +46,10 @@ ARCHITECTURE behavior OF CMD_motors_tb IS
          mosi : IN  std_logic;
          sclk : IN  std_logic;
          ssel : IN  std_logic;
-         motor_1 : OUT  std_logic;
-		   motor_2 : out  STD_LOGIC;
-		   motor_3 : out  STD_LOGIC;
-		   motor_4 : out  STD_LOGIC
+         motor_av_g : OUT  std_logic;
+		   motor_av_d : out  STD_LOGIC;
+		   motor_ar_g : out  STD_LOGIC;
+		   motor_ar_d : out  STD_LOGIC
         );
     END COMPONENT;
     
@@ -62,10 +62,10 @@ ARCHITECTURE behavior OF CMD_motors_tb IS
    signal ssel : std_logic := '0';
 
  	--Outputs
-   signal motor_1 : std_logic;
-   signal motor_2 : std_logic;
-   signal motor_3 : std_logic;
-   signal motor_4 : std_logic;
+   signal motor_av_g : std_logic;
+   signal motor_av_d : std_logic;
+   signal motor_ar_g : std_logic;
+   signal motor_ar_d : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 20 ns; --50MHz
@@ -79,10 +79,10 @@ BEGIN
           mosi => mosi,
           sclk => sclk,
           ssel => ssel,
-          motor_1 => motor_1,
-			 motor_2 => motor_2,
-          motor_3 => motor_3,
-          motor_4 => motor_4
+          motor_av_g => motor_av_g,
+			 motor_av_d => motor_av_d,
+          motor_ar_g => motor_ar_g,
+          motor_ar_d => motor_ar_d
 
         );
  
@@ -95,7 +95,7 @@ BEGIN
 		wait for clk_period/2;
    end process;
  
-  	reset <= '1';									-- Actif bas
+  	reset <= '1', '0' after 31000us;									-- Actif bas
 	mosi	<= '0', 
 				'1' after 100us, ----------PACKET 1---------- 
 				'1' after 110us, 

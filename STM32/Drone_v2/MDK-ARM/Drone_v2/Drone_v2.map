@@ -88,13 +88,12 @@ Section Cross References
     main.o(i.main) refers to mpu6050.o(i.MPU6050_Init) for MPU6050_Init
     main.o(i.main) refers to mpu6050.o(i.MPU6050_Calibrate) for MPU6050_Calibrate
     main.o(i.main) refers to stm32f3xx_hal_tim.o(i.HAL_TIM_IC_Start_IT) for HAL_TIM_IC_Start_IT
-    main.o(i.main) refers to stm32f3xx_hal.o(i.HAL_Delay) for HAL_Delay
     main.o(i.main) refers to stm32f3xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(i.main) refers to mpu6050.o(i.MPU6050_ReadConvert_Pitch_Roll) for MPU6050_ReadConvert_Pitch_Roll
     main.o(i.main) refers to motor_control.o(i.duty_moteurs) for duty_moteurs
     main.o(i.main) refers to main.o(i.Error_Handler) for Error_Handler
-    main.o(i.main) refers to main.o(.data) for .data
     main.o(i.main) refers to main.o(.bss) for .bss
+    main.o(i.main) refers to main.o(.data) for .data
     main.o(i.toggle_led) refers to stm32f3xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     main.o(i.toggle_led) refers to stm32f3xx_hal_gpio.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
     stm32f3xx_it.o(i.I2C1_ER_IRQHandler) refers to stm32f3xx_hal_i2c.o(i.HAL_I2C_ER_IRQHandler) for HAL_I2C_ER_IRQHandler
@@ -1638,21 +1637,21 @@ Image Symbol Table
     i.duty_moteurs                           0x080040f0   Section        0  motor_control.o(i.duty_moteurs)
     i.fabs                                   0x08004170   Section        0  fabs.o(i.fabs)
     i.main                                   0x08004188   Section        0  main.o(i.main)
-    i.sqrt                                   0x08004268   Section        0  sqrt.o(i.sqrt)
-    i.toggle_led                             0x080042d8   Section        0  main.o(i.toggle_led)
-    toggle_led                               0x080042d9   Thumb Code    90  main.o(i.toggle_led)
-    .constdata                               0x08004338   Section       32  stm32f3xx_hal_rcc.o(.constdata)
-    .constdata                               0x08004358   Section       16  system_stm32f3xx.o(.constdata)
-    .constdata                               0x08004368   Section       80  asin.o(.constdata)
-    pS                                       0x08004368   Data          48  asin.o(.constdata)
-    qS                                       0x08004398   Data          32  asin.o(.constdata)
-    .constdata                               0x080043b8   Section       48  cos_i.o(.constdata)
-    C                                        0x080043b8   Data          48  cos_i.o(.constdata)
-    .constdata                               0x080043e8   Section      200  rred.o(.constdata)
-    pio2s                                    0x080043e8   Data          48  rred.o(.constdata)
-    twooverpi                                0x08004418   Data         152  rred.o(.constdata)
-    .constdata                               0x080044b0   Section       40  sin_i.o(.constdata)
-    S                                        0x080044b0   Data          40  sin_i.o(.constdata)
+    i.sqrt                                   0x080042c4   Section        0  sqrt.o(i.sqrt)
+    i.toggle_led                             0x08004334   Section        0  main.o(i.toggle_led)
+    toggle_led                               0x08004335   Thumb Code    90  main.o(i.toggle_led)
+    .constdata                               0x08004394   Section       32  stm32f3xx_hal_rcc.o(.constdata)
+    .constdata                               0x080043b4   Section       16  system_stm32f3xx.o(.constdata)
+    .constdata                               0x080043c8   Section       80  asin.o(.constdata)
+    pS                                       0x080043c8   Data          48  asin.o(.constdata)
+    qS                                       0x080043f8   Data          32  asin.o(.constdata)
+    .constdata                               0x08004418   Section       48  cos_i.o(.constdata)
+    C                                        0x08004418   Data          48  cos_i.o(.constdata)
+    .constdata                               0x08004448   Section      200  rred.o(.constdata)
+    pio2s                                    0x08004448   Data          48  rred.o(.constdata)
+    twooverpi                                0x08004478   Data         152  rred.o(.constdata)
+    .constdata                               0x08004510   Section       40  sin_i.o(.constdata)
+    S                                        0x08004510   Data          40  sin_i.o(.constdata)
     .data                                    0x20000000   Section        4  mpu6050.o(.data)
     .data                                    0x20000004   Section        2  motor_control.o(.data)
     .data                                    0x20000008   Section        4  main.o(.data)
@@ -1846,13 +1845,13 @@ Image Symbol Table
     check_parity                             0x080040bd   Thumb Code    52  motor_control.o(i.check_parity)
     duty_moteurs                             0x080040f1   Thumb Code   118  motor_control.o(i.duty_moteurs)
     fabs                                     0x08004171   Thumb Code    24  fabs.o(i.fabs)
-    main                                     0x08004189   Thumb Code   214  main.o(i.main)
-    sqrt                                     0x08004269   Thumb Code   110  sqrt.o(i.sqrt)
-    aPLLMULFactorTable                       0x08004338   Data          16  stm32f3xx_hal_rcc.o(.constdata)
-    aPredivFactorTable                       0x08004348   Data          16  stm32f3xx_hal_rcc.o(.constdata)
-    AHBPrescTable                            0x08004358   Data          16  system_stm32f3xx.o(.constdata)
-    Region$$Table$$Base                      0x080044d8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080044f8   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08004189   Thumb Code   306  main.o(i.main)
+    sqrt                                     0x080042c5   Thumb Code   110  sqrt.o(i.sqrt)
+    aPLLMULFactorTable                       0x08004394   Data          16  stm32f3xx_hal_rcc.o(.constdata)
+    aPredivFactorTable                       0x080043a4   Data          16  stm32f3xx_hal_rcc.o(.constdata)
+    AHBPrescTable                            0x080043b4   Data          16  system_stm32f3xx.o(.constdata)
+    Region$$Table$$Base                      0x08004538   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08004558   Number         0  anon$$obj.o(Region$$Table)
     set_gyro_angles                          0x20000000   Data           4  mpu6050.o(.data)
     spiTxBuf                                 0x20000004   Data           2  motor_control.o(.data)
     _status                                  0x20000008   Data           4  main.o(.data)
@@ -1877,9 +1876,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004518, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004578, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000044f8, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004558, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2041,30 +2040,31 @@ Memory Map of the image
     0x080040bc   0x080040bc   0x00000034   Code   RO          167    i.check_parity      motor_control.o
     0x080040f0   0x080040f0   0x00000080   Code   RO          168    i.duty_moteurs      motor_control.o
     0x08004170   0x08004170   0x00000018   Code   RO         3381    i.fabs              m_wm.l(fabs.o)
-    0x08004188   0x08004188   0x000000e0   Code   RO          212    i.main              main.o
-    0x08004268   0x08004268   0x0000006e   Code   RO         3329    i.sqrt              m_wm.l(sqrt.o)
-    0x080042d6   0x080042d6   0x00000002   PAD
-    0x080042d8   0x080042d8   0x00000060   Code   RO          213    i.toggle_led        main.o
-    0x08004338   0x08004338   0x00000020   Data   RO         1139    .constdata          stm32f3xx_hal_rcc.o
-    0x08004358   0x08004358   0x00000010   Data   RO         3268    .constdata          system_stm32f3xx.o
-    0x08004368   0x08004368   0x00000050   Data   RO         3304    .constdata          m_wm.l(asin.o)
-    0x080043b8   0x080043b8   0x00000030   Data   RO         3363    .constdata          m_wm.l(cos_i.o)
-    0x080043e8   0x080043e8   0x000000c8   Data   RO         3391    .constdata          m_wm.l(rred.o)
-    0x080044b0   0x080044b0   0x00000028   Data   RO         3395    .constdata          m_wm.l(sin_i.o)
-    0x080044d8   0x080044d8   0x00000020   Data   RO         3440    Region$$Table       anon$$obj.o
+    0x08004188   0x08004188   0x0000013c   Code   RO          212    i.main              main.o
+    0x080042c4   0x080042c4   0x0000006e   Code   RO         3329    i.sqrt              m_wm.l(sqrt.o)
+    0x08004332   0x08004332   0x00000002   PAD
+    0x08004334   0x08004334   0x00000060   Code   RO          213    i.toggle_led        main.o
+    0x08004394   0x08004394   0x00000020   Data   RO         1139    .constdata          stm32f3xx_hal_rcc.o
+    0x080043b4   0x080043b4   0x00000010   Data   RO         3268    .constdata          system_stm32f3xx.o
+    0x080043c4   0x080043c4   0x00000004   PAD
+    0x080043c8   0x080043c8   0x00000050   Data   RO         3304    .constdata          m_wm.l(asin.o)
+    0x08004418   0x08004418   0x00000030   Data   RO         3363    .constdata          m_wm.l(cos_i.o)
+    0x08004448   0x08004448   0x000000c8   Data   RO         3391    .constdata          m_wm.l(rred.o)
+    0x08004510   0x08004510   0x00000028   Data   RO         3395    .constdata          m_wm.l(sin_i.o)
+    0x08004538   0x08004538   0x00000020   Data   RO         3440    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080044f8, Size: 0x00000610, Max: 0x00003000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004558, Size: 0x00000610, Max: 0x00003000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080044f8   0x00000004   Data   RW           17    .data               mpu6050.o
-    0x20000004   0x080044fc   0x00000002   Data   RW          169    .data               motor_control.o
-    0x20000006   0x080044fe   0x00000002   PAD
-    0x20000008   0x08004500   0x00000004   Data   RW          215    .data               main.o
-    0x2000000c   0x08004504   0x0000000c   Data   RW          976    .data               stm32f3xx_hal.o
-    0x20000018   0x08004510   0x00000004   Data   RW         3270    .data               system_stm32f3xx.o
-    0x2000001c   0x08004514   0x00000004   Data   RW         3421    .data               mc_w.l(errno.o)
+    0x20000000   0x08004558   0x00000004   Data   RW           17    .data               mpu6050.o
+    0x20000004   0x0800455c   0x00000002   Data   RW          169    .data               motor_control.o
+    0x20000006   0x0800455e   0x00000002   PAD
+    0x20000008   0x08004560   0x00000004   Data   RW          215    .data               main.o
+    0x2000000c   0x08004564   0x0000000c   Data   RW          976    .data               stm32f3xx_hal.o
+    0x20000018   0x08004570   0x00000004   Data   RW         3270    .data               system_stm32f3xx.o
+    0x2000001c   0x08004574   0x00000004   Data   RW         3421    .data               mc_w.l(errno.o)
     0x20000020        -       0x000001f0   Zero   RW          214    .bss                main.o
     0x20000210        -       0x00000400   Zero   RW            1    STACK               startup_stm32f303x8.o
 
@@ -2076,7 +2076,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1392         72          0          4        496       7082   main.o
+      1484         72          0          4        496       7138   main.o
        180         10          0          2          0       2381   motor_control.o
       1128        106          0          4          0     519918   mpu6050.o
         36          8        392          0       1024        844   startup_stm32f303x8.o
@@ -2096,9 +2096,9 @@ Image component sizes
         28          6         16          4          0       1155   system_stm32f3xx.o
 
     ----------------------------------------------------------------------
-     11726        514        472         28       1520     642802   Object Totals
+     11818        514        476         28       1520     642858   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        22          0          0          2          0          0   (incl. Padding)
+        22          0          4          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2163,15 +2163,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     16816        878        840         32       1520     635050   Grand Totals
-     16816        878        840         32       1520     635050   ELF Image Totals
-     16816        878        840         32          0          0   ROM Totals
+     16908        878        844         32       1520     635106   Grand Totals
+     16908        878        844         32       1520     635106   ELF Image Totals
+     16908        878        844         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                17656 (  17.24kB)
+    Total RO  Size (Code + RO Data)                17752 (  17.34kB)
     Total RW  Size (RW Data + ZI Data)              1552 (   1.52kB)
-    Total ROM Size (Code + RO Data + RW Data)      17688 (  17.27kB)
+    Total ROM Size (Code + RO Data + RW Data)      17784 (  17.37kB)
 
 ==============================================================================
 
