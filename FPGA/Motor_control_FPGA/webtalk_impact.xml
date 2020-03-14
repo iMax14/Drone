@@ -3,9 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Thu Mar 12 14:55:43 2020">
+<application name="impact" timeStamp="Sat Mar 14 23:02:50 2020">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="1c8929e9b1f94aad8a057adc6051b908"/>
+<property name="ProjectID" value="891903e39517447e9f137a226915b141"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
@@ -14,7 +14,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OS Name" value="Microsoft Windows NT (64 Bit)"/>
 <property name="User Lic. Info" value="211823609_0_0_762"/>
 </section>
-<section name="iMPACT One Step SVF File Mode" visible="true">
+<section name="iMPACT Boundary Scan Mode" visible="true">
 <item name="Chain Summary">
 <property name="Number of device" value="1"/>
 <property name="Number of Xilinx device" value="1"/>
@@ -25,9 +25,12 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="Part1" value="xc6slx9"/>
 <property name="Device1" value="SPI FLASH"/>
 <property name="Part1" value="M25P16"/>
+<property name="Data Width" value="x1"/>
 </item>
 <item name="Boundary Scan Operations Statistics">
-<property name="BSCAN Operation" value="Program -p 0 -spionly -e -v -loadfpga
+<property name="BSCAN Operation" value="Program -p 0
+"/>
+<property name="BSCAN Operation" value="Program -p 0 -dataWidth 1 -spionly -e -v -loadfpga
 "/>
 </item>
 <item name="Cable Summary">

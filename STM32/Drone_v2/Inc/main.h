@@ -61,12 +61,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define SPI1_SSEL_Pin GPIO_PIN_4
 #define SPI1_SSEL_GPIO_Port GPIOA
-#define LED_jaune_Pin GPIO_PIN_3
-#define LED_jaune_GPIO_Port GPIOB
-#define LED_rouge_Pin GPIO_PIN_4
-#define LED_rouge_GPIO_Port GPIOB
-#define LED_verte_Pin GPIO_PIN_5
+#define LED_verte_Pin GPIO_PIN_3
 #define LED_verte_GPIO_Port GPIOB
+#define LED_jaune_Pin GPIO_PIN_4
+#define LED_jaune_GPIO_Port GPIOB
+#define LED_rouge_Pin GPIO_PIN_5
+#define LED_rouge_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

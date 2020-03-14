@@ -1,8 +1,9 @@
 Storage Target: SPI Flash Single FPGA
 64M
 FF
-cmd_motors
+impact_v2
 C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\
 
 MCS
 No
+

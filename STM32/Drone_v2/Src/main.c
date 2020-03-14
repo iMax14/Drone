@@ -76,8 +76,6 @@ static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
-static void toggle_led(int id);
-
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -225,6 +223,7 @@ int main(void)
 
   /* USER CODE END 1 */
   
+
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -270,14 +269,10 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1); //PA0  --> CH6 receiver [vrb]
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [vra]
 	
-	//Wait until the receiver is active.
-	while (cmd.throttle < 990 || cmd.roll < 990 || cmd.pitch < 990 || cmd.yaw < 990 || cmd.vrb < 990 || cmd.vra < 990){
-		_status = 2; //FlySky télécommande non détectée
-		Error_Handler();
-	}
+	HAL_Delay(2000);
 	
 	//Wait until the throtle is set to the lower position.
-	while (cmd.throttle < 990 || cmd.throttle > 1050)  {
+	if(cmd.throttle < 990 || cmd.throttle > 1050)  {
 		_status = 3; //Throttle n'est pas dans la position la plus basse
 		Error_Handler();
 	}
@@ -586,7 +581,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED_jaune_Pin|LED_rouge_Pin|LED_verte_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_verte_Pin|LED_jaune_Pin|LED_rouge_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : SPI1_SSEL_Pin */
   GPIO_InitStruct.Pin = SPI1_SSEL_Pin;
@@ -595,8 +590,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(SPI1_SSEL_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_jaune_Pin LED_rouge_Pin LED_verte_Pin */
-  GPIO_InitStruct.Pin = LED_jaune_Pin|LED_rouge_Pin|LED_verte_Pin;
+  /*Configure GPIO pins : LED_verte_Pin LED_jaune_Pin LED_rouge_Pin */
+  GPIO_InitStruct.Pin = LED_verte_Pin|LED_jaune_Pin|LED_rouge_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -626,7 +621,7 @@ void Error_Handler(void)
 *		4 : FPGA non détecté 
 */		
 		toggle_led(0);
-		HAL_Delay(_status*500);
+		HAL_Delay(_status*250);
 	
 	
 	}

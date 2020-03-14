@@ -8,11 +8,11 @@ NET reset CLOCK_DEDICATED_ROUTE = FALSE;
 ##
 
 ########KEY Pin define#####################
-NET mosi             LOC = A4  | IOSTANDARD = "LVCMOS33";       ## Pin 3 J3
-NET sclk             LOC = A5  | IOSTANDARD = "LVCMOS33";       ## Pin 5 J3
-NET ssel             LOC = A6  | IOSTANDARD = "LVCMOS33";       ## Pin 7 J3
+NET mosi             LOC = T15  | IOSTANDARD = "LVCMOS33";       ## Pin 3 J3
+NET sclk             LOC = R12  | IOSTANDARD = "LVCMOS33";       ## Pin 5 J3
+NET ssel             LOC = R9   | IOSTANDARD = "LVCMOS33";       ## Pin 7 J3
 
-NET motor_av_g       LOC = H16 | IOSTANDARD = "LVCMOS33";       ## Pin 3 J2
-NET motor_av_d       LOC = K16 | IOSTANDARD = "LVCMOS33";       ## Pin 5 J2
-NET motor_ar_g       LOC = B5 | IOSTANDARD = "LVCMOS33";        ## Pin 7 J2
-NET motor_ar_d       LOC = M5 | IOSTANDARD = "LVCMOS33";        ## Pin 9 J2
+NET motor_av_g       LOC = B5  | IOSTANDARD = "LVCMOS33";       ## Pin 3 J2
+NET motor_av_d       LOC = M5  | IOSTANDARD = "LVCMOS33";       ## Pin 5 J2
+NET motor_ar_g       LOC = H15 | IOSTANDARD = "LVCMOS33";        ## Pin 7 J2
+NET motor_ar_d       LOC = K16 | IOSTANDARD = "LVCMOS33";        ## Pin 9 J2

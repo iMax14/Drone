@@ -1,16 +1,16 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Mar 12 14:37:24 2020
+// Written by: Map P.20131013 on Sat Mar 14 21:03:54 2020
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "T8" LEVEL 1;
-COMP "sclk" LOCATE = SITE "A5" LEVEL 1;
-COMP "mosi" LOCATE = SITE "A4" LEVEL 1;
-COMP "ssel" LOCATE = SITE "A6" LEVEL 1;
-COMP "motor_ar_d" LOCATE = SITE "M5" LEVEL 1;
-COMP "motor_ar_g" LOCATE = SITE "B5" LEVEL 1;
-COMP "motor_av_d" LOCATE = SITE "K16" LEVEL 1;
-COMP "motor_av_g" LOCATE = SITE "H16" LEVEL 1;
+COMP "sclk" LOCATE = SITE "R12" LEVEL 1;
+COMP "mosi" LOCATE = SITE "T15" LEVEL 1;
+COMP "ssel" LOCATE = SITE "R9" LEVEL 1;
+COMP "motor_ar_d" LOCATE = SITE "K16" LEVEL 1;
+COMP "motor_ar_g" LOCATE = SITE "H15" LEVEL 1;
+COMP "motor_av_d" LOCATE = SITE "M5" LEVEL 1;
+COMP "motor_av_g" LOCATE = SITE "B5" LEVEL 1;
 COMP "reset" LOCATE = SITE "L3" LEVEL 1;
 PIN reset_pin<0> = BEL "reset" PINNAME PAD;
 PIN "reset_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;

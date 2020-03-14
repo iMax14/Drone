@@ -1,9 +1,9 @@
 PROMGEN: Xilinx Prom Generator P.20131013
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-promgen -w -p mcs -c FF -o C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\//cmd_motors -s 8192 -u 0 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit -spi 
+promgen -w -p mcs -c FF -o C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\//impact_v2 -s 8192 -u 0000 C:/Users/Maxime/Documents/Drone/FPGA/Motor_control_FPGA/cmd_motors.bit -spi 
 
-PROM C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\cmd_motors.prm map: Sat Mar 14 22:41:11 2020
+PROM C:\Users\Maxime\Documents\Drone\FPGA\Motor_control_FPGA\impact_v2.prm map: Sat Mar 14 22:43:59 2020
 
 Calculating PROM checksum with fill value ff
 
