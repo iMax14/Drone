@@ -75,12 +75,14 @@ typedef struct _TM_MPU6050_t {
 	int16_t Gyroscope_Z;     /*!< Gyroscope value Z axis */
 	float Temperature;       /*!< Temperature in degrees */
 	
-	long gyro_x_cal, gyro_y_cal, gyro_z_cal,acc_total_vector;
-	double angle_pitch, angle_roll;
-	double angle_roll_acc, angle_pitch_acc;
-	double angle_pitch_output, angle_roll_output;
+	float gyro_pitch_input,gyro_roll_input,gyro_yaw_input;
+	long gyro_x_cal, gyro_y_cal, gyro_z_cal;
+	float roll_level_adjust, pitch_level_adjust;
 
 	
+	double angle_pitch, angle_roll;
+	double angle_roll_acc, angle_pitch_acc;
+
 } TM_MPU6050_t;
 
 

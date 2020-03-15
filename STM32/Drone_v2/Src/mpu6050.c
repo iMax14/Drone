@@ -180,32 +180,38 @@ TM_MPU6050_Result_t MPU6050_Calibrate(TM_MPU6050_t* DataStruct, TM_MPU6050_Devic
 }
 
 TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t DeviceNumber) {
+	long acc_total_vector;
 	
 	if (MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok) {	
 		/* Return error */
 		return TM_MPU6050_Result_Error;
 	}
-	
+
 	MPU6050.Gyroscope_X -= MPU6050.gyro_x_cal;                        //Subtract the offset calibration value from the raw gyro_x value
 	MPU6050.Gyroscope_Y -= MPU6050.gyro_y_cal;                        //Subtract the offset calibration value from the raw gyro_y value
 	MPU6050.Gyroscope_Z -= MPU6050.gyro_z_cal;                        //Subtract the offset calibration value from the raw gyro_z value	
 
+	//65.5 = 1 deg/sec (check the datasheet of the MPU-6050 for more information).
+  MPU6050.gyro_roll_input = (MPU6050.gyro_roll_input * 0.7) + (((float)MPU6050.Gyroscope_X / 65.5) * 0.3);   		//Gyro pid input is deg/sec.
+  MPU6050.gyro_pitch_input = (MPU6050.gyro_pitch_input * 0.7) + (((float)MPU6050.Gyroscope_Y / 65.5) * 0.3);		//Gyro pid input is deg/sec.
+  MPU6050.gyro_yaw_input = (MPU6050.gyro_yaw_input * 0.7) + (((float)MPU6050.Gyroscope_Z / 65.5) * 0.3);      		//Gyro pid input is deg/sec.
+	
 /*Gyro angle calculations*/
 		
 	//0.0000611 = 1 / (250Hz / 65.5)
-	MPU6050.angle_pitch += MPU6050.Gyroscope_X * 0.0000611;                                   //Calculate the traveled pitch angle and add this to the angle_pitch variable
-	MPU6050.angle_roll += MPU6050.Gyroscope_Y * 0.0000611;                                    //Calculate the traveled roll angle and add this to the angle_roll variable
-	
+	MPU6050.angle_pitch += MPU6050.Gyroscope_Y * 0.0000611;                                   //Calculate the traveled pitch angle and add this to the angle_pitch variable
+	MPU6050.angle_roll  += MPU6050.Gyroscope_X * 0.0000611;                                   //Calculate the traveled roll angle and add this to the angle_roll variable
+
 	//0.000001066 = 0.0000611 * (3.142(PI) / 180degr) The Arduino sin function is in radians
-	MPU6050.angle_pitch += MPU6050.angle_roll * sin(MPU6050.Gyroscope_Z * 0.000001066);               //If the IMU has yawed transfer the roll angle to the pitch angel
-	MPU6050.angle_roll -= MPU6050.angle_pitch * sin(MPU6050.Gyroscope_Z * 0.000001066);               //If the IMU has yawed transfer the pitch angle to the roll angel
-	
+	MPU6050.angle_pitch -= MPU6050.angle_roll * sin(MPU6050.Gyroscope_Z * 0.000001066);               //If the IMU has yawed transfer the roll angle to the pitch angel
+	MPU6050.angle_roll += MPU6050.angle_pitch * sin(MPU6050.Gyroscope_Z * 0.000001066);               //If the IMU has yawed transfer the pitch angle to the roll angel
+
 /*Accelerometer angle calculations*/
 		
-	MPU6050.acc_total_vector = sqrt((MPU6050.Accelerometer_X*MPU6050.Accelerometer_X)+(MPU6050.Accelerometer_Y*MPU6050.Accelerometer_Y)+(MPU6050.Accelerometer_Z*MPU6050.Accelerometer_Z));  //Calculate the total accelerometer vector
+	acc_total_vector = sqrt((MPU6050.Accelerometer_X*MPU6050.Accelerometer_X)+(MPU6050.Accelerometer_Y*MPU6050.Accelerometer_Y)+(MPU6050.Accelerometer_Z*MPU6050.Accelerometer_Z));  //Calculate the total accelerometer vector
 	//57.296 = 1 / (3.142 / 180) The Arduino asin function is in radians
-	MPU6050.angle_pitch_acc = asin((float)MPU6050.Accelerometer_Y/MPU6050.acc_total_vector)* 57.296;       //Calculate the pitch angle
-	MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/MPU6050.acc_total_vector)* -57.296;       //Calculate the roll angle
+	MPU6050.angle_pitch_acc = asin((float)MPU6050.Accelerometer_Y/acc_total_vector)* 57.296;       //Calculate the pitch angle
+	MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/acc_total_vector)* -57.296;       //Calculate the roll angle
 	
 /*Place the MPU-6050 spirit level and note the values in the following two lines for calibration*/
 
@@ -222,10 +228,9 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 		set_gyro_angles = 0;                                               //Set the IMU started flag
 	}
 	
-/*To dampen the pitch and roll angles a complementary filter is used*/
-	
-	MPU6050.angle_pitch_output = MPU6050.angle_pitch_output * 0.9 + MPU6050.angle_pitch * 0.1;   //Take 90% of the output pitch value and add 10% of the raw pitch value
-	MPU6050.angle_roll_output = MPU6050.angle_roll_output * 0.9 + MPU6050.angle_roll * 0.1;      //Take 90% of the output roll value and add 10% of the raw roll value
+	MPU6050.pitch_level_adjust = MPU6050.angle_pitch * 15;                                           //Calculate the pitch angle correction.
+  MPU6050.roll_level_adjust = MPU6050.angle_roll * 15;                                             //Calculate the roll angle correction.
+
 	
 	HAL_Delay(5);
 	

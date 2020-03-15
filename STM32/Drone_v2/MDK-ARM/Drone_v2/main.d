@@ -35,3 +35,4 @@ drone_v2\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 drone_v2\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 drone_v2\main.o: ../Inc/mpu6050.h
 drone_v2\main.o: ../Inc/motor_control.h
+drone_v2\main.o: ../Inc/pid_controller.h

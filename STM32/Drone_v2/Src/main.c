@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "mpu6050.h"
 #include "motor_control.h"
+#include "pid_controller.h"
 
 /* USER CODE END Includes */
 
@@ -51,6 +52,8 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
+extern uint8_t start; //FSM
+
 int _status = 2; //Par défaut : FlySky télécommande non détectée
 TM_MPU6050_t MPU6050;
 struct Input_captures{
@@ -64,9 +67,10 @@ struct Remote{
 	int32_t pitch;
 	int32_t throttle;
 	int32_t yaw;
-	int32_t vrb;
-	int32_t vra;
 }cmd;
+extern int16_t esc_1, esc_2, esc_3, esc_4;
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -130,13 +134,15 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 				values.is_First_Captured[2] = 0;
 			}		
 		}
-		else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_4){
+	}
+	else if(htim->Instance == TIM2){
+		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2){
 			if (values.is_First_Captured[3] == 0){
-				values.capt1[3] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_4);
+				values.capt1[3] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
 				values.is_First_Captured[3] = 1;
 			}
 			else if (values.is_First_Captured[3]){
-				values.capt2[3] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_4);
+				values.capt2[3] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
 				cmd.yaw = values.capt2[3] - values.capt1[3];
 				
 				if (cmd.yaw < 0){
@@ -146,38 +152,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 			}		
 		}
 	}
-	else if(htim->Instance == TIM2){
-		if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){
-			if (values.is_First_Captured[4] == 0){
-				values.capt1[4] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-				values.is_First_Captured[4] = 1;
-			}
-			else if (values.is_First_Captured[4]){
-				values.capt2[4] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_1);
-				cmd.vrb = values.capt2[4] - values.capt1[4];
-				
-				if (cmd.vrb < 0){
-					cmd.vrb += 0xFFFF;
-				}
-				values.is_First_Captured[4] = 0;
-			}
-		}
-		else if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2){
-			if (values.is_First_Captured[5] == 0){
-				values.capt1[5] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
-				values.is_First_Captured[5] = 1;
-			}
-			else if (values.is_First_Captured[5]){
-				values.capt2[5] = HAL_TIM_ReadCapturedValue(htim, TIM_CHANNEL_2);
-				cmd.vra = values.capt2[5] - values.capt1[5];
-				
-				if (cmd.vra < 0){
-					cmd.vra += 0xFFFF;
-				}
-				values.is_First_Captured[5] = 0;
-			}
-		}
-	}
+		
 	
 }
 
@@ -265,11 +240,20 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_4); //PA11 --> CH4 receiver [yaw]
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_1); //PA0  --> CH6 receiver [vrb]
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [vra]
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [yaw]
 	
 	HAL_Delay(2000);
+	
+	//Wait until the receiver is active.
+  if(cmd.pitch < 990 || cmd.roll < 990 || cmd.throttle < 990 || cmd.yaw < 990)  {
+		_status = 2; //FlySky télécommande non détectée
+		Error_Handler();
+  }
+	//Wait until the receiver is active.
+  if(cmd.pitch > 1990 || cmd.roll > 1990 || cmd.throttle > 1990 || cmd.yaw > 1990)  {
+		_status = 2; //FlySky télécommande non détectée
+		Error_Handler();
+  }
 	
 	//Wait until the throtle is set to the lower position.
 	if(cmd.throttle < 990 || cmd.throttle > 1050)  {
@@ -290,26 +274,29 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
 		//Read and Convert all the data from the MPU6050
 		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 			_status = 1; //MPU-6050 non détectée
 			Error_Handler();
 		}
 		
-		if(duty_moteurs(0,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AV gauche
+		init_pid();
+		calculate_pid();                                                                 //PID inputs are known. So we can calculate the pid output.
+		cmd_motors();
+
+		if(duty_moteurs(0,(esc_1 - 1000)/20) != FPGA_Result_Ok){ //Moteur AV gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(1,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AV droit
+		if(duty_moteurs(1,(esc_2 - 1000)/20) != FPGA_Result_Ok){ //Moteur AV droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(2,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AR gauche
+		if(duty_moteurs(2,(esc_3 - 1000)/20) != FPGA_Result_Ok){ //Moteur AR gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(3,(cmd.throttle - 1000)/20) != FPGA_Result_Ok){ //Moteur AR droit
+		if(duty_moteurs(3,(esc_4 - 1000)/20) != FPGA_Result_Ok){ //Moteur AR droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
@@ -503,10 +490,6 @@ static void MX_TIM1_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_IC_ConfigChannel(&htim1, &sConfigIC, TIM_CHANNEL_4) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM1_Init 2 */
   /* USER CODE END TIM1_Init 2 */
 
@@ -550,10 +533,6 @@ static void MX_TIM2_Init(void)
   sConfigIC.ICSelection = TIM_ICSELECTION_DIRECTTI;
   sConfigIC.ICPrescaler = TIM_ICPSC_DIV1;
   sConfigIC.ICFilter = 0;
-  if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
   if (HAL_TIM_IC_ConfigChannel(&htim2, &sConfigIC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();

@@ -2,6 +2,7 @@
 "drone_v2\startup_stm32f303x8.o"
 "drone_v2\mpu6050.o"
 "drone_v2\motor_control.o"
+"drone_v2\pid_controller.o"
 "drone_v2\main.o"
 "drone_v2\stm32f3xx_it.o"
 "drone_v2\stm32f3xx_hal_msp.o"
