@@ -52,8 +52,6 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
-extern uint8_t start; //FSM
-
 int _status = 2; //Par défaut : FlySky télécommande non détectée
 TM_MPU6050_t MPU6050;
 struct Input_captures{
@@ -69,7 +67,7 @@ struct Remote{
 	int32_t yaw;
 }cmd;
 extern int16_t esc_1, esc_2, esc_3, esc_4;
-
+int duty;
 
 /* USER CODE END PV */
 
@@ -243,7 +241,7 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [yaw]
 	
 	HAL_Delay(2000);
-	
+
 	//Wait until the receiver is active.
   if(cmd.pitch < 990 || cmd.roll < 990 || cmd.throttle < 990 || cmd.yaw < 990)  {
 		_status = 2; //FlySky télécommande non détectée
@@ -260,7 +258,7 @@ int main(void)
 		_status = 3; //Throttle n'est pas dans la position la plus basse
 		Error_Handler();
 	}
-	
+
 	//Initialize SPI communication
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
 	
@@ -279,7 +277,25 @@ int main(void)
 			_status = 1; //MPU-6050 non détectée
 			Error_Handler();
 		}
+		duty = (cmd.throttle - 1010)/10; // Convert 1000-2000 to 0-99
+		if(duty_moteurs(0,duty) != FPGA_Result_Ok){ //Moteur AV gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AV droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AR gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(3,duty) != FPGA_Result_Ok){ //Moteur AR droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}	
 		
+/*		
 		init_pid();
 		calculate_pid();                                                                 //PID inputs are known. So we can calculate the pid output.
 		cmd_motors();
@@ -300,6 +316,8 @@ int main(void)
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
+*/
+		
 
     /* USER CODE END WHILE */
 

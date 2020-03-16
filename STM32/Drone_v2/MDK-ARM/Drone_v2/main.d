@@ -34,5 +34,6 @@ drone_v2\main.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h
 drone_v2\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 drone_v2\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 drone_v2\main.o: ../Inc/mpu6050.h
+drone_v2\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 drone_v2\main.o: ../Inc/motor_control.h
 drone_v2\main.o: ../Inc/pid_controller.h

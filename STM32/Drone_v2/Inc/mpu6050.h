@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -70,14 +72,15 @@ typedef struct _TM_MPU6050_t {
 	int16_t Accelerometer_X; /*!< Accelerometer value X axis */
 	int16_t Accelerometer_Y; /*!< Accelerometer value Y axis */
 	int16_t Accelerometer_Z; /*!< Accelerometer value Z axis */
-	int16_t Gyroscope_X;     /*!< Gyroscope value X axis */
-	int16_t Gyroscope_Y;     /*!< Gyroscope value Y axis */
-	int16_t Gyroscope_Z;     /*!< Gyroscope value Z axis */
+	int16_t Gyroscope_roll;     /*!< Gyroscope value X axis */
+	int16_t Gyroscope_pitch;     /*!< Gyroscope value Y axis */
+	int16_t Gyroscope_yaw;     /*!< Gyroscope value Z axis */
+	double gyro_roll_cal, gyro_pitch_cal, gyro_yaw_cal;
+
 	float Temperature;       /*!< Temperature in degrees */
 	
-	float gyro_pitch_input,gyro_roll_input,gyro_yaw_input;
-	long gyro_x_cal, gyro_y_cal, gyro_z_cal;
-	float roll_level_adjust, pitch_level_adjust;
+	double gyro_pitch_input,gyro_roll_input,gyro_yaw_input;
+	double roll_level_adjust, pitch_level_adjust;
 
 	
 	double angle_pitch, angle_roll;
