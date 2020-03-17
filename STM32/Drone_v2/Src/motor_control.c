@@ -74,9 +74,7 @@ FPGA_Result_t duty_moteurs(int id_moteur, int duty){
 		return FPGA_Result_Error;
 	}
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET); //Disable communication
-	
-	HAL_Delay(10);
-	
+		
 	/* Return OK */
 	return FPGA_Result_Ok;
 }

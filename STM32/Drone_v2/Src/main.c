@@ -240,20 +240,18 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
 	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [yaw]
 	
-	HAL_Delay(2000);
+	HAL_Delay(2000); //Wait until the receiver is active
 
-	//Wait until the receiver is active.
   if(cmd.pitch < 990 || cmd.roll < 990 || cmd.throttle < 990 || cmd.yaw < 990)  {
 		_status = 2; //FlySky télécommande non détectée
 		Error_Handler();
   }
-	//Wait until the receiver is active.
   if(cmd.pitch > 1990 || cmd.roll > 1990 || cmd.throttle > 1990 || cmd.yaw > 1990)  {
 		_status = 2; //FlySky télécommande non détectée
 		Error_Handler();
   }
 	
-	//Wait until the throtle is set to the lower position.
+	//Wait until the throttle is set to the lower position.
 	if(cmd.throttle < 990 || cmd.throttle > 1050)  {
 		_status = 3; //Throttle n'est pas dans la position la plus basse
 		Error_Handler();
@@ -277,16 +275,18 @@ int main(void)
 			_status = 1; //MPU-6050 non détectée
 			Error_Handler();
 		}
-		duty = (cmd.throttle - 1010)/10; // Convert 1000-2000 to 0-99
+		
+/*  Commandes moteurs en Boucle ouverte
+		duty = (cmd.throttle - 1010)/10; // Convert [1000-2000] (us) to [0-99] (%)
 		if(duty_moteurs(0,duty) != FPGA_Result_Ok){ //Moteur AV gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AV droit
+		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AR gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AR gauche
+		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AV Droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
@@ -294,31 +294,33 @@ int main(void)
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}	
-		
-/*		
-		init_pid();
-		calculate_pid();                                                                 //PID inputs are known. So we can calculate the pid output.
-		cmd_motors();
-
-		if(duty_moteurs(0,(esc_1 - 1000)/20) != FPGA_Result_Ok){ //Moteur AV gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(1,(esc_2 - 1000)/20) != FPGA_Result_Ok){ //Moteur AV droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(2,(esc_3 - 1000)/20) != FPGA_Result_Ok){ //Moteur AR gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(3,(esc_4 - 1000)/20) != FPGA_Result_Ok){ //Moteur AR droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
 */
 		
 
+
+// Commandes moteurs en Boucle fermée (PID)
+		init_pid();
+		calculate_pid();//PID inputs are known. So we can calculate the pid output.
+		cmd_motors();
+		
+		if(duty_moteurs(0,(esc_4 - 1010)/10) != FPGA_Result_Ok){ //Moteur AV gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(1,(esc_3 - 1010)/10) != FPGA_Result_Ok){ //Moteur AR gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(2,(esc_1 - 1010)/10) != FPGA_Result_Ok){ //Moteur AV Droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(3,(esc_2 - 1010)/10) != FPGA_Result_Ok){ //Moteur AR droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+
+		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

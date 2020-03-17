@@ -100,17 +100,24 @@ TM_MPU6050_Result_t MPU6050_Init(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t D
 		return TM_MPU6050_Result_Error;
 	}
 	
-	temp = 0x10;
-	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_ACCEL_CONFIG,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Configure the accelerometer (+/-8g)
-		/* Return error */
-		return TM_MPU6050_Result_Error;
-	}
-			
 	temp = 0x08;
 	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_GYRO_CONFIG,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Configure the gyro (500dps full scale
 		/* Return error */
 		return TM_MPU6050_Result_Error;
 	}
+	
+	temp = 0x10;
+	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_ACCEL_CONFIG,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Configure the accelerometer (+/-8g)
+		/* Return error */
+		return TM_MPU6050_Result_Error;
+	}
+	
+	temp = 0x13;
+	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_CONFIG,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Configure Digital Low Pass Filter to ~43Hz)
+		/* Return error */
+		return TM_MPU6050_Result_Error;
+	}	
+
 	
 	  /* Enable the selected SPI peripheral */
   __HAL_SPI_ENABLE(&hspi1);
@@ -137,8 +144,8 @@ TM_MPU6050_Result_t MPU6050_ReadAll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
 	}
 
 	/* Format accelerometer data */
-	DataStruct->Accelerometer_X = (int16_t)(data[0] << 8 | data[1]);	
-	DataStruct->Accelerometer_Y = (int16_t)(data[2] << 8 | data[3]);
+	DataStruct->Accelerometer_Y = (int16_t)(data[0] << 8 | data[1]);	
+	DataStruct->Accelerometer_X = (int16_t)(data[2] << 8 | data[3]);
 	DataStruct->Accelerometer_Z = (int16_t)(data[4] << 8 | data[5]);
 
 	/* Format temperature */
@@ -227,9 +234,7 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 	MPU6050.pitch_level_adjust = MPU6050.angle_pitch * 15;                                           //Calculate the pitch angle correction.
   MPU6050.roll_level_adjust = MPU6050.angle_roll * 15;                                             //Calculate the roll angle correction.
 
-	
-	HAL_Delay(5);
-	
+		
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }
