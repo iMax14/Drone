@@ -90,6 +90,7 @@ typedef struct _TM_MPU6050_t {
 
 
 
+
 /**
  * @defgroup TM_MPU6050_Functions
  * @brief    Library Functions

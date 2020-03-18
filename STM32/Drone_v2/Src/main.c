@@ -273,28 +273,32 @@ int main(void)
 		//Read and Convert all the data from the MPU6050
 		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 			_status = 1; //MPU-6050 non détectée
+			duty_moteurs(0,0);
+			duty_moteurs(1,0);
+			duty_moteurs(2,0);
+			duty_moteurs(3,0);
 			Error_Handler();
 		}
 		
-/*  Commandes moteurs en Boucle ouverte
-		duty = (cmd.throttle - 1010)/10; // Convert [1000-2000] (us) to [0-99] (%)
-		if(duty_moteurs(0,duty) != FPGA_Result_Ok){ //Moteur AV gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AR gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AV Droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(3,duty) != FPGA_Result_Ok){ //Moteur AR droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}	
-*/
+//  Commandes moteurs en Boucle ouverte
+//		duty = (cmd.throttle - 1010)/10; // Convert [1000-2000] (us) to [0-99] (%)
+//		if(duty_moteurs(0,duty) != FPGA_Result_Ok){ //Moteur AV gauche
+//			_status = 4; //FPGA non détectée
+//			Error_Handler();
+//		}
+//		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AR gauche
+//			_status = 4; //FPGA non détectée
+//			Error_Handler();
+//		}
+//		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AV Droit
+//			_status = 4; //FPGA non détectée
+//			Error_Handler();
+//		}
+//		if(duty_moteurs(3,duty) != FPGA_Result_Ok){ //Moteur AR droit
+//			_status = 4; //FPGA non détectée
+//			Error_Handler();
+//		}	
+
 		
 
 
@@ -303,19 +307,19 @@ int main(void)
 		calculate_pid();//PID inputs are known. So we can calculate the pid output.
 		cmd_motors();
 		
-		if(duty_moteurs(0,(esc_4 - 1010)/10) != FPGA_Result_Ok){ //Moteur AV gauche
+		if(duty_moteurs(0,(esc_4 - 1010)/20) != FPGA_Result_Ok){ //Moteur AV gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(1,(esc_3 - 1010)/10) != FPGA_Result_Ok){ //Moteur AR gauche
+		if(duty_moteurs(1,(esc_3 - 1010)/20) != FPGA_Result_Ok){ //Moteur AR gauche
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(2,(esc_1 - 1010)/10) != FPGA_Result_Ok){ //Moteur AV Droit
+		if(duty_moteurs(2,(esc_1 - 1010)/20) != FPGA_Result_Ok){ //Moteur AV Droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}
-		if(duty_moteurs(3,(esc_2 - 1010)/10) != FPGA_Result_Ok){ //Moteur AR droit
+		if(duty_moteurs(3,(esc_2 - 1010)/20) != FPGA_Result_Ok){ //Moteur AR droit
 			_status = 4; //FPGA non détectée
 			Error_Handler();
 		}

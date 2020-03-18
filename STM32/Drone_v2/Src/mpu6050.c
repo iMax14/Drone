@@ -82,6 +82,10 @@ int set_gyro_angles = 1;
 #define MPU6050_ACCE_SENS_8			((float) 4096)
 #define MPU6050_ACCE_SENS_16		((float) 2048)
 
+//Manual accelerometer calibration values for IMU angles:
+int16_t manual_acc_pitch_cal_value = 0;
+int16_t manual_acc_roll_cal_value = 0;
+
 extern SPI_HandleTypeDef hspi1;
 
 
@@ -196,10 +200,12 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 		/* Return error */
 		return TM_MPU6050_Result_Error;
 	}
-
-	MPU6050.Gyroscope_roll  -= MPU6050.gyro_roll_cal;      //Subtract the offset calibration value from the raw gyro_x value
-	MPU6050.Gyroscope_pitch -= MPU6050.gyro_pitch_cal;     //Subtract the offset calibration value from the raw gyro_y value
-	MPU6050.Gyroscope_yaw   -= MPU6050.gyro_yaw_cal;       //Subtract the offset calibration value from the raw gyro_z value	
+	
+	DataStruct->Accelerometer_X -= manual_acc_pitch_cal_value;//Subtact the manual accelerometer pitch calibration value.
+	DataStruct->Accelerometer_Y -= manual_acc_roll_cal_value; //Subtact the manual accelerometer roll calibration value.
+	MPU6050.Gyroscope_roll  -= MPU6050.gyro_roll_cal;         //Subtract the offset calibration value from the raw gyro_x value
+	MPU6050.Gyroscope_pitch -= MPU6050.gyro_pitch_cal;        //Subtract the offset calibration value from the raw gyro_y value
+	MPU6050.Gyroscope_yaw   -= MPU6050.gyro_yaw_cal;          //Subtract the offset calibration value from the raw gyro_z value	
 
 	//65.5 = 1 deg/sec (check the datasheet of the MPU-6050 for more information).
   MPU6050.gyro_roll_input = (MPU6050.gyro_roll_input * 0.7) + (((double) MPU6050.Gyroscope_roll / 65.5) * 0.3);   		//Gyro pid input is deg/sec.
@@ -224,7 +230,7 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 		MPU6050.angle_pitch_acc = asin((float)MPU6050.Accelerometer_Y/acc_total_vector)* 57.296;       //Calculate the pitch angle
   }
   if (abs(MPU6050.Accelerometer_X) < acc_total_vector) {                                             //Prevent the asin function to produce a NaN.
-		MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/acc_total_vector)* -57.296;       //Calculate the roll angle
+		MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/acc_total_vector)* 57.296;       //Calculate the roll angle
   }
 	
 	MPU6050.angle_pitch = MPU6050.angle_pitch * 0.9996 + MPU6050.angle_pitch_acc * 0.0004;     //Correct the drift of the gyro pitch angle with the accelerometer pitch angle

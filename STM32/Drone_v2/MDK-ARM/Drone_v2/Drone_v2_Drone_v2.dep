@@ -1,7 +1,7 @@
 Dependencies for Project 'Drone_v2', Target 'Drone_v2': (DO NOT MODIFY !)
 F (startup_stm32f303x8.s)(0x5E6E475C)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "STM32F303x8 SETA 1"--list startup_stm32f303x8.lst --xref -o drone_v2\startup_stm32f303x8.o --depend drone_v2\startup_stm32f303x8.d)
-F (..\Src\mpu6050.c)(0x5E710065)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\mpu6050.o --omf_browse drone_v2\mpu6050.crf --depend drone_v2\mpu6050.d)
-I (../Inc/mpu6050.h)(0x5E6EA8C1)
+F (..\Src\mpu6050.c)(0x5E72968A)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\mpu6050.o --omf_browse drone_v2\mpu6050.crf --depend drone_v2\mpu6050.d)
+I (../Inc/mpu6050.h)(0x5E725918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (../Inc/main.h)(0x5E6E4757)
@@ -106,9 +106,9 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (../Inc/mpu6050.h)(0x5E6EA8C1)
+I (../Inc/mpu6050.h)(0x5E725918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
-F (../Src/main.c)(0x5E711476)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\main.o --omf_browse drone_v2\main.crf --depend drone_v2\main.d)
+F (../Src/main.c)(0x5E72976E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\main.o --omf_browse drone_v2\main.crf --depend drone_v2\main.d)
 I (../Inc/main.h)(0x5E6E4757)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
 I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
@@ -142,7 +142,7 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (../Inc/mpu6050.h)(0x5E6EA8C1)
+I (../Inc/mpu6050.h)(0x5E725918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
 I (../Inc/motor_control.h)(0x5E66685A)
 I (../Inc/pid_controller.h)(0x5E6E3A77)
