@@ -51,6 +51,8 @@ SPI_HandleTypeDef hspi1;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 
+UART_HandleTypeDef huart2;
+
 /* USER CODE BEGIN PV */
 int _status = 2; //Par défaut : FlySky télécommande non détectée
 TM_MPU6050_t MPU6050;
@@ -66,8 +68,6 @@ struct Remote{
 	int32_t throttle;
 	int32_t yaw;
 }cmd;
-extern int16_t esc_1, esc_2, esc_3, esc_4;
-int duty;
 
 /* USER CODE END PV */
 
@@ -78,12 +78,28 @@ static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
+#ifdef __GNUC__
+	#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+	#define PUTCHAR_PROTOTYPE int fputc(int ch,FILE *f)
+#endif
+
 
 /* USER CODE END PFP */
+PUTCHAR_PROTOTYPE{
 
+	HAL_UART_Transmit(&huart2,(uint8_t *) &ch,1,0xFFFF);
+
+	return ch;
+
+}
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+	
+	
+
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 	
 	if(htim->Instance == TIM1){
@@ -219,6 +235,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 	
 	toggle_led(1); //Set Led jaune pendant l'initialisation
@@ -238,7 +255,7 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
 	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH5 receiver [yaw]
+	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH4 receiver [yaw]
 	
 	HAL_Delay(2000); //Wait until the receiver is active
 
@@ -259,7 +276,7 @@ int main(void)
 
 	//Initialize SPI communication
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
-	
+
 	_status = 0; //L'initialisation des périphériques a été excécutée
 
 	toggle_led(2); //Set Led verte à la fin de l'initialisation
@@ -273,56 +290,17 @@ int main(void)
 		//Read and Convert all the data from the MPU6050
 		if(MPU6050_ReadConvert_Pitch_Roll(&MPU6050, TM_MPU6050_Device_0) != TM_MPU6050_Result_Ok){
 			_status = 1; //MPU-6050 non détectée
-			duty_moteurs(0,0);
-			duty_moteurs(1,0);
-			duty_moteurs(2,0);
-			duty_moteurs(3,0);
+			run_moteurs(5); //Stop ALL motors
 			Error_Handler();
 		}
 		
-//  Commandes moteurs en Boucle ouverte
-//		duty = (cmd.throttle - 1010)/10; // Convert [1000-2000] (us) to [0-99] (%)
-//		if(duty_moteurs(0,duty) != FPGA_Result_Ok){ //Moteur AV gauche
-//			_status = 4; //FPGA non détectée
-//			Error_Handler();
-//		}
-//		if(duty_moteurs(1,duty) != FPGA_Result_Ok){ //Moteur AR gauche
-//			_status = 4; //FPGA non détectée
-//			Error_Handler();
-//		}
-//		if(duty_moteurs(2,duty) != FPGA_Result_Ok){ //Moteur AV Droit
-//			_status = 4; //FPGA non détectée
-//			Error_Handler();
-//		}
-//		if(duty_moteurs(3,duty) != FPGA_Result_Ok){ //Moteur AR droit
-//			_status = 4; //FPGA non détectée
-//			Error_Handler();
-//		}	
-
-		
-
+// Commandes moteurs en Boucle ouverte
+//		check_motor_vibrations(4); 
 
 // Commandes moteurs en Boucle fermée (PID)
 		init_pid();
 		calculate_pid();//PID inputs are known. So we can calculate the pid output.
 		cmd_motors();
-		
-		if(duty_moteurs(0,(esc_4 - 1010)/20) != FPGA_Result_Ok){ //Moteur AV gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(1,(esc_3 - 1010)/20) != FPGA_Result_Ok){ //Moteur AR gauche
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(2,(esc_1 - 1010)/20) != FPGA_Result_Ok){ //Moteur AV Droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
-		if(duty_moteurs(3,(esc_2 - 1010)/20) != FPGA_Result_Ok){ //Moteur AR droit
-			_status = 4; //FPGA non détectée
-			Error_Handler();
-		}
 
 		
     /* USER CODE END WHILE */
@@ -564,6 +542,41 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
 
 }
 

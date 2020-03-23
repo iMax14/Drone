@@ -1,12 +1,12 @@
 Dependencies for Project 'Drone_v2', Target 'Drone_v2': (DO NOT MODIFY !)
-F (startup_stm32f303x8.s)(0x5E6E475C)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "STM32F303x8 SETA 1"--list startup_stm32f303x8.lst --xref -o drone_v2\startup_stm32f303x8.o --depend drone_v2\startup_stm32f303x8.d)
-F (..\Src\mpu6050.c)(0x5E72968A)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\mpu6050.o --omf_browse drone_v2\mpu6050.crf --depend drone_v2\mpu6050.d)
-I (../Inc/mpu6050.h)(0x5E725918)
+F (startup_stm32f303x8.s)(0x5E74DE3E)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1" --pd "STM32F303x8 SETA 1"--list startup_stm32f303x8.lst --xref -o drone_v2\startup_stm32f303x8.o --depend drone_v2\startup_stm32f303x8.d)
+F (..\Src\mpu6050.c)(0x5E77ACBA)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\mpu6050.o --omf_browse drone_v2\mpu6050.crf --depend drone_v2\mpu6050.d)
+I (../Inc/mpu6050.h)(0x5E77A231)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
-I (../Inc/main.h)(0x5E6E4757)
+I (../Inc/main.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -35,12 +35,14 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-F (..\Src\motor_control.c)(0x5E710F1A)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\motor_control.o --omf_browse drone_v2\motor_control.crf --depend drone_v2\motor_control.d)
-I (../Inc/motor_control.h)(0x5E66685A)
-I (../Inc/main.h)(0x5E6E4757)
+F (..\Src\motor_control.c)(0x5E7655DB)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\motor_control.o --omf_browse drone_v2\motor_control.crf --depend drone_v2\motor_control.d)
+I (../Inc/motor_control.h)(0x5E74F0AF)
+I (../Inc/main.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -69,49 +71,17 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-F (..\Src\pid_controller.c)(0x5E6EAD80)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\pid_controller.o --omf_browse drone_v2\pid_controller.crf --depend drone_v2\pid_controller.d)
-I (../Inc/pid_controller.h)(0x5E6E3A77)
-I (../Inc/main.h)(0x5E6E4757)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h)(0x5E0230CC)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x5E0230D4)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5E0230D4)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5E0230D4)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5E0230D4)
-I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x5E0230CC)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_exti.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
-I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
-I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (../Inc/mpu6050.h)(0x5E725918)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
-F (../Src/main.c)(0x5E72976E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\main.o --omf_browse drone_v2\main.crf --depend drone_v2\main.d)
-I (../Inc/main.h)(0x5E6E4757)
+I (../Inc/mpu6050.h)(0x5E77A231)
+F (..\Src\pid_controller.c)(0x5E77AC3E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\pid_controller.o --omf_browse drone_v2\pid_controller.crf --depend drone_v2\pid_controller.d)
+I (../Inc/pid_controller.h)(0x5E74D612)
+I (../Inc/main.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -140,16 +110,17 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (../Inc/mpu6050.h)(0x5E725918)
+I (../Inc/mpu6050.h)(0x5E77A231)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
-I (../Inc/motor_control.h)(0x5E66685A)
-I (../Inc/pid_controller.h)(0x5E6E3A77)
-F (../Src/stm32f3xx_it.c)(0x5E6E4757)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_it.o --omf_browse drone_v2\stm32f3xx_it.crf --depend drone_v2\stm32f3xx_it.d)
-I (../Inc/main.h)(0x5E6E4757)
+I (../Inc/motor_control.h)(0x5E74F0AF)
+F (../Src/main.c)(0x5E77A20E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\main.o --omf_browse drone_v2\main.crf --depend drone_v2\main.d)
+I (../Inc/main.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -178,13 +149,18 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (../Inc/stm32f3xx_it.h)(0x5E6E4757)
-F (../Src/stm32f3xx_hal_msp.c)(0x5E6E4757)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_msp.o --omf_browse drone_v2\stm32f3xx_hal_msp.crf --depend drone_v2\stm32f3xx_hal_msp.d)
-I (../Inc/main.h)(0x5E6E4757)
+I (../Inc/mpu6050.h)(0x5E77A231)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEBCE42)
+I (../Inc/motor_control.h)(0x5E74F0AF)
+I (../Inc/pid_controller.h)(0x5E74D612)
+F (../Src/stm32f3xx_it.c)(0x5E74DE37)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_it.o --omf_browse drone_v2\stm32f3xx_it.crf --depend drone_v2\stm32f3xx_it.d)
+I (../Inc/main.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -213,11 +189,50 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
+I (../Inc/stm32f3xx_it.h)(0x5E74DE37)
+F (../Src/stm32f3xx_hal_msp.c)(0x5E74DE37)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_msp.o --omf_browse drone_v2\stm32f3xx_hal_msp.crf --depend drone_v2\stm32f3xx_hal_msp.d)
+I (../Inc/main.h)(0x5E74DE37)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x5E0230D4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x5E0230CC)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_exti.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5CEBCE36)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_i2c.o --omf_browse drone_v2\stm32f3xx_hal_i2c.crf --depend drone_v2\stm32f3xx_hal_i2c.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -246,9 +261,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_i2c_ex.o --omf_browse drone_v2\stm32f3xx_hal_i2c_ex.crf --depend drone_v2\stm32f3xx_hal_i2c_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -277,9 +294,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal.o --omf_browse drone_v2\stm32f3xx_hal.crf --depend drone_v2\stm32f3xx_hal.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -308,9 +327,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_rcc.o --omf_browse drone_v2\stm32f3xx_hal_rcc.crf --depend drone_v2\stm32f3xx_hal_rcc.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -339,9 +360,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_rcc_ex.o --omf_browse drone_v2\stm32f3xx_hal_rcc_ex.crf --depend drone_v2\stm32f3xx_hal_rcc_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -370,9 +393,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_gpio.o --omf_browse drone_v2\stm32f3xx_hal_gpio.crf --depend drone_v2\stm32f3xx_hal_gpio.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -401,9 +426,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_dma.o --omf_browse drone_v2\stm32f3xx_hal_dma.crf --depend drone_v2\stm32f3xx_hal_dma.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -432,9 +459,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_cortex.o --omf_browse drone_v2\stm32f3xx_hal_cortex.crf --depend drone_v2\stm32f3xx_hal_cortex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -463,9 +492,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_pwr.o --omf_browse drone_v2\stm32f3xx_hal_pwr.crf --depend drone_v2\stm32f3xx_hal_pwr.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -494,9 +525,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_pwr_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_pwr_ex.o --omf_browse drone_v2\stm32f3xx_hal_pwr_ex.crf --depend drone_v2\stm32f3xx_hal_pwr_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -525,9 +558,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_flash.o --omf_browse drone_v2\stm32f3xx_hal_flash.crf --depend drone_v2\stm32f3xx_hal_flash.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -556,9 +591,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_flash_ex.o --omf_browse drone_v2\stm32f3xx_hal_flash_ex.crf --depend drone_v2\stm32f3xx_hal_flash_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -587,9 +624,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_exti.o --omf_browse drone_v2\stm32f3xx_hal_exti.crf --depend drone_v2\stm32f3xx_hal_exti.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -618,9 +657,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_spi.o --omf_browse drone_v2\stm32f3xx_hal_spi.crf --depend drone_v2\stm32f3xx_hal_spi.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -649,9 +690,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_spi_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_spi_ex.o --omf_browse drone_v2\stm32f3xx_hal_spi_ex.crf --depend drone_v2\stm32f3xx_hal_spi_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -680,9 +723,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_tim.o --omf_browse drone_v2\stm32f3xx_hal_tim.crf --depend drone_v2\stm32f3xx_hal_tim.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -711,9 +756,11 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
 F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_tim_ex.o --omf_browse drone_v2\stm32f3xx_hal_tim_ex.crf --depend drone_v2\stm32f3xx_hal_tim_ex.d)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
@@ -742,7 +789,75 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
-F (../Src/system_stm32f3xx.c)(0x5E0230CC)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\system_stm32f3xx.o --omf_browse drone_v2\system_stm32f3xx.crf --depend drone_v2\system_stm32f3xx.d)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
+F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_uart.o --omf_browse drone_v2\stm32f3xx_hal_uart.crf --depend drone_v2\stm32f3xx_hal_uart.d)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x5E0230D4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x5E0230CC)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_exti.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
+F (../Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.c)(0x5E0230D5)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\stm32f3xx_hal_uart_ex.o --omf_browse drone_v2\stm32f3xx_hal_uart_ex.crf --depend drone_v2\stm32f3xx_hal_uart_ex.d)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h)(0x5E0230CC)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x5E0230D4)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5E0230D4)
+I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x5E0230CC)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_gpio_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_exti.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_dma_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_cortex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_flash_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_i2c_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_pwr_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)
+F (../Src/system_stm32f3xx.c)(0x5E74D617)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Drone_v2-IC:\Users\Maxime\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include-IC:\Users\Maxime\AppData\Local\Arm\Packs\Keil\STM32F3xx_DFP\2.1.0\Drivers\CMSIS\Device\ST\STM32F3xx\Include-D__UVISION_VERSION="528" -D_RTE_ -DSTM32F303x8 -DUSE_HAL_DRIVER -DSTM32F303x8-o drone_v2\system_stm32f3xx.o --omf_browse drone_v2\system_stm32f3xx.crf --depend drone_v2\system_stm32f3xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f3xx.h)(0x5E0230CC)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/stm32f303x8.h)(0x5E0230CC)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x5E0230D4)
@@ -752,7 +867,7 @@ I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x5E0230D4)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5E0230D4)
 I (../Drivers/CMSIS/Device/ST/STM32F3xx/Include/system_stm32f3xx.h)(0x5E0230CC)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h)(0x5E0230D5)
-I (../Inc/stm32f3xx_hal_conf.h)(0x5E6E4757)
+I (../Inc/stm32f3xx_hal_conf.h)(0x5E74DE37)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_def.h)(0x5E0230D5)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
@@ -773,3 +888,5 @@ I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h)(0x5E0230D5)
 I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h)(0x5E0230D5)
+I (../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h)(0x5E0230D5)

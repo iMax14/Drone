@@ -31,6 +31,8 @@ drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi.h
 drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_spi_ex.h
 drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim.h
 drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h
+drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h
+drone_v2\stm32f3xx_it.o: ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h
 drone_v2\stm32f3xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 drone_v2\stm32f3xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 drone_v2\stm32f3xx_it.o: ../Inc/stm32f3xx_it.h

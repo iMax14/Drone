@@ -23,6 +23,8 @@
 "drone_v2\stm32f3xx_hal_spi_ex.o"
 "drone_v2\stm32f3xx_hal_tim.o"
 "drone_v2\stm32f3xx_hal_tim_ex.o"
+"drone_v2\stm32f3xx_hal_uart.o"
+"drone_v2\stm32f3xx_hal_uart_ex.o"
 "drone_v2\system_stm32f3xx.o"
 --library_type=microlib --strict --scatter "Drone_v2\Drone_v2.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

@@ -76,6 +76,7 @@ typedef struct _TM_MPU6050_t {
 	int16_t Gyroscope_pitch;     /*!< Gyroscope value Y axis */
 	int16_t Gyroscope_yaw;     /*!< Gyroscope value Z axis */
 	double gyro_roll_cal, gyro_pitch_cal, gyro_yaw_cal;
+	double acc_roll_cal, acc_pitch_cal;
 
 	float Temperature;       /*!< Temperature in degrees */
 	
@@ -85,6 +86,10 @@ typedef struct _TM_MPU6050_t {
 	
 	double angle_pitch, angle_roll;
 	double angle_roll_acc, angle_pitch_acc;
+
+	double angle_pitch_output, angle_roll_output;
+
+	int32_t vibrations;
 
 } TM_MPU6050_t;
 

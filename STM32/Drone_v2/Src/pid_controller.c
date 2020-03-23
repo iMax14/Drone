@@ -1,7 +1,8 @@
 #include "pid_controller.h"
 #include "mpu6050.h"
+#include "motor_control.h"
 
-uint8_t start; //FSM
+uint8_t start = 0; //FSM
 double pid_error_temp;
 double pid_i_mem_roll, pid_roll_setpoint, gyro_roll_input, pid_output_roll, pid_last_roll_d_error;
 double pid_i_mem_pitch, pid_pitch_setpoint, gyro_pitch_input, pid_output_pitch, pid_last_pitch_d_error;
@@ -24,9 +25,14 @@ float pid_i_gain_yaw = 0.02;               //Gain setting for the pitch I-contro
 float pid_d_gain_yaw = 0.0;                //Gain setting for the pitch D-controller (default = 0.0).
 int pid_max_yaw = 400;                     //Maximum output of the PID-controller (+/-).
 
-int16_t throttle,esc_1, esc_2, esc_3, esc_4;
+int16_t throttle;
+int16_t esc_1 = 1000;
+int16_t esc_2 = 1000;
+int16_t esc_3 = 1000;
+int16_t esc_4 = 1000;
 
 extern TM_MPU6050_t MPU6050;
+extern int _status;
 
 extern struct Remote{
 	int32_t roll;
@@ -36,15 +42,16 @@ extern struct Remote{
 }cmd;
 
 void init_pid(void){
-//For starting the motors: throttle low and yaw left (step 1).
-		if(cmd.throttle < 1050 || cmd.yaw < 1050)  {
-			start = 1;
-		}
-		//When yaw stick is back in the center position start the motors (step 2).
-		if (start == 1 && cmd.throttle < 1050 && cmd.yaw > 1450) {
+	
+////////////////STEP 1//////////////////////
+		if(cmd.throttle < 1050 && cmd.yaw < 1050) start = 1;//For starting the motors: throttle low and yaw left
+
+	
+////////////////STEP 2//////////////////////
+		if (start == 1 && cmd.throttle < 1050 && cmd.yaw > 1450){//When yaw stick is back in the center position start the motors
 			start = 2;
-			MPU6050.angle_pitch = MPU6050.angle_pitch_acc;                                                 //Set the gyro pitch angle equal to the accelerometer pitch angle when the quadcopter is started.
-			MPU6050.angle_roll = MPU6050.angle_roll_acc;                                                   //Set the gyro roll angle equal to the accelerometer roll angle when the quadcopter is started.
+			MPU6050.angle_pitch = MPU6050.angle_pitch_output;                               //Set the gyro pitch angle equal to the accelerometer pitch angle when the quadcopter is started.
+			MPU6050.angle_roll = MPU6050.angle_roll_output;                                 //Set the gyro roll angle equal to the accelerometer roll angle when the quadcopter is started.
 			
 			//Reset the PID controllers for a bumpless start.
 			pid_i_mem_roll = 0;
@@ -54,11 +61,9 @@ void init_pid(void){
 			pid_i_mem_yaw = 0;
 			pid_last_yaw_d_error = 0;
 		}
-		//Stopping the motors: throttle low and yaw right.
-		if (start == 2 && cmd.throttle < 1050 && cmd.yaw  > 1950) {
-			start = 0;
-		}
 		
+		if (start == 2 && cmd.throttle < 1050 && cmd.yaw  > 1950) start = 0;//Stopping the motors: throttle low and yaw right.
+
 		//The PID set point in degrees per second is determined by the roll receiver input.
 		//In the case of deviding by 3 the max roll rate is aprox 164 degrees per second ( (500-8)/3 = 164d/s ).
 		pid_roll_setpoint = 0;
@@ -66,7 +71,7 @@ void init_pid(void){
 		if (cmd.roll > 1508)pid_roll_setpoint = cmd.roll - 1508;
 		else if (cmd.roll < 1492)pid_roll_setpoint = cmd.roll - 1492;
 
-		pid_roll_setpoint -= MPU6050.roll_level_adjust;                                          //Subtract the angle correction from the standardized receiver roll input value.
+		pid_roll_setpoint -= MPU6050.roll_level_adjust;                                  //Subtract the angle correction from the standardized receiver roll input value.
 		pid_roll_setpoint /= 3.0;                                                        //Divide the setpoint for the PID roll controller by 3 to get angles in degrees.
 
 
@@ -77,7 +82,7 @@ void init_pid(void){
 		if (cmd.pitch > 1508)pid_pitch_setpoint = cmd.pitch - 1508;
 		else if (cmd.pitch < 1492)pid_pitch_setpoint = cmd.pitch - 1492;
 
-		pid_pitch_setpoint -= MPU6050.pitch_level_adjust;                                        //Subtract the angle correction from the standardized receiver pitch input value.
+		pid_pitch_setpoint -= MPU6050.pitch_level_adjust;                                //Subtract the angle correction from the standardized receiver pitch input value.
 		pid_pitch_setpoint /= 3.0;                                        
 		
 
@@ -90,6 +95,7 @@ void init_pid(void){
 			else if (cmd.yaw < 1492)pid_yaw_setpoint = (cmd.yaw - 1492) / 3.0;
 		}
 }
+
 
 void calculate_pid(void){
   //Roll calculations
@@ -129,31 +135,50 @@ void calculate_pid(void){
   pid_last_yaw_d_error = pid_error_temp;
 }
 
+
+
 void cmd_motors(void){
 		throttle = cmd.throttle;                                                         //We need the throttle signal as a base signal.
 		if (start == 2) {                                                                //The motors are started.
 				if (throttle > 1800) throttle = 1800;                                          //We need some room to keep full control at full throttle.
-					esc_1 = throttle - pid_output_pitch + pid_output_roll - pid_output_yaw;        //Calculate the pulse for esc 1 (front-right - CCW).
-					esc_2 = throttle + pid_output_pitch + pid_output_roll + pid_output_yaw;        //Calculate the pulse for esc 2 (rear-right - CW).
-					esc_3 = throttle + pid_output_pitch - pid_output_roll - pid_output_yaw;        //Calculate the pulse for esc 3 (rear-left - CCW).
-					esc_4 = throttle - pid_output_pitch - pid_output_roll + pid_output_yaw;        //Calculate the pulse for esc 4 (front-left - CW).
+				esc_1 = throttle - pid_output_pitch + pid_output_roll - pid_output_yaw;        //Calculate the pulse for esc 1 (front-right - CCW).
+				esc_2 = throttle + pid_output_pitch + pid_output_roll + pid_output_yaw;        //Calculate the pulse for esc 2 (rear-right - CW).
+				esc_3 = throttle + pid_output_pitch - pid_output_roll - pid_output_yaw;        //Calculate the pulse for esc 3 (rear-left - CCW).
+				esc_4 = throttle - pid_output_pitch - pid_output_roll + pid_output_yaw;        //Calculate the pulse for esc 4 (front-left - CW).
 
-					if (esc_1 < 1100) esc_1 = 1100;                                                //Keep the motors running.
-					if (esc_2 < 1100) esc_2 = 1100;                                                //Keep the motors running.
-					if (esc_3 < 1100) esc_3 = 1100;                                                //Keep the motors running.
-					if (esc_4 < 1100) esc_4 = 1100;                                                //Keep the motors running.
+				if (esc_1 < 1100) esc_1 = 1100;                                                //Keep the motors running.
+				if (esc_2 < 1100) esc_2 = 1100;                                                //Keep the motors running.
+				if (esc_3 < 1100) esc_3 = 1100;                                                //Keep the motors running.
+				if (esc_4 < 1100) esc_4 = 1100;                                                //Keep the motors running.
 
-					if (esc_1 > 2000)esc_1 = 2000;                                                 //Limit the esc-1 pulse to 2000us.
-					if (esc_2 > 2000)esc_2 = 2000;                                                 //Limit the esc-2 pulse to 2000us.
-					if (esc_3 > 2000)esc_3 = 2000;                                                 //Limit the esc-3 pulse to 2000us.
-					if (esc_4 > 2000)esc_4 = 2000;                                                 //Limit the esc-4 pulse to 2000us.
-				}
-				else {
-					esc_1 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-1.
-					esc_2 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-2.
-					esc_3 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-3.
-					esc_4 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-4.
-				}
+				if (esc_1 > 2000)esc_1 = 2000;                                                 //Limit the esc-1 pulse to 2000us.
+				if (esc_2 > 2000)esc_2 = 2000;                                                 //Limit the esc-2 pulse to 2000us.
+				if (esc_3 > 2000)esc_3 = 2000;                                                 //Limit the esc-3 pulse to 2000us.
+				if (esc_4 > 2000)esc_4 = 2000;                                                 //Limit the esc-4 pulse to 2000us.
+		}
+		else {
+			esc_1 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-1.
+			esc_2 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-2.
+			esc_3 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-3.
+			esc_4 = 1000;                                                                  //If start is not 2 keep a 1000us pulse for ess-4.
+		}
+				
+		if(duty_moteurs(0,(esc_4 - 1000)/10) != FPGA_Result_Ok){ //Moteur AV gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(1,(esc_3 - 1000)/10) != FPGA_Result_Ok){ //Moteur AR gauche
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(2,(esc_1 - 1000)/10) != FPGA_Result_Ok){ //Moteur AV Droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
+		if(duty_moteurs(3,(esc_2 - 1000)/10) != FPGA_Result_Ok){ //Moteur AR droit
+			_status = 4; //FPGA non détectée
+			Error_Handler();
+		}
 
 }
 

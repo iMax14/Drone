@@ -82,10 +82,6 @@ int set_gyro_angles = 1;
 #define MPU6050_ACCE_SENS_8			((float) 4096)
 #define MPU6050_ACCE_SENS_16		((float) 2048)
 
-//Manual accelerometer calibration values for IMU angles:
-int16_t manual_acc_pitch_cal_value = 0;
-int16_t manual_acc_roll_cal_value = 0;
-
 extern SPI_HandleTypeDef hspi1;
 
 
@@ -116,7 +112,7 @@ TM_MPU6050_Result_t MPU6050_Init(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_t D
 		return TM_MPU6050_Result_Error;
 	}
 	
-	temp = 0x13;
+	temp = 0x03;
 	if (HAL_I2C_Mem_Write(&hi2c1,DataStruct->Address ,MPU6050_CONFIG,1,&temp,1,HAL_MAX_DELAY) != HAL_OK) {//Configure Digital Low Pass Filter to ~43Hz)
 		/* Return error */
 		return TM_MPU6050_Result_Error;
@@ -148,8 +144,8 @@ TM_MPU6050_Result_t MPU6050_ReadAll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
 	}
 
 	/* Format accelerometer data */
-	DataStruct->Accelerometer_Y = (int16_t)(data[0] << 8 | data[1]);	
-	DataStruct->Accelerometer_X = (int16_t)(data[2] << 8 | data[3]);
+	DataStruct->Accelerometer_X = (int16_t)(data[0] << 8 | data[1]);	
+	DataStruct->Accelerometer_Y = (int16_t)(data[2] << 8 | data[3]);
 	DataStruct->Accelerometer_Z = (int16_t)(data[4] << 8 | data[5]);
 
 	/* Format temperature */
@@ -163,7 +159,6 @@ TM_MPU6050_Result_t MPU6050_ReadAll(TM_MPU6050_t* DataStruct, TM_MPU6050_Device_
 	DataStruct->Gyroscope_pitch *= -1;
 	DataStruct->Gyroscope_yaw *= -1;
 	
-
 	  /* Enable the selected SPI peripheral */
   __HAL_SPI_ENABLE(&hspi1);
 	
@@ -177,17 +172,20 @@ TM_MPU6050_Result_t MPU6050_Calibrate(TM_MPU6050_t* DataStruct, TM_MPU6050_Devic
 			/* Return error */
 			return TM_MPU6050_Result_Error;
 		}
-		MPU6050_ReadAll(&MPU6050, TM_MPU6050_Device_0);                 //Read the raw acc and gyro data from the MPU-6050
-		MPU6050.gyro_roll_cal  += MPU6050.Gyroscope_roll;                         //Add the gyro x-axis offset to the gyro_x_cal variable
-		MPU6050.gyro_pitch_cal += MPU6050.Gyroscope_pitch;                         //Add the gyro y-axis offset to the gyro_y_cal variable
-		MPU6050.gyro_yaw_cal   += MPU6050.Gyroscope_yaw;                         //Add the gyro z-axis offset to the gyro_z_cal variable
-		
-		HAL_Delay(1);
+
+		MPU6050.gyro_roll_cal  += MPU6050.Gyroscope_roll;               //Add the gyro x-axis offset to the gyro_x_cal variable
+		MPU6050.gyro_pitch_cal += MPU6050.Gyroscope_pitch;              //Add the gyro y-axis offset to the gyro_y_cal variable
+		MPU6050.gyro_yaw_cal   += MPU6050.Gyroscope_yaw;                //Add the gyro z-axis offset to the gyro_z_cal variable
+		MPU6050.acc_roll_cal   += MPU6050.Accelerometer_X;              //Add the gyro y-axis offset to the gyro_y_cal variable
+		MPU6050.acc_pitch_cal  += MPU6050.Accelerometer_Y;                //Add the gyro z-axis offset to the gyro_z_cal variable
+		HAL_Delay(3);
 	}
 	
   MPU6050.gyro_roll_cal  /= 2000;                                          //Divide the gyro_x_cal variable by 2000 to get the avarage offset
   MPU6050.gyro_pitch_cal /= 2000;                                          //Divide the gyro_y_cal variable by 2000 to get the avarage offset
   MPU6050.gyro_yaw_cal   /= 2000;                                          //Divide the gyro_z_cal variable by 2000 to get the avarage offset
+	MPU6050.acc_roll_cal   /= 2000;                                          //Divide the gyro_y_cal variable by 2000 to get the avarage offset
+  MPU6050.acc_pitch_cal  /= 2000;                                          //Divide the gyro_z_cal variable by 2000 to get the avarage offset
 	
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
@@ -201,13 +199,14 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 		return TM_MPU6050_Result_Error;
 	}
 	
-	DataStruct->Accelerometer_X -= manual_acc_pitch_cal_value;//Subtact the manual accelerometer pitch calibration value.
-	DataStruct->Accelerometer_Y -= manual_acc_roll_cal_value; //Subtact the manual accelerometer roll calibration value.
+	DataStruct->Accelerometer_X -= MPU6050.acc_roll_cal;      //Subtact the manual accelerometer pitch calibration value.
+	DataStruct->Accelerometer_Y -= MPU6050.acc_pitch_cal;     //Subtact the manual accelerometer roll calibration value.
 	MPU6050.Gyroscope_roll  -= MPU6050.gyro_roll_cal;         //Subtract the offset calibration value from the raw gyro_x value
 	MPU6050.Gyroscope_pitch -= MPU6050.gyro_pitch_cal;        //Subtract the offset calibration value from the raw gyro_y value
 	MPU6050.Gyroscope_yaw   -= MPU6050.gyro_yaw_cal;          //Subtract the offset calibration value from the raw gyro_z value	
 
-	//65.5 = 1 deg/sec (check the datasheet of the MPU-6050 for more information).
+
+//	//65.5 = 1 deg/sec (check the datasheet of the MPU-6050 for more information).
   MPU6050.gyro_roll_input = (MPU6050.gyro_roll_input * 0.7) + (((double) MPU6050.Gyroscope_roll / 65.5) * 0.3);   		//Gyro pid input is deg/sec.
   MPU6050.gyro_pitch_input = (MPU6050.gyro_pitch_input * 0.7) + (((double) MPU6050.Gyroscope_pitch / 65.5) * 0.3);		//Gyro pid input is deg/sec.
   MPU6050.gyro_yaw_input = (MPU6050.gyro_yaw_input * 0.7) + (((double) MPU6050.Gyroscope_yaw / 65.5) * 0.3);      		//Gyro pid input is deg/sec.
@@ -219,8 +218,8 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 	MPU6050.angle_roll  += MPU6050.Gyroscope_roll * 0.0000611;                                   //Calculate the traveled roll angle and add this to the angle_roll variable
 
 	//0.000001066 = 0.0000611 * (3.142(PI) / 180degr) The Arduino sin function is in radians
-	MPU6050.angle_pitch -= MPU6050.angle_roll * sin(MPU6050.Gyroscope_yaw * 0.000001066);               //If the IMU has yawed transfer the roll angle to the pitch angel
-	MPU6050.angle_roll  += MPU6050.angle_pitch * sin(MPU6050.Gyroscope_yaw * 0.000001066);               //If the IMU has yawed transfer the pitch angle to the roll angel
+	MPU6050.angle_pitch += MPU6050.angle_roll * sin(MPU6050.Gyroscope_yaw * 0.000001066);               //If the IMU has yawed transfer the roll angle to the pitch angel
+	MPU6050.angle_roll  -= MPU6050.angle_pitch * sin(MPU6050.Gyroscope_yaw * 0.000001066);               //If the IMU has yawed transfer the pitch angle to the roll angel
 
 /*Accelerometer angle calculations*/
 		
@@ -230,17 +229,35 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 		MPU6050.angle_pitch_acc = asin((float)MPU6050.Accelerometer_Y/acc_total_vector)* 57.296;       //Calculate the pitch angle
   }
   if (abs(MPU6050.Accelerometer_X) < acc_total_vector) {                                             //Prevent the asin function to produce a NaN.
-		MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/acc_total_vector)* 57.296;       //Calculate the roll angle
+		MPU6050.angle_roll_acc = asin((float)MPU6050.Accelerometer_X/acc_total_vector)* -57.296;       //Calculate the roll angle
   }
-	
-	MPU6050.angle_pitch = MPU6050.angle_pitch * 0.9996 + MPU6050.angle_pitch_acc * 0.0004;     //Correct the drift of the gyro pitch angle with the accelerometer pitch angle
-	MPU6050.angle_roll = MPU6050.angle_roll * 0.9996 + MPU6050.angle_roll_acc * 0.0004;        //Correct the drift of the gyro roll angle with the accelerometer roll angle
 
 	
-	MPU6050.pitch_level_adjust = MPU6050.angle_pitch * 15;                                           //Calculate the pitch angle correction.
-  MPU6050.roll_level_adjust = MPU6050.angle_roll * 15;                                             //Calculate the roll angle correction.
+	if(set_gyro_angles == 0){                                                 //If the IMU is already started
+		MPU6050.angle_pitch = MPU6050.angle_pitch * 0.98 + MPU6050.angle_pitch_acc * 0.02;     //Correct the drift of the gyro pitch angle with the accelerometer pitch angle
+		MPU6050.angle_roll = MPU6050.angle_roll * 0.98 + MPU6050.angle_roll_acc * 0.02;        //Correct the drift of the gyro roll angle with the accelerometer roll angle
+	}
+	else{                                                                //At first start
+		MPU6050.angle_pitch = MPU6050.angle_pitch_acc;                     //Set the gyro pitch angle equal to the accelerometer pitch angle 
+		MPU6050.angle_roll = MPU6050.angle_roll_acc;                       //Set the gyro roll angle equal to the accelerometer roll angle 
+		set_gyro_angles = 0;                                            //Set the IMU started flag
+	}
+	
+	MPU6050.angle_pitch_output = MPU6050.angle_pitch_output * 0.9 + MPU6050.angle_pitch * 0.1;   //Take 90% of the output pitch value and add 10% of the raw pitch value
+  MPU6050.angle_roll_output = MPU6050.angle_roll_output * 0.9 + MPU6050.angle_roll * 0.1;      //Take 90% of the output roll value and add 10% of the raw roll value
+	
 
-		
+	MPU6050.pitch_level_adjust = MPU6050.angle_pitch_output * 15;                                           //Calculate the pitch angle correction.
+  MPU6050.roll_level_adjust = MPU6050.angle_roll_output * 15;                                             //Calculate the roll angle correction.
+
+ //Display MPU data on the terminal (USART2)
+//	printf("----------------------------------\n\r");
+//	printf("---------MPU6050 data-------------\n\r");
+//	printf("----------------------------------\n\r");
+//	printf("Pitch : %0.1f\n\r",MPU6050.angle_pitch_output);
+//	printf("Roll : %0.1f\n\r",MPU6050.angle_roll_output);
+//	printf("Yaw : %0.1f\n\r",(double) MPU6050.Gyroscope_yaw / 65.5);
+//	HAL_Delay(200);
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }
