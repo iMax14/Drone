@@ -250,14 +250,15 @@ TM_MPU6050_Result_t MPU6050_ReadConvert_Pitch_Roll(TM_MPU6050_t* DataStruct, TM_
 	MPU6050.pitch_level_adjust = MPU6050.angle_pitch_output * 15;                                           //Calculate the pitch angle correction.
   MPU6050.roll_level_adjust = MPU6050.angle_roll_output * 15;                                             //Calculate the roll angle correction.
 
- //Display MPU data on the terminal (USART2)
+	
+	//Display MPU data on the terminal (USART2)
 //	printf("----------------------------------\n\r");
 //	printf("---------MPU6050 data-------------\n\r");
 //	printf("----------------------------------\n\r");
 //	printf("Pitch : %0.1f\n\r",MPU6050.angle_pitch_output);
 //	printf("Roll : %0.1f\n\r",MPU6050.angle_roll_output);
 //	printf("Yaw : %0.1f\n\r",(double) MPU6050.Gyroscope_yaw / 65.5);
-//	HAL_Delay(200);
+
 	/* Return OK */
 	return TM_MPU6050_Result_Ok;
 }

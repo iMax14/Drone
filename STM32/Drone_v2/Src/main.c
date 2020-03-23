@@ -251,28 +251,28 @@ int main(void)
 		Error_Handler();
 	}
 
-	//Activate Remote control captures
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
-	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
-	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH4 receiver [yaw]
-	
-	HAL_Delay(2000); //Wait until the receiver is active
+//	//Activate Remote control captures
+//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_1); //PA8  --> CH3 receiver [throttle]
+//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_2); //PA9  --> CH1 receiver [roll]
+//	HAL_TIM_IC_Start_IT(&htim1,TIM_CHANNEL_3); //PA10 --> CH2 receiver [pitch]
+//	HAL_TIM_IC_Start_IT(&htim2,TIM_CHANNEL_2); //PA1  --> CH4 receiver [yaw]
+//	
+//	HAL_Delay(2000); //Wait until the receiver is active
 
-  if(cmd.pitch < 990 || cmd.roll < 990 || cmd.throttle < 990 || cmd.yaw < 990)  {
-		_status = 2; //FlySky télécommande non détectée
-		Error_Handler();
-  }
-  if(cmd.pitch > 1990 || cmd.roll > 1990 || cmd.throttle > 1990 || cmd.yaw > 1990)  {
-		_status = 2; //FlySky télécommande non détectée
-		Error_Handler();
-  }
-	
-	//Wait until the throttle is set to the lower position.
-	if(cmd.throttle < 990 || cmd.throttle > 1050)  {
-		_status = 3; //Throttle n'est pas dans la position la plus basse
-		Error_Handler();
-	}
+//  if(cmd.pitch < 990 || cmd.roll < 990 || cmd.throttle < 990 || cmd.yaw < 990)  {
+//		_status = 2; //FlySky télécommande non détectée
+//		Error_Handler();
+//  }
+//  if(cmd.pitch > 1990 || cmd.roll > 1990 || cmd.throttle > 1990 || cmd.yaw > 1990)  {
+//		_status = 2; //FlySky télécommande non détectée
+//		Error_Handler();
+//  }
+//	
+//	//Wait until the throttle is set to the lower position.
+//	if(cmd.throttle < 990 || cmd.throttle > 1050)  {
+//		_status = 3; //Throttle n'est pas dans la position la plus basse
+//		Error_Handler();
+//	}
 
 	//Initialize SPI communication
 	HAL_GPIO_WritePin(SPI1_SSEL_GPIO_Port, SPI1_SSEL_Pin, GPIO_PIN_SET);
@@ -298,9 +298,9 @@ int main(void)
 //		check_motor_vibrations(4); 
 
 // Commandes moteurs en Boucle fermée (PID)
-		init_pid();
-		calculate_pid();//PID inputs are known. So we can calculate the pid output.
-		cmd_motors();
+//		init_pid();
+//		calculate_pid();//PID inputs are known. So we can calculate the pid output.
+//		cmd_motors();
 
 		
     /* USER CODE END WHILE */
